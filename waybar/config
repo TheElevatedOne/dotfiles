@@ -1,0 +1,210 @@
+{
+        "layer": "top",
+        "position": "top",
+        "reload_style_on_change": true,
+        "modules-left": ["group/power","custom/separator","hyprland/workspaces","custom/separator", "hyprland/window"],
+        "modules-center": ["clock"],
+        "modules-right": ["group/tray","custom/separator","hyprland/language","custom/separator","backlight","custom/separator","custom/nightlight","custom/separator","pulseaudio","custom/separator","bluetooth","custom/separator","network","custom/separator","battery","custom/separator","custom/notification"],
+
+        "hyprland/workspaces": {
+            "format": "{icon}",
+            "format-icons": {
+                "active": "",
+                "default": "",
+                "empty": ""
+            },
+            "persistent-workspaces": {
+                "*": [ 1,2,3,4 ]
+            }
+        },
+        "hyprland/window": {
+            "format": "",
+            "icon": true,
+            "icon-size": 24,
+            "separate-outputs": true,
+            "max-length": 35,
+            "rewrite": {
+                "<span text_transform='capitalize'></span>": "Desktop (Empty)",
+                "<span text_transform='capitalize'>com.obsproject.studio</span>": "OBS Studio"
+            }
+        },
+        "hyprland/language": {
+            "format": "{}",
+            "format-en": "🇺🇸",
+            "format-sk": "🇸🇰",
+            "keyboard-name": "at-translated-set-2-keyboard"
+        },
+        "custom/notification": {
+            "tooltip": false,
+            "format": "",
+            "on-click": "swaync-client -t -sw",
+            "escape": true
+        },
+        "clock": {
+            "format": "{:%y/%m/%d | %I:%M:%S}",
+            "interval": 1,   
+            "timezone": "Europe/Bratislava",
+            "on-click": "korganizer"
+        },
+        "network": {
+            "format-wifi": "<big>󰖩</big>",
+            "format-ethernet":"<big></big>",
+            "format-disconnected": "<big></big>",
+            "tooltip-format-disconnected": "Error",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+            "tooltip-format-ethernet": "{ifname} 🖧 ",
+            "on-click": "kitty nmtui"
+        },
+        "custom/hotspot": {
+            "format": "󰀂",
+            "tooltip": false
+        },
+        "bluetooth": {
+            "format-on": "󰂯",
+            "format-off": "BT-off",
+            "format-disabled": "󰂲",
+            "format-connected-battery": "{device_battery_percentage}% 󰁹󰂯",
+            "format-connected": "<big>󰂱</big>",
+            "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+            "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+            "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+            "on-click-right": "blueman-manager",
+        }, 
+        "battery": {
+            "interval":30,
+            "states": {
+                "good": 95,
+                "warning": 30,
+                "critical": 20
+            },
+            "format": "{capacity}% {icon}",
+            "format-charging": "{capacity}% 󰂄",
+            "format-plugged": "{capacity}% 󰂄 ",
+            "format-icons": [
+                "󰁻",
+            "󰁼",
+            "󰁾",
+            "󰂀",
+            "󰂂",
+            "󰁹"
+            ],
+        },
+        "backlight": {
+            "format": "{percent}% <big>{icon}</big>",
+            "format-icons": [
+                "󰃞",
+                "󰃝",
+                "󰃟",
+                "󰃠"
+            ],
+            "reverse-scrolling": true,
+            "tooltip-format": "Laptop Display Brightness"
+        },
+        "custom/nightlight": {
+            "format": "{icon}",
+            "format-icons": {
+                "on": "󰌵",
+                "off": "󰌶",
+            },
+            "tooltip": true,
+            "tooltip-format": "temperature: {text}K",
+            "exec-on-event": true,
+            "interval": 1,
+            "exec": "python3 $HOME/.config/waybar/scripts/nightlight.py return",
+            "on-click": "python3 $HOME/.config/waybar/scripts/nightlight.py toggle",
+            "return-type": "json",
+        },
+        "pulseaudio": {
+            "format": "{volume}% <big>{icon}</big>",
+	          "nospacing": 1,
+            "format-muted": "<big>󰖁</big>",
+            "format-icons": {
+                "default": ["󰕿", "󰖀", "󰕾"]
+            },
+            "on-click": "pamixer -t",
+	          "on-click-right": "pavucontrol",
+	          "scroll-step": 5,
+        },
+        "custom/separator":{
+            "format": "<big>|</big>",
+            "tooltip": false
+        },
+        "custom/power": {
+            "format": "",
+            "tooltip-format": "Power Menu",
+        },
+        "custom/shutdown": {
+            "format": "",
+            "tooltip-format": "Power Off / Shutdown",
+            "on-click": "systemctl poweroff"
+        },
+        "custom/reboot": {
+            "format": "",
+            "tooltip-format": "Restart / Reboot",
+            "on-click": "systemctl reboot"
+        },
+        "custom/logout": {
+            "format": "󰍃",
+            "tooltip-format": "Logout",
+            "on-click": "kill -9 -1"
+        },
+        "custom/lock": {
+            "format": "",
+            "tooltip-format": "Lock / Hyprlock",
+            "on-click": "hyprlock"
+        },
+        "custom/sleep": {
+            "format": "󰤄",
+            "tooltip-format": "Sleep / Suspend",
+            "on-click": "systemctl suspend"
+        },
+        "group/power": {
+            "orientation": "horizontal",
+            "drawer": {
+                "transition-duration": 600,
+                "transition-to-left": true,
+                "click-to-reveal": false
+            },
+            "modules": [
+                "custom/power",
+                "custom/separator",
+                "custom/shutdown",
+                "custom/reboot",
+                "custom/logout",
+                "custom/lock",
+                "custom/sleep"
+            ],
+        },
+        "cpu": {
+            "format": "󰻠",
+            "tooltip": true
+        },
+        "memory": {
+            "format": ""
+        },
+        "temperature": {
+            "critical-threshold": 80,
+            "format": "",
+        },
+        "custom/hidetray": {
+            "format": "<big></big>",
+        },
+        "tray": {
+            "icon-size": 16,
+            "spacing": 10,
+        },
+        "group/tray": {
+            "orientation": "horizontal",
+            "drawer": {
+                "transition-duration": 600,
+                "transition-left-to-right": false,
+                "click-to-reveal": false
+            },
+            "modules": [
+                "custom/hidetray",
+                "tray",
+            ],
+        },
+} 
+

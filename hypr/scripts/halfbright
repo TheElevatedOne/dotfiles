@@ -1,0 +1,16 @@
+#!/bin/bash
+
+max=$(brightnessctl m)
+percent=$((max / 100))
+
+current=$(brightnessctl g)
+half=$((current / 2))
+
+brightnessctl -s
+
+for ((i = current; i >= half; i -= percent)); do
+  sleep 0.02
+  brightnessctl s $i
+done
+
+# brightnessctl -s s $half

@@ -2,54 +2,25 @@
 /*### General and Definitions ###*/
 /*###############################*/
 
-@define-color background rgba(43, 0, 0, 0.6);
+@import '../../.cache/wal/colors-waybar.css';
+
+@define-color workspaces mix(@color2, rgb(39, 0, 0), 0.9);
+@define-color window darker(darker(@color3));
 @define-color text rgba(238, 238, 238, 1);
 @define-color utext rgba(192, 192, 192, 0.7);
 @define-color separator rgba(160, 0, 0, 0.6);
 
 * {
-    font-size: 17px;
-    font-family: "LiterationMonoNerdFontMono Nerd Font";
+    /* font-size: 15px; */
+    font-family: "GeistMono Nerd Font";
 }
 window#waybar{
     all: unset;
 }
-.modules-left {
-    padding: 7px;
-    margin: 10 0 5 20;
-    border-radius: 15px;
-    border: solid 2px @separator;
-    background: @background;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-}
-.modules-center {
-    padding:7px;
-    margin:10 0 5 0;
-    border-radius: 100px;
-    border: solid 2px @separator;
-    background: @background;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-}
-.modules-right {
-    padding:7px;
-    padding-left: 3px;
-    margin: 10 20 5 0;
-    border-radius:15px;
-    border: solid 2px @separator;
-    background: @background;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-}
-tooltip {
-    background: rgb(43, 0, 0);
-    color: @text;
-}
-#clock:hover,#custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover,#cpu:hover,#memory:hover,#temperature:hover{
-    transition: all .3s ease;
-    color:@utext;
-}
-#custom-separator {
-    color: @separator;
-    /* font-size: 21px; */
+tooltip { 
+    background: alpha(@background, 0.7);
+    color: @foreground;
+    font-weight: bold;
 }
 
 /*  __  __           _       _             _           __ _   */
@@ -59,100 +30,128 @@ tooltip {
 /* | |  | | (_) | (_| | |_| | |  __/\__ \ | |___|  __/ | | |_ */
 /* |_|  |_|\___/ \__,_|\__,_|_|\___||___/ |______\___|_|  \__|*/
 
-/*#########################*/
-/*### Custom Power Menu ###*/
-/*#########################*/
+/* ############################# */
+/* ### App Menu & Power Menu ### */
+/* ############################# */
 
-#group-power{
-    padding: 0px 5px;
-    transition: all .3s ease; 
-}
-#custom-power{
-    padding: 0px 8px;
-    color: @text;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
-    transition: all .3s ease;
-    font-size: 21px;
-}
-#custom-power:hover{
-    text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
-    font-weight: bold;
-    color: @utext;
-    border-radius: 100px;
-}
-#custom-shutdown,#custom-reboot,#custom-logout,#custom-lock,#custom-sleep {
-  padding: 0px 8px;
-  margin: 0px 3px;
+#custom-lp-menu {
   font-size: 20px;
-  border-radius: 100px;
+  color: @color1;
+}
+#custom-menu{
+    color: @text;
+    transition: all .3s ease;
+    background: @color1;
+    padding: 0 12 0 8;
+    font-size: 18px;
+}
+#custom-rp-menu {
+  font-size: 20px;
+  color: @color1;
+  background: #a00000;
+}
+#custom-shutdown,#custom-reboot,#custom-logout,#custom-sleep {
+  padding: 0 7 0 7;
+  font-size: 15px;
+  transition: all .3s ease;
+}
+#custom-shutdown:hover,#custom-reboot:hover,#custom-logout:hover,#custom-sleep:hover {
+  font-size: 16px;
 }
 #custom-shutdown {
-  margin-left: 5px;
-  background: @separator;
+  background: #a00000;
+}
+#custom-rp-shutdown {
+  color: #a00000;
+  background: #005DA0;
+  font-size: 20px;
 }
 #custom-reboot {
   background: #005DA0;
 }
+#custom-rp-reboot {
+  color: #005DA0;
+  background: #00A018;
+  font-size: 20px;
+}
 #custom-logout {
   background: #00A018;
 }
-#custom-lock {
-  background: #A05900;
+#custom-rp-logout {
+  color: #00A018;
+  background: #9300A0;
+  font-size: 20px;
 }
 #custom-sleep {
   background: #9300A0;
 }
+#custom-rp-sleep {
+  color: #9300A0;
+  font-size: 20px;
+  margin-right: 10px;
+}
 
-/*######################*/
-/*### Workspace Dots ###*/
-/*######################*/
+/*##########################*/
+/*### Workspace  & Window###*/
+/*##########################*/
 
+#custom-lp-workspaces {
+  margin-left: 0px;
+  color: @color2;
+  font-size: 20px;
+}
 #workspaces {
-    padding: 0px 5px;
+  background: @color2;
+  padding-right: 2px;
 }
 #workspaces button {
     all:unset;
-    padding: 0px 5px;
-    color: alpha(#ff9898, 0.5);
+    font-size: 13px;
+    padding: 0px 6px;
+    color: alpha(@workspaces, 0.7);
     transition: all .2s ease;
 }
 #workspaces button:hover {
-    color:rgba(0,0,0,0);
+    color: alpha(@workspaces, 0.2);
     border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
     transition: all 1s ease;
 }
 #workspaces button.active {
-    color: #FF9898;
+    color: @workspaces;
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
 #workspaces button.empty {
-    color: alpha(#ff9898, 0.2);
+    color: alpha(@workspaces, 0.4);
     border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
 }
 #workspaces button.empty:hover {
-    color: rgba(0,0,0,0);
+    color: alpha(@workspaces, 0.2);
     border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
     transition: all 1s ease;
 }
 #workspaces button.empty.active {
-    color: #FF9898;
+    color: @workspaces;
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
-
-/*##########################*/
-/*### Active Window Name ###*/
-/*##########################*/
-
+#custom-rp-workspaces {
+  color: @color2;
+  font-size: 20px;
+  background: @window;
+}
 #window {
   color: white;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-radius: 5px;
+  background: @window;
+  padding: 0 5 0 7;
+  font-size: 15px;
+}
+#custom-rp-window {
+  color: @window;
+  font-size: 20px;
 }
 
  /*  __  __           _       _              _____           _             */
@@ -170,8 +169,7 @@ tooltip {
     padding: 0px 5px;
     color: @text;
     transition: all .3s ease;
-    font-family: "Rounded Mgen+ 2pp Medium Custom";
-    font-size: 17px;
+    font-weight: bold;
 }
 
  /*  __  __           _       _             _____  _       _     _    */
@@ -196,11 +194,9 @@ tooltip {
 }
 #tray menu * {
     font-family: "Noto Sans";
-    font-size: 14px;
 }
 #tray menu separator {
     font-family: "Noto Sans";
-    font-size: 14px;
 }
 
 /*###############*/
@@ -211,7 +207,6 @@ tooltip {
     padding: 0px 5px;
     transition: all .3s ease;
     color:@text;
-    font-size: 16px;
 }
 #battery.charging {
     color: #26A65B;
@@ -235,7 +230,6 @@ tooltip {
 #language {
   padding: 0px 5px;
   color: @text;
-  font-size: 18px;
 }
 #backlight {
   padding: 0px 5px;
@@ -260,7 +254,6 @@ tooltip {
     padding: 0px 5px;
     transition: all .3s ease;
     color:@text;
-    font-size: 20px;
 }
 #custom-notification {
     padding: 0px 10px 0px 5px;

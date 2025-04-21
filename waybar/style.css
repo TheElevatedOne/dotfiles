@@ -2,13 +2,41 @@
 /*### General and Definitions ###*/
 /*###############################*/
 
-@import '../../.cache/wal/colors-waybar.css';
+@import '../../.cache/hellwal/waybar-colors.css';
 
-@define-color workspaces mix(@color2, rgb(39, 0, 0), 0.9);
-@define-color window darker(darker(@color3));
-@define-color text rgba(238, 238, 238, 1);
-@define-color utext rgba(192, 192, 192, 0.7);
-@define-color separator rgba(160, 0, 0, 0.6);
+/* Left Modules */
+
+@define-color apps mix(#12C8FF, @color10, 0.6);
+@define-color power mix(#A00000, @color9, 0.3);
+@define-color reboot mix(#005DA0, @color9, 0.3);
+@define-color logout mix(#00A018, @color9, 0.3);
+@define-color sleep mix(#9300A0, @color9, 0.3);
+
+@define-color workspaces-bg mix(#FF83BB, @color15, 0.3);
+@define-color workspaces darker(mix(#8A003F, @color14, 0.7));
+@define-color window darker(mix(#862F8E, @color10, 0.5));
+
+/* Center Modules */
+
+@define-color date mix(#B27A00, @color4, 0.2);
+@define-color time mix(#008F7E, @color4, 0.2);
+
+/* Right Modules */
+
+@define-color tray mix(mix(#004960, @color4, 0.6), #000000, 0.2);
+@define-color lang mix(#FF0000, @color2, 0.4);
+@define-color backlight mix(#FFED12, @color1, 0.5);
+@define-color nightlight mix(#FF6505, @color9, 0.6);
+@define-color sound mix(#00C71A, @color2, 0.5);
+@define-color bluetooth mix(#1100D6, @color2, 0.3);
+@define-color network mix(#870059, @color7, 0.2);
+@define-color battery @color6;
+@define-color notifications mix(#FF4A4A, @color11, 0.3);
+
+/* Extra Colors */
+
+@define-color text-light rgb(255, 255, 255);
+@define-color text-dark rgb(0, 0, 0);
 
 * {
     /* font-size: 15px; */
@@ -19,7 +47,7 @@ window#waybar{
 }
 tooltip { 
     background: alpha(@background, 0.7);
-    color: @foreground;
+    color: @text-light;
     font-weight: bold;
 }
 
@@ -36,19 +64,19 @@ tooltip {
 
 #custom-lp-menu {
   font-size: 20px;
-  color: @color1;
+  color: @apps;
 }
 #custom-menu{
-    color: @text;
+    color: @text-light;
     transition: all .3s ease;
-    background: @color1;
+    background: @apps;
     padding: 0 12 0 8;
     font-size: 18px;
 }
 #custom-rp-menu {
   font-size: 20px;
-  color: @color1;
-  background: #a00000;
+  color: @apps;
+  background: @power;
 }
 #custom-shutdown,#custom-reboot,#custom-logout,#custom-sleep {
   padding: 0 7 0 7;
@@ -59,34 +87,34 @@ tooltip {
   font-size: 16px;
 }
 #custom-shutdown {
-  background: #a00000;
+  background: @power;
 }
 #custom-rp-shutdown {
-  color: #a00000;
-  background: #005DA0;
+  color: @power;
+  background: @reboot;
   font-size: 20px;
 }
 #custom-reboot {
-  background: #005DA0;
+  background: @reboot;
 }
 #custom-rp-reboot {
-  color: #005DA0;
-  background: #00A018;
+  color: @reboot;
+  background: @logout;
   font-size: 20px;
 }
 #custom-logout {
-  background: #00A018;
+  background: @logout;
 }
 #custom-rp-logout {
-  color: #00A018;
-  background: #9300A0;
+  color: @logout;
+  background: @sleep;
   font-size: 20px;
 }
 #custom-sleep {
-  background: #9300A0;
+  background: @sleep;
 }
 #custom-rp-sleep {
-  color: #9300A0;
+  color: @sleep;
   font-size: 20px;
   margin-right: 10px;
 }
@@ -97,11 +125,11 @@ tooltip {
 
 #custom-lp-workspaces {
   margin-left: 0px;
-  color: @color2;
+  color: @workspaces-bg;
   font-size: 20px;
 }
 #workspaces {
-  background: @color2;
+  background: @workspaces-bg;
   padding-right: 2px;
 }
 #workspaces button {
@@ -139,7 +167,7 @@ tooltip {
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
 #custom-rp-workspaces {
-  color: @color2;
+  color: @workspaces-bg;
   font-size: 20px;
   background: @window;
 }
@@ -164,12 +192,32 @@ tooltip {
 /*####################*/
 /*### Clock & Date ###*/
 /*####################*/
-
-#clock{
+#custom-lp-clock {
+  font-size: 20px;
+  color: @date;
+}
+#clock.date {
     padding: 0px 5px;
-    color: @text;
+    color: @text-light;
     transition: all .3s ease;
     font-weight: bold;
+    background: @date;
+}
+#custom-mp-clock {
+  font-size: 20px;
+  background: @date;
+  color: @time;
+}
+#clock.time {
+    padding: 0px 5px;
+    color: @text-light;
+    transition: all .3s ease;
+    font-weight: bold;
+    background: @time;
+}
+#custom-rp-clock {
+  font-size: 20px;
+  color: @time;
 }
 
  /*  __  __           _       _             _____  _       _     _    */
@@ -184,13 +232,14 @@ tooltip {
 /*###############*/
 /*### Systray ###*/
 /*###############*/
-#custom-hidetray {
-  margin-left: 7px;
-  transition: all .3s ease;
-  color: @text;
+
+#custom-lp-tray {
+  color: @tray;
+  font-size: 20px;
 }
 #tray{
-    padding: 0px 5px;
+    padding: 0px 7px;
+    background: @tray;
 }
 #tray menu * {
     font-family: "Noto Sans";
@@ -199,23 +248,94 @@ tooltip {
     font-family: "Noto Sans";
 }
 
-/*###############*/
-/*### Battery ###*/
-/*###############*/
+/*############################*/
+/*### Other Simple Configs ###*/
+/*############################*/
 
-#battery{
-    padding: 0px 5px;
+#custom-lp-lang {
+  font-size: 20px;
+  background: @tray;
+  color: @lang;
+}
+#language {
+  padding: 0px 5px;
+  color: @text-light;
+  font-weight: bold;
+  background: @lang;
+  font-size: 20px;
+}
+#custom-rp-lang {
+  font-size: 20px;
+  color: @lang;
+  background: @backlight;
+}
+#backlight {
+  padding: 0px 7px;
+  color: @text-light;
+  font-size: 15px;
+  background: @backlight;
+}
+#custom-rp-backlight {
+  font-size: 20px;
+  color: @backlight;
+  background: @nightlight;
+}
+#custom-nightlight {
+  padding: 0px 7px;
+  color: @text-light;
+  background: @nightlight;
+  font-size: 15px;
+}
+#custom-rp-nightlight {
+  font-size: 20px;
+  color: @nightlight;
+  background: @sound;
+}
+#pulseaudio {
+  padding: 0px 7px;
+  color: @text-light;
+  background: @sound;
+  font-size: 15px;
+}
+#custom-rp-sound {
+  font-size: 20px;
+  color: @sound;
+  background: @bluetooth;
+}
+#bluetooth {
+    padding: 0px 5px 0px 5px;
     transition: all .3s ease;
-    color:@text;
+    color:@text-light;
+    background: @bluetooth;
+    /* font-size: 18px; */
 }
-#battery.charging {
-    color: #26A65B;
+#custom-rp-bluetooth {
+  font-size: 20px;
+  color: @bluetooth;
+  background: @network;
 }
-#battery.warning:not(.charging) {
-    color: #ffbe61;
+#network {
+    padding: 0px 11px 0px 5px;
+    transition: all .3s ease;
+    color:@text-light;
+    background: @network;
 }
-#battery.critical:not(.charging) {
-    color: #f53c3c;
+#battery.network {
+  font-size: 20px;
+  color: @network;
+  background: @battery;
+}
+#battery.network.discharging {
+    background: #B76400;
+}
+#battery.network.charging {
+    background: #26A65B;
+}
+#battery.network.warning:not(.charging) {
+    background: #BB3300;
+}
+#battery.network.critical:not(.charging) {
+    background: #ff0000;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -223,54 +343,65 @@ tooltip {
     animation-direction: alternate;
 }
 
-/*############################*/
-/*### Other Simple Configs ###*/
-/*############################*/
+/*###############*/
+/*### Battery ###*/
+/*###############*/
 
-#language {
-  padding: 0px 5px;
-  color: @text;
-}
-#backlight {
-  padding: 0px 5px;
-  color: @text;
-}
-#custom-nightlight {
-  padding: 0px 5px;
-  color: @text;
-}
-#pulseaudio {
-  padding: 0px 5px;
-  color: @text;
-  /* font-size: 24px; */
-}
-#bluetooth{
-    padding: 0px 5px;
+#battery.main {
+    padding: 0px 7px;
     transition: all .3s ease;
-    color:@text;
-    /* font-size: 18px; */
+    color:@text-light;
+    font-size: 15px;
+    background: @battery;
 }
-#network{
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color:@text;
+#battery.main.discharging {
+    background: #B76400;
 }
+#battery.main.charging {
+    background: #26A65B;
+}
+#battery.main.warning:not(.charging) {
+    background: #BB3300;
+}
+#battery.main.critical:not(.charging) {
+    background: #ff0000;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+#battery.rp {
+  font-size: 20px;
+  color: @battery;
+  background: @notifications;
+}
+#battery.rp.discharging {
+    color: #B76400;
+}
+#battery.rp.charging {
+    color: #26A65B;
+}
+#battery.rp.warning:not(.charging) {
+    color: #BB3300;
+}
+#battery.rp.critical:not(.charging) {
+    color: #ff0000;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
 #custom-notification {
     padding: 0px 10px 0px 5px;
     transition: all .3s ease;
-    color:@text;
+    color:@text-light;
+    background: @notifications;
+}
+#custom-rp-notif {
+  font-size: 20px;
+  color: @notifications;
 }
 
- /*  _    _                          _   __  __           _       _            */
- /* | |  | |                        | | |  \/  |         | |     | |           */
- /* | |  | |_ __  _   _ ___  ___  __| | | \  / | ___   __| |_   _| | ___  ___  */
- /* | |  | | '_ \| | | / __|/ _ \/ _` | | |\/| |/ _ \ / _` | | | | |/ _ \/ __| */
- /* | |__| | | | | |_| \__ \  __/ (_| | | |  | | (_) | (_| | |_| | |  __/\__ \ */
- /*  \____/|_| |_|\__,_|___/\___|\__,_| |_|  |_|\___/ \__,_|\__,_|_|\___||___/ */
-
-#cpu,#memory,#temperature{
-    padding: 0px 5px;
-    transition: all .3s ease; 
-    color:@text;
-
-}

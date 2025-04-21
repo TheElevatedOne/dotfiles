@@ -49,7 +49,7 @@
   "custom/sleep": {
     "format": "󰤄",
     "tooltip-format": "Sleep / Suspend",
-    "on-click": "systemctl suspend"
+    "on-click": "hyprlock & systemctl suspend"
   },
   "custom/rp-sleep": {
     "format": "",
@@ -86,19 +86,48 @@
     "separate-outputs": true,
     "max-length": 35,
     "rewrite": {
-      "": "empty",
-      "org.kde.dolphin": "dolphin"
+      "": "󰍹  desktop",
+      "org.kde.dolphin": "dolphin",
+      "clipse": "󰅍 clipse"
     }
   },
   "custom/rp-window": {
     "format": "",
     "tooltip": false
   },
-  "clock": {
-    "format": "{:%y/%m/%d | %I:%M:%S}",
+  "custom/lp-clock": {
+    "format": "",
+    "tooltip": false
+  },
+  "clock#date": {
+    "format": "{:%y/%m/%d}",
     "interval": 1,
-    "timezone": "Europe/Bratislava",
-    "on-click": "korganizer"
+    "timezone": "Europe/Bratislava"
+  },
+  "custom/mp-clock": {
+    "format": "",
+    "tooltip": false
+  },
+  "clock#time": {
+    "format": "{:%I:%M:%S}",
+    "interval": 1,
+    "timezone": "Europe/Bratislava"
+  },
+  "custom/rp-clock": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/lp-tray": {
+    "format": "",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+  "custom/lp-lang": {
+    "format": "",
+    "tooltip": false
   },
   "hyprland/language": {
     "format": "{}",
@@ -106,23 +135,60 @@
     "format-sk": "🇸🇰",
     "keyboard-name": "at-translated-set-2-keyboard"
   },
-  "custom/notification": {
-    "tooltip": false,
-    "format": "",
-    "on-click": "swaync-client -t -sw",
-    "escape": true
+  "custom/rp-lang": {
+    "format": "",
+    "tooltip": false
   },
-  "network": {
-    "format-wifi": "<big>󰖩</big>",
-    "format-ethernet": "<big></big>",
-    "format-disconnected": "<big></big>",
-    "tooltip-format-disconnected": "Error",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-    "tooltip-format-ethernet": "{ifname} 🖧 ",
-    "on-click": "kitty nmtui"
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": [
+      "󰃞",
+      "󰃝",
+      "󰃟",
+      "󰃠"
+    ],
+    "reverse-scrolling": true,
+    "tooltip-format": "Laptop Display Brightness"
   },
-  "custom/hotspot": {
-    "format": "󰀂",
+  "custom/rp-backlight": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/nightlight": {
+    "format": "{icon}",
+    "format-icons": {
+      "on": "󰌵",
+      "off": "󰌶"
+    },
+    "tooltip": true,
+    "tooltip-format": "Night Light Toggle",
+    "exec-on-event": true,
+    "interval": 1,
+    "exec": "python3 $HOME/.config/waybar/scripts/nightlight.py return",
+    "on-click": "python3 $HOME/.config/waybar/scripts/nightlight.py toggle",
+    "return-type": "json"
+  },
+  "custom/rp-nightlight": {
+    "format": "",
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "format": "{volume}% <big>{icon}</big>",
+    "nospacing": 1,
+    "format-muted": "<big>󰖁</big>",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "on-click": "pamixer -t",
+    "on-click-right": "pavucontrol",
+    "scroll-step": 5
+  },
+  "custom/rp-sound": {
+    "format": "",
     "tooltip": false
   },
   "bluetooth": {
@@ -135,10 +201,28 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
-    "on-click-right": "blueman-manager",
+    "on-click-right": "blueman-manager"
   },
-  "battery": {
-    "interval": 30,
+  "custom/rp-bluetooth": {
+    "format": "",
+    "tooltip": false
+  },
+  "network": {
+    "format-wifi": "󰖩",
+    "format-ethernet": "",
+    "format-disconnected": "",
+    "tooltip-format-disconnected": "Error",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname} 🖧 ",
+    "on-click": "kitty nmtui"
+  },
+  "battery#network": {
+    "format": "",
+    "tooltip": false,
+    "interval": 5
+  },
+  "battery#main": {
+    "interval": 5,
     "states": {
       "good": 95,
       "warning": 30,
@@ -154,47 +238,26 @@
       "󰂀",
       "󰂂",
       "󰁹"
-    ],
+    ]
   },
-  "backlight": {
-    "format": "{percent}% <big>{icon}</big>",
-    "format-icons": [
-      "󰃞",
-      "󰃝",
-      "󰃟",
-      "󰃠"
-    ],
-    "reverse-scrolling": true,
-    "tooltip-format": "Laptop Display Brightness"
+  "battery#rp": {
+    "format": "",
+    "tooltip": false,
+    "interval": 5
   },
-  "custom/nightlight": {
-    "format": "{icon}",
-    "format-icons": {
-      "on": "󰌵",
-      "off": "󰌶",
-    },
-    "tooltip": true,
-    "tooltip-format": "temperature: {text}K",
-    "exec-on-event": true,
-    "interval": 1,
-    "exec": "python3 $HOME/.config/waybar/scripts/nightlight.py return",
-    "on-click": "python3 $HOME/.config/waybar/scripts/nightlight.py toggle",
-    "return-type": "json",
+  "custom/notification": {
+    "tooltip": false,
+    "format": "",
+    "on-click": "swaync-client -t -sw",
+    "escape": true
   },
-  "pulseaudio": {
-    "format": "{volume}% <big>{icon}</big>",
-    "nospacing": 1,
-    "format-muted": "<big>󰖁</big>",
-    "format-icons": {
-      "default": [
-        "󰕿",
-        "󰖀",
-        "󰕾"
-      ]
-    },
-    "on-click": "pamixer -t",
-    "on-click-right": "pavucontrol",
-    "scroll-step": 5,
+  "custom/rp-notif": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/hotspot": {
+    "format": "󰀂",
+    "tooltip": false
   },
   "custom/separator": {
     "format": "<big>|</big>",
@@ -209,25 +272,6 @@
   },
   "temperature": {
     "critical-threshold": 80,
-    "format": "",
-  },
-  "custom/hidetray": {
-    "format": "<big></big>",
-  },
-  "tray": {
-    "icon-size": 16,
-    "spacing": 10,
-  },
-  "group/tray": {
-    "orientation": "horizontal",
-    "drawer": {
-      "transition-duration": 600,
-      "transition-left-to-right": false,
-      "click-to-reveal": false
-    },
-    "modules": [
-      "custom/hidetray",
-      "tray",
-    ],
-  },
+    "format": ""
+  }
 }

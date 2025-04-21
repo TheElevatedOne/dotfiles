@@ -31,26 +31,28 @@
     "custom/rp-window"
   ],
 
-  "modules-center": ["clock"],
+  "modules-center": ["custom/lp-clock", "clock#date", "custom/mp-clock", "clock#time", "custom/rp-clock"],
 
   "modules-right": [
-    "group/tray",
-    "custom/separator",
+    "custom/lp-tray",
+    "tray",
+    "custom/lp-lang",
     "hyprland/language",
-    "custom/separator",
+    "custom/rp-lang",
     "backlight",
-    "custom/separator",
+    "custom/rp-backlight",
     "custom/nightlight",
-    "custom/separator",
+    "custom/rp-nightlight",
     "pulseaudio",
-    "custom/separator",
+    "custom/rp-sound",
     "bluetooth",
-    "custom/separator",
+    "custom/rp-bluetooth",
     "network",
-    "custom/separator",
-    "battery",
-    "custom/separator",
-    "custom/notification"
-  ],
+    "battery#network",
+    "battery#main",
+    "battery#rp",
+    "custom/notification",
+    "custom/rp-notif"
+  ]
 } 
 

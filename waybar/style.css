@@ -4,39 +4,43 @@
 
 @import '../../.cache/hellwal/waybar-colors.css';
 
+@define-color sys #FF83BB;
+
 /* Left Modules */
 
-@define-color apps mix(#12C8FF, @color10, 0.6);
-@define-color power mix(#A00000, @color9, 0.3);
-@define-color reboot mix(#005DA0, @color9, 0.3);
-@define-color logout mix(#00A018, @color9, 0.3);
-@define-color sleep mix(#9300A0, @color9, 0.3);
+@define-color apps mix(#005A7F, @foreground, 0.4);
+@define-color power mix(#A00000, @foreground, 0.1);
+@define-color reboot mix(#005DA0, @foreground, 0.1);
+@define-color logout mix(#00A018, @foreground, 0.1);
+@define-color sleep mix(#9300A0, @foreground, 0.1);
 
-@define-color workspaces-bg mix(#FF83BB, @color15, 0.3);
-@define-color workspaces darker(mix(#8A003F, @color14, 0.7));
-@define-color window darker(mix(#862F8E, @color10, 0.5));
+@define-color workspaces-bg mix(@color7, @sys, 0.4);
+@define-color workspaces darker(mix(@color1, @sys, 0.4));
+@define-color window mix(@color1, @sys, 0.2);
 
 /* Center Modules */
 
-@define-color date mix(#B27A00, @color4, 0.2);
-@define-color time mix(#008F7E, @color4, 0.2);
+@define-color date mix(@sys, lighter(@color2), 0.9);
+@define-color time mix(@sys, lighter(@color4), 0.9);
 
 /* Right Modules */
 
-@define-color tray mix(mix(#004960, @color4, 0.6), #000000, 0.2);
-@define-color lang mix(#FF0000, @color2, 0.4);
-@define-color backlight mix(#FFED12, @color1, 0.5);
-@define-color nightlight mix(#FF6505, @color9, 0.6);
-@define-color sound mix(#00C71A, @color2, 0.5);
-@define-color bluetooth mix(#1100D6, @color2, 0.3);
-@define-color network mix(#870059, @color7, 0.2);
-@define-color battery @color6;
-@define-color notifications mix(#FF4A4A, @color11, 0.3);
+@define-color tray mix(darker(darker(darker(@color7))), #000, 0.5);
+
+@define-color lang mix(#FF4A4A, mix(@sys, @color1, 0.9), 0.5);
+@define-color backlight mix(#FF974A, mix(@sys, @color2, 0.9), 0.5);
+@define-color nightlight mix(#E4FF4A, mix(@sys, @color3, 0.9), 0.5);
+@define-color sound mix(#4AFFCD, mix(@sys, @color4, 0.9), 0.5);
+@define-color bluetooth mix(#4AAEFF, mix(@sys, @color5, 0.9), 0.5);
+@define-color network mix(#9B4AFF, mix(@sys, @color6, 0.9), 0.5);
+@define-color battery mix(#FF4ABC, darker(darker(mix(@sys, @color7, 0.9))), 0.7);
+
+@define-color notifications mix(#A30000, mix(@sys, @color13, 0.9), 0.4);
 
 /* Extra Colors */
 
-@define-color text-light rgb(255, 255, 255);
-@define-color text-dark rgb(0, 0, 0);
+@define-color text-light #FFF;
+@define-color text-dark #000;
 
 * {
     /* font-size: 15px; */
@@ -260,9 +264,8 @@ tooltip {
 #language {
   padding: 0px 5px;
   color: @text-light;
-  font-weight: bold;
   background: @lang;
-  font-size: 20px;
+  font-size: 18px;
 }
 #custom-rp-lang {
   font-size: 20px;
@@ -270,7 +273,8 @@ tooltip {
   background: @backlight;
 }
 #backlight {
-  padding: 0px 7px;
+  padding-left: 7px;
+  padding-right: 11px;
   color: @text-light;
   font-size: 15px;
   background: @backlight;
@@ -281,7 +285,8 @@ tooltip {
   background: @nightlight;
 }
 #custom-nightlight {
-  padding: 0px 7px;
+  padding-left: 9px;
+  padding-right: 7px;
   color: @text-light;
   background: @nightlight;
   font-size: 15px;

@@ -148,7 +148,8 @@
       "󰃠"
     ],
     "reverse-scrolling": true,
-    "tooltip-format": "Brightness: {percent}%"
+    "tooltip-format": "Brightness: {percent}%",
+    "on-click": "better-control -d"
   },
   "custom/rp-backlight": {
     "format": "",
@@ -174,6 +175,8 @@
   },
   "pulseaudio": {
     "format": "{volume}% {icon}",
+    "tooltip": true,
+    "tooltip-format": "Device: {desc}",
     "nospacing": 1,
     "format-muted": "󰖁",
     "format-icons": {
@@ -200,7 +203,7 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\nBattery: {device_battery_percentage}%",
-    "on-click-right": "blueman-manager"
+    "on-click": "better-control -b"
   },
   "custom/rp-bluetooth": {
     "format": "",
@@ -213,7 +216,7 @@
     "tooltip-format-disconnected": "Error",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "tooltip-format-ethernet": "{ifname} 🖧 ",
-    "on-click": "kitty nmtui"
+    "on-click": "better-control -w"
   },
   "battery#network": {
     "format": "",
@@ -237,7 +240,8 @@
       "󰂀",
       "󰂂",
       "󰁹"
-    ]
+    ],
+    "on-click": "better-control -B"
   },
   "battery#rp": {
     "format": "",

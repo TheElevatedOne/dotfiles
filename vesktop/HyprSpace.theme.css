@@ -1,5 +1,5 @@
 /**
- * @name DiscordRecolor (PowerLove with PyWal)
+ * @name DiscordRecolor (HyprSpace with Hellwal)
  * @description Allows you to customize Discord's native Color Scheme
  * @author ELEVATED
  * @version 1.0.0
@@ -32,15 +32,7 @@
 /* To change the colors, change the variables inside the root {}, do NOT change the @import url() */
 
 @import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/DiscordRecolor/DiscordRecolor.css);
-@import '../../../.cache/wal/colors-waybar.css';
-
-@function rgb($hexcolor){
-  $red:red($hexcolor);
-  $green:green($hexcolor);
-  $blue:blue($hexcolor);
-  $alpha:alpha($hexcolor);
-  @return {$red},{$green},{$blue};
-}
+@import '~/.cache/hellwal/discord-colors.css'
 
 /* All colors are in RGB format (red, green, blue) use: https://www.google.com/search?q=colorpicker	*/
 
@@ -63,10 +55,10 @@
 	--textdarker: 			190,190,190;			/*	Text Color 5		-	default:	114,118,125		-	hex:	#72767d		*/
 	--textdarkest: 			176,176,176;			/*	Text Color 6		-	default:	79,84,92		-	hex:	#4f545c		*/
 	
-	--backgroundaccent: 		@color2;			/*	Background Accent	-	default:	64,68,75		-	hex:	#40444b		*/
-	--backgroundprimary: 		@color3;			/*	Background 1		-	default:	54,57,63		-	hex:	#36393f		*/
-	--backgroundsecondary: 		33,0,0;			/*	Background 2		-	default:	47,49,54		-	hex:	#2f3136		*/
-	--backgroundsecondaryalt: 	20,0,0;			/*	Background 3		-	default:	41,43,47		-	hex:	#292b2f		*/
-	--backgroundtertiary: 		25,0,0;			/*	Background 4		-	default:	32,34,37		-	hex:	#202225		*/
-	--backgroundfloating: 		0,0,0;				/*	Background Elevated	-	default:	24,25,28		-	hex:	#18191c		*/
+	--backgroundaccent: 		--color6;			/*	Background Accent	-	default:	64,68,75		-	hex:	#40444b		*/
+	--backgroundprimary: 		--color5;			/*	Background 1		-	default:	54,57,63		-	hex:	#36393f		*/
+	--backgroundsecondary: 		--color4;			/*	Background 2		-	default:	47,49,54		-	hex:	#2f3136		*/
+	--backgroundsecondaryalt: 	--color3;			/*	Background 3		-	default:	41,43,47		-	hex:	#292b2f		*/
+	--backgroundtertiary: 		--color2;			/*	Background 4		-	default:	32,34,37		-	hex:	#202225		*/
+	--backgroundfloating: 		--color1;				/*	Background Elevated	-	default:	24,25,28		-	hex:	#18191c		*/
 }

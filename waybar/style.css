@@ -21,11 +21,11 @@
 /* Center Modules */
 
 @define-color date mix(@sys, lighter(@color2), 0.9);
-@define-color time mix(@sys, lighter(@color4), 0.9);
+@define-color time mix(@sys, lighter(@color5), 0.9);
 
 /* Right Modules */
 
-@define-color tray mix(darker(darker(darker(@color7))), #000, 0.5);
+@define-color tray mix(@color2, #000, 0.5);
 
 @define-color lang mix(#FF4A4A, mix(@sys, @color1, 0.9), 0.5);
 @define-color backlight mix(#FF974A, mix(@sys, @color2, 0.9), 0.5);

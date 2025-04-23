@@ -17,7 +17,7 @@
 
 ## TO FIGURE OUT HOW THE F&#K
 
-- [ ] Vesktop/BetterDiscord
+- [x] Vesktop/BetterDiscord -> Create your own script, f&#k
 - [ ] Tauon
 - [ ] Firefox (Maybe)
 - [ ] QBitTorrent

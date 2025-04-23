@@ -16,23 +16,23 @@
 
 @define-color workspaces-bg mix(@color7, @sys, 0.4);
 @define-color workspaces darker(mix(@color1, @sys, 0.4));
-@define-color window mix(@color1, @sys, 0.2);
+@define-color window mix(@color1, @sys, 0.4);
 
 /* Center Modules */
 
-@define-color date mix(@sys, lighter(@color2), 0.9);
-@define-color time mix(@sys, lighter(@color5), 0.9);
+@define-color date mix(@sys, @color2, 0.4);
+@define-color time mix(@sys, @color5, 0.6);
 
 /* Right Modules */
 
 @define-color tray mix(@color2, #000, 0.5);
 
-@define-color lang mix(#FF4A4A, mix(@sys, @color1, 0.9), 0.5);
-@define-color backlight mix(#FF974A, mix(@sys, @color2, 0.9), 0.5);
-@define-color nightlight mix(#E4FF4A, mix(@sys, @color3, 0.9), 0.5);
-@define-color sound mix(#4AFFCD, mix(@sys, @color4, 0.9), 0.5);
-@define-color bluetooth mix(#4AAEFF, mix(@sys, @color5, 0.9), 0.5);
-@define-color network mix(#9B4AFF, mix(@sys, @color6, 0.9), 0.5);
+@define-color lang mix(#FF4A4A, mix(@sys, @color1, 0.9), 0.35);
+@define-color backlight mix(#FF974A, mix(@sys, @color2, 0.9), 0.35);
+@define-color nightlight mix(#E4FF4A, mix(@sys, @color3, 0.9), 0.35);
+@define-color sound mix(#4AFFCD, mix(@sys, @color4, 0.9), 0.35);
+@define-color bluetooth mix(#4AAEFF, mix(@sys, @color5, 0.9), 0.35);
+@define-color network mix(#9B4AFF, mix(@sys, @color6, 0.9), 0.35);
 @define-color battery mix(#FF4ABC, darker(darker(mix(@sys, @color7, 0.9))), 0.7);
 
 @define-color notifications mix(#A30000, mix(@sys, @color13, 0.9), 0.4);

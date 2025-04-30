@@ -1,5 +1,13 @@
 #!/bin/bash
 
+##########################
+### SCRIPT INFORMATION ###
+##########################
+
+# Name: halfbright
+# Dependencies: hyprlock, brightnessctl
+# Description: Hyprlock script to halve the brightness, with a gradual descent
+
 max=$(brightnessctl m)
 percent=$((max / 100))
 

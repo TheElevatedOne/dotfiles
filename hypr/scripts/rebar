@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+##########################
+### SCRIPT INFORMATION ###
+##########################
+
+# Name: rebar
+# Dependencies: waybar
+# Description: Reload WayBar Config
+
+killall -s SIGUSR2 waybar

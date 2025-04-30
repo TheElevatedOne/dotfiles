@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if ! eww active-windows | grep toastbright >>/dev/null; then eww open toastbright; fi
+
+while true; do
+  TEST1=$(brightnessctl get)
+  sleep 3
+  TEST2=$(brightnessctl get)
+  if [ "$TEST1" = "$TEST2" ]; then
+    eww close toastbright
+    break
+  fi
+done

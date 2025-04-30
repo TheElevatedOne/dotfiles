@@ -1,0 +1,622 @@
+! Using --force, I hope you know what you are doing.
+[v] installed version returned: Hyprland 0.48.1 built from branch  at commit 29e2e59fdbab8ed2cc23a20e3c6043d5decb5cdc  (version: bump to v0.48.1).
+Date: Fri Mar 28 16:16:07 2025
+Tag: v0.48.1, commits: 5937
+built against:
+ aquamarine 0.8.0
+ hyprlang 0.6.0
+ hyprutils 0.6.0
+ hyprcursor 0.1.12
+ hyprgraphics 0.1.3
+
+
+no flags were set
+
+
+[v] parsed commit 29e2e59fdbab8ed2cc23a20e3c6043d5decb5cdc at branch  on Fri Mar 28 16:16:07 2025, commits 5937
+
+! Cloning https://github.com/hyprwm/Hyprland, this might take a moment.
+✔ Hyprland cloned
+[v] will run: cd /run/user/1000/hyprpm/hyprland-the-elevated-one && git checkout 29e2e59fdbab8ed2cc23a20e3c6043d5decb5cdc 2>&1
+[v] git returned (co): Note: switching to '29e2e59fdbab8ed2cc23a20e3c6043d5decb5cdc'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 29e2e59f version: bump to v0.48.1
+M	subprojects/hyprland-protocols
+
+[v] git returned (rs): rm 'subprojects/tracy'
+Submodule path 'subprojects/hyprland-protocols': checked out '755aef8dab49d0fc4663c715fa4ad221b2aedaed'
+HEAD is now at 29e2e59f version: bump to v0.48.1
+
+✔ checked out to running ver
+! configuring Hyprland
+[v] setting PREFIX for cmake to /home/the-elevated-one/.local/share/hyprpm/headersRoot
+[v] cmake returned: Not searching for unused variables given on the command line.
+-- The C compiler identification is GNU 14.2.1
+-- The CXX compiler identification is GNU 14.2.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Gathering git info
+-- Found PkgConfig: /bin/pkg-config (found version "2.4.3")
+-- Checking for module 'udis86>=1.7.2'
+--   Package 'udis86' not found
+-- Found Python3: /bin/python3.13 (found version "3.13.3") found components: Interpreter
+Building itab.c/itab.h...
+-- udis86 dependency not found, falling back to subproject
+-- Found wayland-protocols at //usr/share/wayland-protocols
+-- Found wayland-scanner pkgdatadir at //usr/share/wayland
+-- Configuring Hyprland in Release with CMake
+-- Checking deps...
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Found OpenGL: /usr/lib/libOpenGL.so  found components: GLES3
+-- Checking for module 'aquamarine>=0.8.0'
+--   Found aquamarine, version 0.8.0
+-- Checking for module 'hyprlang>=0.3.2'
+--   Found hyprlang, version 0.6.1
+-- Checking for module 'hyprcursor>=0.1.7'
+--   Found hyprcursor, version 0.1.12
+-- Checking for module 'hyprutils>=0.5.1'
+--   Found hyprutils, version 0.6.0
+-- Checking for module 'hyprgraphics>=0.1.1'
+--   Found hyprgraphics, version 0.1.3
+-- Checking for modules 'xkbcommon;uuid;wayland-server>=1.22.90;wayland-protocols>=1.41;cairo;pango;pangocairo;pixman-1;xcursor;libdrm;libinput;gbm;gio-2.0;re2'
+--   Found xkbcommon, version 1.8.1
+--   Found uuid, version 2.41.0
+--   Found wayland-server, version 1.23.1
+--   Found wayland-protocols, version 1.43
+--   Found cairo, version 1.18.4
+--   Found pango, version 1.56.3
+--   Found pangocairo, version 1.56.3
+--   Found pixman-1, version 0.44.2
+--   Found xcursor, version 1.2.3
+--   Found libdrm, version 2.4.124
+--   Found libinput, version 1.28.1
+--   Found gbm, version 25.0.4-arch1.1
+--   Found gio-2.0, version 2.84.1
+--   Found re2, version 11.0.0
+-- Looking for execinfo.h
+-- Looking for execinfo.h - found
+-- Configuration supports execinfo
+-- Looking for backtrace in execinfo
+-- Looking for backtrace in execinfo - not found
+-- Looking for sys/timerfd.h
+-- Looking for sys/timerfd.h - found
+-- Checking for module 'epoll-shim'
+--   Package 'epoll-shim' not found
+-- Looking for sys/inotify.h
+-- Looking for sys/inotify.h - found
+-- Checking for module 'libinotify'
+--   Package 'libinotify' not found
+-- XWAYLAND Enabled (NO_XWAYLAND not defined) checking deps...
+-- Checking for modules 'xcb;xcb-render;xcb-xfixes;xcb-icccm;xcb-composite;xcb-res;xcb-errors'
+--   Found xcb, version 1.17.0
+--   Found xcb-render, version 1.17.0
+--   Found xcb-xfixes, version 1.17.0
+--   Found xcb-icccm, version 0.4.2
+--   Found xcb-composite, version 1.17.0
+--   Found xcb-res, version 1.17.0
+--   Found xcb-errors, version 1.0.1
+-- SYSTEMD support is requested (NO_SYSTEMD not defined)...
+-- UWSM support is enabled (NO_UWSM not defined)...
+-- Setting precompiled headers
+-- Setting link libraries
+-- Checking for module 'hyprland-protocols>=0.6.2'
+--   Package 'hyprland-protocols' not found
+-- hyprland-protocols subproject set to subprojects/hyprland-protocols
+-- Checking for modules 'hyprutils>=0.2.4;re2'
+--   Found hyprutils, version 0.6.0
+--   Found re2, version 11.0.0
+-- Checking for modules 'tomlplusplus;hyprutils>=0.2.4'
+--   Found tomlplusplus, version 3.4.0
+--   Found hyprutils, version 0.6.0
+-- glaze dependency not found, retrieving v4.2.3 with FetchContent
+Glaze is being compiled with AVX2 instructions. Set glaze_ENABLE_AVX2 to OFF if you wish to disable this.
+-- Performing Test COMPILER_SUPPORTS_AVX2_FLAG
+-- Performing Test COMPILER_SUPPORTS_AVX2_FLAG - Success
+-- Performing Test AVX2_CODE_COMPILES
+-- Performing Test AVX2_CODE_COMPILES - Success
+-- Glaze: using AVX2 intrinsics. Set glaze_ENABLE_AVX2 to OFF to avoid use.
+-- hyprpm is enabled (NO_HYPRPM not defined)
+-- Configuring done (5.6s)
+-- Generating done (0.1s)
+-- Build files have been written to: /run/user/1000/hyprpm/hyprland-the-elevated-one/build
+
+✔ configured Hyprland
+[v] installation will run: sed -i -e "s#PREFIX = /usr/local#PREFIX = /home/the-elevated-one/.local/share/hyprpm/headersRoot#" /run/user/1000/hyprpm/hyprland-the-elevated-one/Makefile && cd /run/user/1000/hyprpm/hyprland-the-elevated-one && make installheaders
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╍━━━━━━━━━  4 / 5  Installing sources[v] installer returned: # remove previous headers from hyprpm's dir
+rm -fr /home/the-elevated-one/.local/share/hyprpm/headersRoot/include/hyprland
+mkdir -p /home/the-elevated-one/.local/share/hyprpm/headersRoot/include/hyprland
+mkdir -p /home/the-elevated-one/.local/share/hyprpm/headersRoot/include/hyprland/protocols
+mkdir -p /home/the-elevated-one/.local/share/hyprpm/headersRoot/share/pkgconfig
+cmake --build ./build --config Release --target generate-protocol-headers
+[0/2] Re-checking globbed directories...
+[1/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/hyprland-global-shortcuts-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/hyprland-global-shortcuts-v1.hpp
+[2/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/text-input-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/text-input-unstable-v1.hpp
+[3/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/hyprland-toplevel-export-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/hyprland-toplevel-export-v1.hpp
+[4/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wlr-screencopy-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wlr-screencopy-unstable-v1.hpp
+[5/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wlr-gamma-control-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wlr-gamma-control-unstable-v1.hpp
+[6/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wlr-foreign-toplevel-management-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wlr-foreign-toplevel-management-unstable-v1.hpp
+[7/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wlr-output-power-management-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wlr-output-power-management-unstable-v1.hpp
+[8/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/virtual-keyboard-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/virtual-keyboard-unstable-v1.hpp
+[9/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wlr-virtual-pointer-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wlr-virtual-pointer-unstable-v1.hpp
+[10/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/input-method-unstable-v2.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/input-method-unstable-v2.hpp
+[11/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wlr-output-management-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wlr-output-management-unstable-v1.hpp
+[12/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/kde-server-decoration.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/kde-server-decoration.hpp
+[13/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wlr-data-control-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wlr-data-control-unstable-v1.hpp
+[14/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/hyprland-focus-grab-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/hyprland-focus-grab-v1.hpp
+[15/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wlr-layer-shell-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wlr-layer-shell-unstable-v1.hpp
+[16/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/xx-color-management-v4.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/xx-color-management-v4.hpp
+[17/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/frog-color-management-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/frog-color-management-v1.hpp
+[18/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wayland-drm.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wayland-drm.hpp
+[19/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/hyprland-ctm-control-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/hyprland-ctm-control-v1.hpp
+[20/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/hyprland-surface-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/hyprland-surface-v1.hpp
+[21/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/hyprland-lock-notify-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/hyprland-lock-notify-v1.hpp
+[22/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/tearing-control-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/tearing-control-v1.hpp
+[23/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/fractional-scale-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/fractional-scale-v1.hpp
+[24/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/xdg-output-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/xdg-output-unstable-v1.hpp
+[25/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/cursor-shape-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/cursor-shape-v1.hpp
+[26/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/idle-inhibit-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/idle-inhibit-unstable-v1.hpp
+[27/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/relative-pointer-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/relative-pointer-unstable-v1.hpp
+[28/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/xdg-decoration-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/xdg-decoration-unstable-v1.hpp
+[29/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/alpha-modifier-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/alpha-modifier-v1.hpp
+[30/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/ext-foreign-toplevel-list-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/ext-foreign-toplevel-list-v1.hpp
+[31/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/keyboard-shortcuts-inhibit-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/keyboard-shortcuts-inhibit-unstable-v1.hpp
+[32/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/pointer-gestures-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/pointer-gestures-unstable-v1.hpp
+[33/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/text-input-unstable-v3.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/text-input-unstable-v3.hpp
+[34/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/pointer-constraints-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/pointer-constraints-unstable-v1.hpp
+[35/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/xdg-activation-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/xdg-activation-v1.hpp
+[36/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/ext-idle-notify-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/ext-idle-notify-v1.hpp
+[37/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/ext-session-lock-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/ext-session-lock-v1.hpp
+[38/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/tablet-v2.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/tablet-v2.hpp
+[39/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/presentation-time.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/presentation-time.hpp
+[40/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/xdg-shell.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/xdg-shell.hpp
+[41/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/primary-selection-unstable-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/primary-selection-unstable-v1.hpp
+[42/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/xwayland-shell-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/xwayland-shell-v1.hpp
+[43/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/viewporter.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/viewporter.hpp
+[44/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/linux-dmabuf-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/linux-dmabuf-v1.hpp
+[45/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/drm-lease-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/drm-lease-v1.hpp
+[46/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/linux-drm-syncobj-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/linux-drm-syncobj-v1.hpp
+[47/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/single-pixel-buffer-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/single-pixel-buffer-v1.hpp
+[48/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/xdg-dialog-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/xdg-dialog-v1.hpp
+[49/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/content-type-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/content-type-v1.hpp
+[50/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/security-context-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/security-context-v1.hpp
+[51/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/color-management-v1.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/color-management-v1.hpp
+[52/53] Generating /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wayland.cpp, /run/user/1000/hyprpm/hyprland-the-elevated-one/protocols/wayland.hpp
+find src -name '*.h*' -print0 | cpio --quiet -0dump /home/the-elevated-one/.local/share/hyprpm/headersRoot/include/hyprland
+cp ./protocols/*.h* /home/the-elevated-one/.local/share/hyprpm/headersRoot/include/hyprland/protocols
+cp ./build/hyprland.pc /home/the-elevated-one/.local/share/hyprpm/headersRoot/share/pkgconfig
+if [ -d /usr/share/pkgconfig ]; then cp ./build/hyprland.pc /usr/share/pkgconfig 2>/dev/null || true; fi
+chmod -R 755 /home/the-elevated-one/.local/share/hyprpm/headersRoot/include/hyprland
+chmod 755 /home/the-elevated-one/.local/share/hyprpm/headersRoot/share/pkgconfig
+
+✔ installed headers
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  5 / 5  Done!
+
+→ checking for updates for hyprland-plugins
+→ Cloning https://github.com/hyprwm/hyprland-plugins.git
+✔ repository hyprland-plugins has updates.
+→ Building hyprland-plugins
+✔ found hyprpm manifest
+→ Manifest has 29 pins, checking
+→ Building borders-plus-plus
+ ━━━━━━━━━━━━━━━━━━━━━━━━━╍━━━━━━━━━━━━━━━━━━━━━━━━  2 / 4  Updating hyprland-plugins[v] shell returned:  -> cd /run/user/1000/hyprpm/the-elevated-one && PKG_CONFIG_PATH="/home/the-elevated-one/.local/share/hyprpm/headersRoot/share/pkgconfig" make -C borders-plus-plus all
+make: Entering directory '/run/user/1000/hyprpm/the-elevated-one/borders-plus-plus'
+g++ -shared -fPIC --no-gnu-unique main.cpp borderDeco.cpp BorderppPassElement.cpp -o borders-plus-plus.so -g `pkg-config --cflags pixman-1 libdrm hyprland pangocairo libinput libudev wayland-server xkbcommon` -std=c++2b -O2
+main.cpp: In function ‘PLUGIN_DESCRIPTION_INFO pluginInit(void*)’:
+main.cpp:50:35: error: ‘class CCompositor’ has no member named ‘m_windows’; did you mean ‘m_vWindows’?
+   50 |     for (auto& w : g_pCompositor->m_windows) {
+      |                                   ^~~~~~~~~
+      |                                   m_vWindows
+make: *** [Makefile:2: all] Error 1
+make: Leaving directory '/run/user/1000/hyprpm/the-elevated-one/borders-plus-plus'
+
+
+
+✖ Plugin borders-plus-plus failed to build.
+  This likely means that the plugin is either outdated, not yet available for your version, or broken.
+If you are on -git, update first.
+Try re-running with -v to see more verbose output.
+→ Building csgo-vulkan-fix
+ ━━━━━━━━━━━━━━━━━━━━━━━━━╍━━━━━━━━━━━━━━━━━━━━━━━━  2 / 4  Updating hyprland-plugins[v] shell returned:  -> cd /run/user/1000/hyprpm/the-elevated-one && PKG_CONFIG_PATH="/home/the-elevated-one/.local/share/hyprpm/headersRoot/share/pkgconfig" make -C csgo-vulkan-fix all
+make: Entering directory '/run/user/1000/hyprpm/the-elevated-one/csgo-vulkan-fix'
+g++ -shared -fPIC --no-gnu-unique main.cpp -o csgo-vulkan-fix.so -g `pkg-config --cflags pixman-1 libdrm hyprland pangocairo libinput libudev wayland-server xkbcommon` -std=c++2b -O2
+main.cpp: In function ‘void hkNotifyMotion(CSeatManager*, uint32_t, const Hyprutils::Math::Vector2D&)’:
+main.cpp:35:35: error: ‘class CCompositor’ has no member named ‘m_lastWindow’; did you mean ‘m_pLastWindow’?
+   35 |     if (**PFIX && !g_pCompositor->m_lastWindow.expired() && g_pCompositor->m_lastWindow->m_szInitialClass == *PCLASS && g_pCompositor->m_lastMonitor) {
+      |                                   ^~~~~~~~~~~~
+      |                                   m_pLastWindow
+main.cpp:35:76: error: ‘class CCompositor’ has no member named ‘m_lastWindow’; did you mean ‘m_pLastWindow’?
+   35 |     if (**PFIX && !g_pCompositor->m_lastWindow.expired() && g_pCompositor->m_lastWindow->m_szInitialClass == *PCLASS && g_pCompositor->m_lastMonitor) {
+      |                                                                            ^~~~~~~~~~~~
+      |                                                                            m_pLastWindow
+main.cpp:35:136: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+   35 |     if (**PFIX && !g_pCompositor->m_lastWindow.expired() && g_pCompositor->m_lastWindow->m_szInitialClass == *PCLASS && g_pCompositor->m_lastMonitor) {
+      |                                                                                                                                        ^~~~~~~~~~~~~
+      |                                                                                                                                        m_pLastMonitor
+main.cpp:37:49: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+   37 |         newCoords.x *= (**RESX / g_pCompositor->m_lastMonitor->vecSize.x) / g_pCompositor->m_lastWindow->m_fX11SurfaceScaledBy;
+      |                                                 ^~~~~~~~~~~~~
+      |                                                 m_pLastMonitor
+main.cpp:37:92: error: ‘class CCompositor’ has no member named ‘m_lastWindow’; did you mean ‘m_pLastWindow’?
+   37 |         newCoords.x *= (**RESX / g_pCompositor->m_lastMonitor->vecSize.x) / g_pCompositor->m_lastWindow->m_fX11SurfaceScaledBy;
+      |                                                                                            ^~~~~~~~~~~~
+      |                                                                                            m_pLastWindow
+main.cpp:38:49: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+   38 |         newCoords.y *= (**RESY / g_pCompositor->m_lastMonitor->vecSize.y) / g_pCompositor->m_lastWindow->m_fX11SurfaceScaledBy;
+      |                                                 ^~~~~~~~~~~~~
+      |                                                 m_pLastMonitor
+main.cpp:38:92: error: ‘class CCompositor’ has no member named ‘m_lastWindow’; did you mean ‘m_pLastWindow’?
+   38 |         newCoords.y *= (**RESY / g_pCompositor->m_lastMonitor->vecSize.y) / g_pCompositor->m_lastWindow->m_fX11SurfaceScaledBy;
+      |                                                                                            ^~~~~~~~~~~~
+      |                                                                                            m_pLastWindow
+make: *** [Makefile:2: all] Error 1
+make: Leaving directory '/run/user/1000/hyprpm/the-elevated-one/csgo-vulkan-fix'
+
+
+
+✖ Plugin csgo-vulkan-fix failed to build.
+  This likely means that the plugin is either outdated, not yet available for your version, or broken.
+If you are on -git, update first.
+Try re-running with -v to see more verbose output.
+→ Building hyprbars
+ ━━━━━━━━━━━━━━━━━━━━━━━━━╍━━━━━━━━━━━━━━━━━━━━━━━━  2 / 4  Updating hyprland-plugins[v] shell returned:  -> cd /run/user/1000/hyprpm/the-elevated-one && PKG_CONFIG_PATH="/home/the-elevated-one/.local/share/hyprpm/headersRoot/share/pkgconfig" make -C hyprbars all
+make: Entering directory '/run/user/1000/hyprpm/the-elevated-one/hyprbars'
+g++ -shared -fPIC --no-gnu-unique -g -std=c++2b -Wno-c++11-narrowing `pkg-config --cflags pixman-1 libdrm hyprland pangocairo libinput libudev wayland-server xkbcommon` main.cpp barDeco.cpp BarPassElement.cpp  -o hyprbars.so `pkg-config --libs pangocairo` -O2
+main.cpp: In function ‘PLUGIN_DESCRIPTION_INFO pluginInit(void*)’:
+main.cpp:149:35: error: ‘class CCompositor’ has no member named ‘m_windows’; did you mean ‘m_vWindows’?
+  149 |     for (auto& w : g_pCompositor->m_windows) {
+      |                                   ^~~~~~~~~
+      |                                   m_vWindows
+main.cpp: In function ‘void pluginExit()’:
+main.cpp:164:35: error: ‘class CCompositor’ has no member named ‘m_monitors’; did you mean ‘m_vMonitors’?
+  164 |     for (auto& m : g_pCompositor->m_monitors)
+      |                                   ^~~~~~~~~~
+      |                                   m_vMonitors
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-c++11-narrowing’ may have been intended to silence earlier diagnostics
+barDeco.cpp: In constructor ‘CHyprBar::CHyprBar(PHLWINDOW)’:
+barDeco.cpp:42:53: warning: narrowing conversion of ‘*(long int*)(*(long int* const*)PCOLOR)’ from ‘long int’ to ‘uint64_t’ {aka ‘long unsigned int’} [-Wnarrowing]
+   42 |     g_pAnimationManager->createAnimation(CHyprColor{**PCOLOR}, m_cRealBarColor, g_pConfigManager->getAnimationPropertyConfig("border"), pWindow, AVARDAMAGE_NONE);
+      |                                                     ^~~~~~~~
+barDeco.cpp: In destructor ‘virtual CHyprBar::~CHyprBar()’:
+barDeco.cpp:47:36: warning: ‘bool HyprlandAPI::unregisterCallback(void*, Hyprutils::Memory::CSharedPointer<std::function<void(void*, SCallbackInfo&, std::any)> >)’ is deprecated [-Wdeprecated-declarations]
+   47 |     HyprlandAPI::unregisterCallback(PHANDLE, m_pMouseButtonCallback);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from globals.hpp:3,
+                 from barDeco.hpp:11,
+                 from barDeco.cpp:1:
+/home/the-elevated-one/.local/share/hyprpm/headersRoot/include/hyprland/src/plugins/PluginAPI.hpp:163:33: note: declared here
+  163 |     APICALL [[deprecated]] bool unregisterCallback(HANDLE handle, SP<HOOK_CALLBACK_FN> fn);
+      |                                 ^~~~~~~~~~~~~~~~~~
+barDeco.cpp:48:36: warning: ‘bool HyprlandAPI::unregisterCallback(void*, Hyprutils::Memory::CSharedPointer<std::function<void(void*, SCallbackInfo&, std::any)> >)’ is deprecated [-Wdeprecated-declarations]
+   48 |     HyprlandAPI::unregisterCallback(PHANDLE, m_pTouchDownCallback);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/the-elevated-one/.local/share/hyprpm/headersRoot/include/hyprland/src/plugins/PluginAPI.hpp:163:33: note: declared here
+  163 |     APICALL [[deprecated]] bool unregisterCallback(HANDLE handle, SP<HOOK_CALLBACK_FN> fn);
+      |                                 ^~~~~~~~~~~~~~~~~~
+barDeco.cpp:49:36: warning: ‘bool HyprlandAPI::unregisterCallback(void*, Hyprutils::Memory::CSharedPointer<std::function<void(void*, SCallbackInfo&, std::any)> >)’ is deprecated [-Wdeprecated-declarations]
+   49 |     HyprlandAPI::unregisterCallback(PHANDLE, m_pTouchUpCallback);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/the-elevated-one/.local/share/hyprpm/headersRoot/include/hyprland/src/plugins/PluginAPI.hpp:163:33: note: declared here
+  163 |     APICALL [[deprecated]] bool unregisterCallback(HANDLE handle, SP<HOOK_CALLBACK_FN> fn);
+      |                                 ^~~~~~~~~~~~~~~~~~
+barDeco.cpp:50:36: warning: ‘bool HyprlandAPI::unregisterCallback(void*, Hyprutils::Memory::CSharedPointer<std::function<void(void*, SCallbackInfo&, std::any)> >)’ is deprecated [-Wdeprecated-declarations]
+   50 |     HyprlandAPI::unregisterCallback(PHANDLE, m_pTouchMoveCallback);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/the-elevated-one/.local/share/hyprpm/headersRoot/include/hyprland/src/plugins/PluginAPI.hpp:163:33: note: declared here
+  163 |     APICALL [[deprecated]] bool unregisterCallback(HANDLE handle, SP<HOOK_CALLBACK_FN> fn);
+      |                                 ^~~~~~~~~~~~~~~~~~
+barDeco.cpp:51:36: warning: ‘bool HyprlandAPI::unregisterCallback(void*, Hyprutils::Memory::CSharedPointer<std::function<void(void*, SCallbackInfo&, std::any)> >)’ is deprecated [-Wdeprecated-declarations]
+   51 |     HyprlandAPI::unregisterCallback(PHANDLE, m_pMouseMoveCallback);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/the-elevated-one/.local/share/hyprpm/headersRoot/include/hyprland/src/plugins/PluginAPI.hpp:163:33: note: declared here
+  163 |     APICALL [[deprecated]] bool unregisterCallback(HANDLE handle, SP<HOOK_CALLBACK_FN> fn);
+      |                                 ^~~~~~~~~~~~~~~~~~
+barDeco.cpp: In member function ‘virtual SDecorationPositioningInfo CHyprBar::getPositioningInfo()’:
+barDeco.cpp:64:42: warning: narrowing conversion of ‘(((CHyprBar*)this)->CHyprBar::m_bHidden ? 0 : (*(long int*)(*(long int* const*)PHEIGHT)))’ from ‘long int’ to ‘int’ [-Wnarrowing]
+   64 |     info.desiredExtents = {{0, m_bHidden ? 0 : **PHEIGHT}, {0, 0}};
+      |                                ~~~~~~~~~~^~~~~~~~~~~~~~~
+barDeco.cpp: In member function ‘bool CHyprBar::inputIsValid()’:
+barDeco.cpp:86:68: error: ‘class CCompositor’ has no member named ‘m_lastWindow’; did you mean ‘m_pLastWindow’?
+   86 |     if (WINDOWATCURSOR != m_pWindow && m_pWindow != g_pCompositor->m_lastWindow)
+      |                                                                    ^~~~~~~~~~~~
+      |                                                                    m_pLastWindow
+barDeco.cpp: In member function ‘void CHyprBar::onTouchDown(SCallbackInfo&, ITouch::SDownEvent)’:
+barDeco.cpp:109:58: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+  109 |     PMONITOR      = PMONITOR ? PMONITOR : g_pCompositor->m_lastMonitor.lock();
+      |                                                          ^~~~~~~~~~~~~
+      |                                                          m_pLastMonitor
+barDeco.cpp: In member function ‘void CHyprBar::handleDownEvent(SCallbackInfo&, std::optional<ITouch::SDownEvent>)’:
+barDeco.cpp:168:24: error: ‘class CCompositor’ has no member named ‘m_lastWindow’; did you mean ‘m_pLastWindow’?
+  168 |     if (g_pCompositor->m_lastWindow.lock() != PWINDOW)
+      |                        ^~~~~~~~~~~~
+      |                        m_pLastWindow
+barDeco.cpp: In member function ‘void CHyprBar::handleUpEvent(SCallbackInfo&)’:
+barDeco.cpp:182:44: error: ‘class CCompositor’ has no member named ‘m_lastWindow’; did you mean ‘m_pLastWindow’?
+  182 |     if (m_pWindow.lock() != g_pCompositor->m_lastWindow.lock())
+      |                                            ^~~~~~~~~~~~
+      |                                            m_pLastWindow
+barDeco.cpp: In member function ‘bool CHyprBar::doButtonPress(Hyprlang::INT* const*, Hyprlang::INT* const*, Hyprlang::INT* const*, Hyprutils::Math::Vector2D, bool)’:
+barDeco.cpp:213:70: warning: narrowing conversion of ‘*(Hyprlang::INT*)(* PHEIGHT)’ from ‘Hyprlang::INT’ {aka ‘long int’} to ‘int’ [-Wnarrowing]
+  213 |         const auto BARBUF     = Vector2D{(int)assignedBoxGlobal().w, **PHEIGHT};
+      |                                                                      ^~~~~~~~~
+barDeco.cpp: In member function ‘void CHyprBar::renderBarButtonsText(Hyprutils::Math::CBox*, float, float)’:
+barDeco.cpp:465:70: warning: narrowing conversion of ‘*(long int*)(*(long int* const*)PHEIGHT)’ from ‘long int’ to ‘int’ [-Wnarrowing]
+  465 |         const auto BARBUF     = Vector2D{(int)assignedBoxGlobal().w, **PHEIGHT};
+      |                                                                      ^~~~~~~~~
+barDeco.cpp: In member function ‘void CHyprBar::renderPass(PHLMONITOR, const float&)’:
+barDeco.cpp:543:24: warning: narrowing conversion of ‘*(long int*)(*(long int* const*)PHEIGHT)’ from ‘long int’ to ‘int’ [-Wnarrowing]
+  543 |     m_seExtents = {{0, **PHEIGHT}, {}};
+      |                        ^~~~~~~~~
+barDeco.cpp:606:51: warning: narrowing conversion of ‘(int)(double)BARBUF.Hyprutils::Math::Vector2D::x’ from ‘int’ to ‘double’ [-Wnarrowing]
+  606 |     CBox textBox = {titleBarBox.x, titleBarBox.y, (int)BARBUF.x, (int)BARBUF.y};
+      |                                                   ^~~~~~~~~~~~~
+barDeco.cpp:606:66: warning: narrowing conversion of ‘(int)(double)BARBUF.Hyprutils::Math::Vector2D::y’ from ‘int’ to ‘double’ [-Wnarrowing]
+  606 |     CBox textBox = {titleBarBox.x, titleBarBox.y, (int)BARBUF.x, (int)BARBUF.y};
+      |                                                                  ^~~~~~~~~~~~~
+barDeco.cpp: In member function ‘void CHyprBar::damageOnButtonHover()’:
+barDeco.cpp:716:70: warning: narrowing conversion of ‘*(long int*)(*(long int* const*)PHEIGHT)’ from ‘long int’ to ‘int’ [-Wnarrowing]
+  716 |         const auto BARBUF     = Vector2D{(int)assignedBoxGlobal().w, **PHEIGHT};
+      |                                                                      ^~~~~~~~~
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-c++11-narrowing’ may have been intended to silence earlier diagnostics
+make: *** [Makefile:11: hyprbars.so] Error 1
+make: Leaving directory '/run/user/1000/hyprpm/the-elevated-one/hyprbars'
+
+
+
+✖ Plugin hyprbars failed to build.
+  This likely means that the plugin is either outdated, not yet available for your version, or broken.
+If you are on -git, update first.
+Try re-running with -v to see more verbose output.
+→ Building hyprexpo
+ ━━━━━━━━━━━━━━━━━━━━━━━━━╍━━━━━━━━━━━━━━━━━━━━━━━━  2 / 4  Updating hyprland-plugins[v] shell returned:  -> cd /run/user/1000/hyprpm/the-elevated-one && PKG_CONFIG_PATH="/home/the-elevated-one/.local/share/hyprpm/headersRoot/share/pkgconfig" make -C hyprexpo all
+make: Entering directory '/run/user/1000/hyprpm/the-elevated-one/hyprexpo'
+g++ -shared -fPIC --no-gnu-unique main.cpp overview.cpp OverviewPassElement.cpp -o hyprexpo.so -g `pkg-config --cflags pixman-1 libdrm hyprland pangocairo libinput libudev wayland-server xkbcommon` -std=c++2b -Wno-narrowing
+main.cpp: In function ‘void swipeUpdate(void*, SCallbackInfo&, std::any)’:
+main.cpp:94:76: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+   94 |             g_pOverview       = std::make_unique<COverview>(g_pCompositor->m_lastMonitor->activeWorkspace, true);
+      |                                                                            ^~~~~~~~~~~~~
+      |                                                                            m_pLastMonitor
+main.cpp:102:76: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+  102 |             g_pOverview       = std::make_unique<COverview>(g_pCompositor->m_lastMonitor->activeWorkspace, true);
+      |                                                                            ^~~~~~~~~~~~~
+      |                                                                            m_pLastMonitor
+main.cpp: In function ‘void onExpoDispatcher(std::string)’:
+main.cpp:138:76: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+  138 |             g_pOverview       = std::make_unique<COverview>(g_pCompositor->m_lastMonitor->activeWorkspace);
+      |                                                                            ^~~~~~~~~~~~~
+      |                                                                            m_pLastMonitor
+main.cpp:154:68: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+  154 |     g_pOverview       = std::make_unique<COverview>(g_pCompositor->m_lastMonitor->activeWorkspace);
+      |                                                                    ^~~~~~~~~~~~~
+      |                                                                    m_pLastMonitor
+main.cpp: In function ‘PLUGIN_DESCRIPTION_INFO pluginInit(void*)’:
+main.cpp:215:31: warning: ‘bool HyprlandAPI::addDispatcher(void*, const std::string&, std::function<void(std::__cxx11::basic_string<char>)>)’ is deprecated [-Wdeprecated-declarations]
+  215 |     HyprlandAPI::addDispatcher(PHANDLE, "hyprexpo:expo", onExpoDispatcher);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from globals.hpp:3,
+                 from main.cpp:11:
+/home/the-elevated-one/.local/share/hyprpm/headersRoot/include/hyprland/src/plugins/PluginAPI.hpp:249:33: note: declared here
+  249 |     APICALL [[deprecated]] bool addDispatcher(HANDLE handle, const std::string& name, std::function<void(std::string)> handler);
+      |                                 ^~~~~~~~~~~~~
+overview.cpp:10:10: fatal error: hyprland/src/helpers/time/Time.hpp: No such file or directory
+   10 | #include <hyprland/src/helpers/time/Time.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Makefile:2: all] Error 1
+make: Leaving directory '/run/user/1000/hyprpm/the-elevated-one/hyprexpo'
+
+
+
+✖ Plugin hyprexpo failed to build.
+  This likely means that the plugin is either outdated, not yet available for your version, or broken.
+If you are on -git, update first.
+Try re-running with -v to see more verbose output.
+→ Building hyprtrails
+ ━━━━━━━━━━━━━━━━━━━━━━━━━╍━━━━━━━━━━━━━━━━━━━━━━━━  2 / 4  Updating hyprland-plugins[v] shell returned:  -> cd /run/user/1000/hyprpm/the-elevated-one && PKG_CONFIG_PATH="/home/the-elevated-one/.local/share/hyprpm/headersRoot/share/pkgconfig" make -C hyprtrails all
+make: Entering directory '/run/user/1000/hyprpm/the-elevated-one/hyprtrails'
+g++ -shared -fPIC --no-gnu-unique main.cpp trail.cpp TrailPassElement.cpp -o hyprtrails.so -g `pkg-config --cflags pixman-1 libdrm hyprland pangocairo libinput libudev wayland-server xkbcommon` -std=c++2b -O2
+main.cpp:9:10: fatal error: hyprland/src/render/shaders/Shaders.hpp: No such file or directory
+    9 | #include <hyprland/src/render/shaders/Shaders.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+trail.cpp: In destructor ‘virtual CTrail::~CTrail()’:
+trail.cpp:43:36: warning: ‘bool HyprlandAPI::unregisterCallback(void*, Hyprutils::Memory::CSharedPointer<std::function<void(void*, SCallbackInfo&, std::any)> >)’ is deprecated [-Wdeprecated-declarations]
+   43 |     HyprlandAPI::unregisterCallback(PHANDLE, pTickCb);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+In file included from trail.hpp:6,
+                 from trail.cpp:1:
+/home/the-elevated-one/.local/share/hyprpm/headersRoot/include/hyprland/src/plugins/PluginAPI.hpp:163:33: note: declared here
+  163 |     APICALL [[deprecated]] bool unregisterCallback(HANDLE handle, SP<HOOK_CALLBACK_FN> fn);
+      |                                 ^~~~~~~~~~~~~~~~~~
+trail.cpp: In member function ‘void CTrail::renderPass(PHLMONITOR, const float&)’:
+trail.cpp:249:93: warning: narrowing conversion of ‘((PWINDOW.Hyprutils::Memory::CSharedPointer<CWindow>::operator->()->CWindow::m_vRealPosition.Hyprutils::Memory::CSharedPointer<Hyprutils::Animation::CGenericAnimatedVariable<Hyprutils::Math::Vector2D, SAnimationContext> >::operator->()->Hyprutils::Animation::CGenericAnimatedVariable<Hyprutils::Math::Vector2D, SAnimationContext>::value().Hyprutils::Math::Vector2D::x - pMonitor.Hyprutils::Memory::CSharedPointer<CMonitor>::operator->()->CMonitor::vecPosition.Hyprutils::Math::Vector2D::x) / pMonitor.Hyprutils::Memory::CSharedPointer<CMonitor>::operator->()->CMonitor::vecSize.Hyprutils::Math::Vector2D::x)’ from ‘double’ to ‘float’ [-Wnarrowing]
+  249 |     box thisboxopengl = box{(PWINDOW->m_vRealPosition->value().x - pMonitor->vecPosition.x) / pMonitor->vecSize.x,
+      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+trail.cpp:250:93: warning: narrowing conversion of ‘((PWINDOW.Hyprutils::Memory::CSharedPointer<CWindow>::operator->()->CWindow::m_vRealPosition.Hyprutils::Memory::CSharedPointer<Hyprutils::Animation::CGenericAnimatedVariable<Hyprutils::Math::Vector2D, SAnimationContext> >::operator->()->Hyprutils::Animation::CGenericAnimatedVariable<Hyprutils::Math::Vector2D, SAnimationContext>::value().Hyprutils::Math::Vector2D::y - pMonitor.Hyprutils::Memory::CSharedPointer<CMonitor>::operator->()->CMonitor::vecPosition.Hyprutils::Math::Vector2D::y) / pMonitor.Hyprutils::Memory::CSharedPointer<CMonitor>::operator->()->CMonitor::vecSize.Hyprutils::Math::Vector2D::y)’ from ‘double’ to ‘float’ [-Wnarrowing]
+  250 |                             (PWINDOW->m_vRealPosition->value().y - pMonitor->vecPosition.y) / pMonitor->vecSize.y,
+      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+trail.cpp:251:101: warning: narrowing conversion of ‘((PWINDOW.Hyprutils::Memory::CSharedPointer<CWindow>::operator->()->CWindow::m_vRealPosition.Hyprutils::Memory::CSharedPointer<Hyprutils::Animation::CGenericAnimatedVariable<Hyprutils::Math::Vector2D, SAnimationContext> >::operator->()->Hyprutils::Animation::CGenericAnimatedVariable<Hyprutils::Math::Vector2D, SAnimationContext>::value().Hyprutils::Math::Vector2D::x + PWINDOW.Hyprutils::Memory::CSharedPointer<CWindow>::operator->()->CWindow::m_vRealSize.Hyprutils::Memory::CSharedPointer<Hyprutils::Animation::CGenericAnimatedVariable<Hyprutils::Math::Vector2D, SAnimationContext> >::operator->()->Hyprutils::Animation::CGenericAnimatedVariable<Hyprutils::Math::Vector2D, SAnimationContext>::value().Hyprutils::Math::Vector2D::x) / pMonitor.Hyprutils::Memory::CSharedPointer<CMonitor>::operator->()->CMonitor::vecSize.Hyprutils::Math::Vector2D::x)’ from ‘double’ to ‘float’ [-Wnarrowing]
+  251 |                             (PWINDOW->m_vRealPosition->value().x + PWINDOW->m_vRealSize->value().x) / pMonitor->vecSize.x,
+      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+trail.cpp:252:101: warning: narrowing conversion of ‘((PWINDOW.Hyprutils::Memory::CSharedPointer<CWindow>::operator->()->CWindow::m_vRealPosition.Hyprutils::Memory::CSharedPointer<Hyprutils::Animation::CGenericAnimatedVariable<Hyprutils::Math::Vector2D, SAnimationContext> >::operator->()->Hyprutils::Animation::CGenericAnimatedVariable<Hyprutils::Math::Vector2D, SAnimationContext>::value().Hyprutils::Math::Vector2D::y + PWINDOW.Hyprutils::Memory::CSharedPointer<CWindow>::operator->()->CWindow::m_vRealSize.Hyprutils::Memory::CSharedPointer<Hyprutils::Animation::CGenericAnimatedVariable<Hyprutils::Math::Vector2D, SAnimationContext> >::operator->()->Hyprutils::Animation::CGenericAnimatedVariable<Hyprutils::Math::Vector2D, SAnimationContext>::value().Hyprutils::Math::Vector2D::y) / pMonitor.Hyprutils::Memory::CSharedPointer<CMonitor>::operator->()->CMonitor::vecSize.Hyprutils::Math::Vector2D::y)’ from ‘double’ to ‘float’ [-Wnarrowing]
+  252 |                             (PWINDOW->m_vRealPosition->value().y + PWINDOW->m_vRealSize->value().y) / pMonitor->vecSize.y};
+      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+trail.cpp: In member function ‘virtual void CTrail::damageEntire()’:
+trail.cpp:339:16: warning: narrowing conversion of ‘(int)(((CTrail*)this)->CTrail::m_vLastWindowPos.Hyprutils::Math::Vector2D::x - ((CTrail*)this)->CTrail::m_seExtents.Hyprutils::Math::SBoxExtents::topLeft.Hyprutils::Math::Vector2D::x)’ from ‘int’ to ‘double’ [-Wnarrowing]
+  339 |     CBox dm = {(int)(m_vLastWindowPos.x - m_seExtents.topLeft.x), (int)(m_vLastWindowPos.y - m_seExtents.topLeft.y),
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+trail.cpp:339:67: warning: narrowing conversion of ‘(int)(((CTrail*)this)->CTrail::m_vLastWindowPos.Hyprutils::Math::Vector2D::y - ((CTrail*)this)->CTrail::m_seExtents.Hyprutils::Math::SBoxExtents::topLeft.Hyprutils::Math::Vector2D::y)’ from ‘int’ to ‘double’ [-Wnarrowing]
+  339 |     CBox dm = {(int)(m_vLastWindowPos.x - m_seExtents.topLeft.x), (int)(m_vLastWindowPos.y - m_seExtents.topLeft.y),
+      |                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+trail.cpp:340:16: warning: narrowing conversion of ‘(int)(((CTrail*)this)->CTrail::m_vLastWindowSize.Hyprutils::Math::Vector2D::x + ((CTrail*)this)->CTrail::m_seExtents.Hyprutils::Math::SBoxExtents::topLeft.Hyprutils::Math::Vector2D::x + ((CTrail*)this)->CTrail::m_seExtents.Hyprutils::Math::SBoxExtents::bottomRight.Hyprutils::Math::Vector2D::x)’ from ‘int’ to ‘double’ [-Wnarrowing]
+  340 |                (int)(m_vLastWindowSize.x + m_seExtents.topLeft.x + m_seExtents.bottomRight.x), (int)m_seExtents.topLeft.y};
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+trail.cpp:340:96: warning: narrowing conversion of ‘(int)((CTrail*)this)->CTrail::m_seExtents.Hyprutils::Math::SBoxExtents::topLeft.Hyprutils::Math::Vector2D::y’ from ‘int’ to ‘double’ [-Wnarrowing]
+  340 |                (int)(m_vLastWindowSize.x + m_seExtents.topLeft.x + m_seExtents.bottomRight.x), (int)m_seExtents.topLeft.y};
+      |                                                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Makefile:2: all] Error 1
+make: Leaving directory '/run/user/1000/hyprpm/the-elevated-one/hyprtrails'
+
+
+
+✖ Plugin hyprtrails failed to build.
+  This likely means that the plugin is either outdated, not yet available for your version, or broken.
+If you are on -git, update first.
+Try re-running with -v to see more verbose output.
+→ Building hyprwinwrap
+ ━━━━━━━━━━━━━━━━━━━━━━━━━╍━━━━━━━━━━━━━━━━━━━━━━━━  2 / 4  Updating hyprland-plugins[v] shell returned:  -> cd /run/user/1000/hyprpm/the-elevated-one && PKG_CONFIG_PATH="/home/the-elevated-one/.local/share/hyprpm/headersRoot/share/pkgconfig" make -C hyprwinwrap all
+make: Entering directory '/run/user/1000/hyprpm/the-elevated-one/hyprwinwrap'
+g++ -shared -fPIC --no-gnu-unique main.cpp -o hyprwinwrap.so -g `pkg-config --cflags pixman-1 libdrm hyprland pangocairo libinput libudev wayland-server xkbcommon` -std=c++2b -O2
+main.cpp:17:10: fatal error: hyprland/src/helpers/time/Time.hpp: No such file or directory
+   17 | #include <hyprland/src/helpers/time/Time.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Makefile:2: all] Error 1
+make: Leaving directory '/run/user/1000/hyprpm/the-elevated-one/hyprwinwrap'
+
+
+
+✖ Plugin hyprwinwrap failed to build.
+  This likely means that the plugin is either outdated, not yet available for your version, or broken.
+If you are on -git, update first.
+Try re-running with -v to see more verbose output.
+→ Building xtra-dispatchers
+ ━━━━━━━━━━━━━━━━━━━━━━━━━╍━━━━━━━━━━━━━━━━━━━━━━━━  2 / 4  Updating hyprland-plugins[v] shell returned:  -> cd /run/user/1000/hyprpm/the-elevated-one && PKG_CONFIG_PATH="/home/the-elevated-one/.local/share/hyprpm/headersRoot/share/pkgconfig" make -C xtra-dispatchers all
+make: Entering directory '/run/user/1000/hyprpm/the-elevated-one/xtra-dispatchers'
+g++ -shared -fPIC --no-gnu-unique main.cpp -o xtra-dispatchers.so -g `pkg-config --cflags pixman-1 libdrm hyprland pangocairo libinput libudev wayland-server xkbcommon` -std=c++2b -O2
+main.cpp: In function ‘SDispatchResult moveOrExec(std::string)’:
+main.cpp:31:25: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+   31 |     if (!g_pCompositor->m_lastMonitor || !g_pCompositor->m_lastMonitor->activeWorkspace)
+      |                         ^~~~~~~~~~~~~
+      |                         m_pLastMonitor
+main.cpp:31:58: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+   31 |     if (!g_pCompositor->m_lastMonitor || !g_pCompositor->m_lastMonitor->activeWorkspace)
+      |                                                          ^~~~~~~~~~~~~
+      |                                                          m_pLastMonitor
+main.cpp:39:28: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+   39 |         if (g_pCompositor->m_lastMonitor->activeWorkspace != PWINDOW->m_pWorkspace)
+      |                            ^~~~~~~~~~~~~
+      |                            m_pLastMonitor
+main.cpp:40:78: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+   40 |             g_pCompositor->moveWindowToWorkspaceSafe(PWINDOW, g_pCompositor->m_lastMonitor->activeWorkspace);
+      |                                                                              ^~~~~~~~~~~~~
+      |                                                                              m_pLastMonitor
+main.cpp: In function ‘SDispatchResult throwUnfocused(std::string)’:
+main.cpp:55:25: error: ‘class CCompositor’ has no member named ‘m_lastWindow’; did you mean ‘m_pLastWindow’?
+   55 |     if (!g_pCompositor->m_lastWindow || !g_pCompositor->m_lastWindow->m_pWorkspace)
+      |                         ^~~~~~~~~~~~
+      |                         m_pLastWindow
+main.cpp:55:57: error: ‘class CCompositor’ has no member named ‘m_lastWindow’; did you mean ‘m_pLastWindow’?
+   55 |     if (!g_pCompositor->m_lastWindow || !g_pCompositor->m_lastWindow->m_pWorkspace)
+      |                                                         ^~~~~~~~~~~~
+      |                                                         m_pLastWindow
+main.cpp:60:75: error: ‘class CCompositor’ has no member named ‘m_lastWindow’; did you mean ‘m_pLastWindow’?
+   60 |         pWorkspace = g_pCompositor->createNewWorkspace(id, g_pCompositor->m_lastWindow->m_pWorkspace->monitorID(), name, false);
+      |                                                                           ^~~~~~~~~~~~
+      |                                                                           m_pLastWindow
+main.cpp:62:41: error: ‘class CCompositor’ has no member named ‘m_windows’; did you mean ‘m_vWindows’?
+   62 |     for (const auto& w : g_pCompositor->m_windows) {
+      |                                         ^~~~~~~~~
+      |                                         m_vWindows
+main.cpp:63:33: error: ‘class CCompositor’ has no member named ‘m_lastWindow’; did you mean ‘m_pLastWindow’?
+   63 |         if (w == g_pCompositor->m_lastWindow || w->m_pWorkspace != g_pCompositor->m_lastWindow->m_pWorkspace)
+      |                                 ^~~~~~~~~~~~
+      |                                 m_pLastWindow
+main.cpp:63:83: error: ‘class CCompositor’ has no member named ‘m_lastWindow’; did you mean ‘m_pLastWindow’?
+   63 |         if (w == g_pCompositor->m_lastWindow || w->m_pWorkspace != g_pCompositor->m_lastWindow->m_pWorkspace)
+      |                                                                                   ^~~~~~~~~~~~
+      |                                                                                   m_pLastWindow
+main.cpp: In function ‘SDispatchResult bringAllFrom(std::string)’:
+main.cpp:78:25: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+   78 |     if (!g_pCompositor->m_lastMonitor || !g_pCompositor->m_lastMonitor->activeWorkspace)
+      |                         ^~~~~~~~~~~~~
+      |                         m_pLastMonitor
+main.cpp:78:58: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+   78 |     if (!g_pCompositor->m_lastMonitor || !g_pCompositor->m_lastMonitor->activeWorkspace)
+      |                                                          ^~~~~~~~~~~~~
+      |                                                          m_pLastMonitor
+main.cpp:85:45: error: ‘class CCompositor’ has no member named ‘m_lastWindow’; did you mean ‘m_pLastWindow’?
+   85 |     const auto PLASTWINDOW = g_pCompositor->m_lastWindow.lock();
+      |                                             ^~~~~~~~~~~~
+      |                                             m_pLastWindow
+main.cpp:87:41: error: ‘class CCompositor’ has no member named ‘m_windows’; did you mean ‘m_vWindows’?
+   87 |     for (const auto& w : g_pCompositor->m_windows) {
+      |                                         ^~~~~~~~~
+      |                                         m_vWindows
+main.cpp:91:68: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+   91 |         g_pCompositor->moveWindowToWorkspaceSafe(w, g_pCompositor->m_lastMonitor->activeWorkspace);
+      |                                                                    ^~~~~~~~~~~~~
+      |                                                                    m_pLastMonitor
+main.cpp: In function ‘SDispatchResult closeUnfocused(std::string)’:
+main.cpp:103:25: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+  103 |     if (!g_pCompositor->m_lastMonitor)
+      |                         ^~~~~~~~~~~~~
+      |                         m_pLastMonitor
+main.cpp:106:41: error: ‘class CCompositor’ has no member named ‘m_windows’; did you mean ‘m_vWindows’?
+  106 |     for (const auto& w : g_pCompositor->m_windows) {
+      |                                         ^~~~~~~~~
+      |                                         m_vWindows
+main.cpp:107:47: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+  107 |         if (w->m_pWorkspace != g_pCompositor->m_lastMonitor->activeWorkspace || w->m_pMonitor != g_pCompositor->m_lastMonitor || !w->m_bIsMapped)
+      |                                               ^~~~~~~~~~~~~
+      |                                               m_pLastMonitor
+main.cpp:107:113: error: ‘class CCompositor’ has no member named ‘m_lastMonitor’; did you mean ‘m_pLastMonitor’?
+  107 |         if (w->m_pWorkspace != g_pCompositor->m_lastMonitor->activeWorkspace || w->m_pMonitor != g_pCompositor->m_lastMonitor || !w->m_bIsMapped)
+      |                                                                                                                 ^~~~~~~~~~~~~
+      |                                                                                                                 m_pLastMonitor
+make: *** [Makefile:2: all] Error 1
+make: Leaving directory '/run/user/1000/hyprpm/the-elevated-one/xtra-dispatchers'
+
+
+
+✖ Plugin xtra-dispatchers failed to build.
+  This likely means that the plugin is either outdated, not yet available for your version, or broken.
+If you are on -git, update first.
+Try re-running with -v to see more verbose output.
+✔ updated hyprland-plugins
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  4 / 4  Done!
+✔ Ensuring plugin load state
+[v] running version returned: Hyprland 0.48.1 built from branch  at commit 29e2e59fdbab8ed2cc23a20e3c6043d5decb5cdc  (version: bump to v0.48.1).
+Date: Fri Mar 28 16:16:07 2025
+Tag: v0.48.1, commits: 5937
+built against:
+ aquamarine 0.8.0
+ hyprlang 0.6.0
+ hyprutils 0.6.0
+ hyprcursor 0.1.12
+ hyprgraphics 0.1.3
+
+
+no flags were set
+
+
+[v] parsed commit 29e2e59fdbab8ed2cc23a20e3c6043d5decb5cdc at branch  on Fri Mar 28 16:16:07 2025, commits 5937
+✔ Loaded hyprexpo
+✔ Loaded hyprwinwrap
+✔ Plugin load state ensured

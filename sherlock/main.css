@@ -1,13 +1,11 @@
-@import '../../.cache/hellwal/sherlock-colors.css';
+@import '/tmp/user-hellwal/sherlock-colors.css';
 
 :root {
-    --background: mix(var(--walbackground), var(--walforeground), 0.1);
-    --foreground: var(--color8);
-    --text: lighter(var(--walcursor));
-    --border: var(--walborder);
+    --accent1: lighter(mix(var(--color3), #FFF, 0.05));
+    --accent2: darker(var(--color6));
+    --border: darker(var(--accent1));
+    --text: lighter(var(--walforeground));
 
-    --tag-background: lighter(var(--walforeground));
-    --tag-color: var(--color8);
     --error: var(--color6);
     --warning: 55, 100%, 68%;
     --success: 140, 40%, 40%;
@@ -46,56 +44,68 @@ undershoot.left,
 overshoot:backdrop {
     background: none;
     border: none;
-    background-color: transparent;
+    background-color: none;
 }
 
+
+/* General Settings */
 * {
     padding: 0px;
     margin: 0px;
-    -gtk-secondary-caret-color: var(--background);
+    -gtk-secondary-caret-color: var(--walbackground);
     outline-width: 0px;
-    outline-offset: -3px;
+    outline-offset: 0px;
     outline-style: dashed;
     line-height: 1;
-    font-family: "Cantarell";
+    font-family: "GeistMono Nerd Font";
 }
 
-#overlay spinner{
-    color: var(--text);
+/* Dunno What This Does #1 */
+#overlay spinner {
+    color: var(--walforeground);
 }
 #overlay * {
-    background: transparent;
+    background: none;
 }
 .notifications {
-    background: transparent;
+    background: none;
 }
 
+/* Window Control */
 scrolledwindow>viewport,
 scrolledwindow>viewport>*,
 window {
-    background: var(--background);
+    background: darker(var(--color1));
 }
-
-
-label {
-    color: var(--text);
-}
-
-
 window {
     color: var(--text);
-    border-radius: 5px;
-    border: 5px solid var(--border);
+    border-radius: 15px;
+    border: 7px solid var(--border);
 }
 
-/* STATUS BAR */
-.status-bar {
-    background: var(--foreground);
-    border-top: 1px solid var(--border);
-    padding: 4px 10px 4px 20px;
+/* Labels */
+label#title {                 /* App Title */
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--text);
 }
-.status-bar label {
+label#launcher-type {         /* App Subtitle */
+  font-style: italic;
+  font-weight: 800;
+  font-size: 14px;
+  color: mix(var(--text), #000, 0.2);
+}
+label#logo {                  /* Bottom Bar Label */
     color: var(--text);
+    font-weight: 800;
+    font-size: 16px;
+}
+
+/* Dunno why it doesn't work */
+.status-bar {
+    background-color: var(--border); 
+    border-top: 3px solid var(--border);
+    padding: 2px 8px 0px 16px;
 }
 .spinner-disappear {
     animation: vanish-rotate 0.3s ease forwards;
@@ -105,25 +115,27 @@ window {
     animation: rotate 0.3s linear infinite;
 }
 
-
-/* SEARCH PAGE */
+/* Search Bar */
 #search-bar {
     outline: none;
-    border: 3px solid alpha(var(--color7), 0.7);
+    border: none;
     background: none;
     min-height: 40px;
-    color: var(--color0);
-    font-size: 15px;
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 800;
     padding-left: 20px;
+    background: mix(var(--accent1), var(--walbackground), 0.6);
+    border-radius: 10px;
 }
-
 #search-bar-holder {
-    border-bottom: 2px solid var(--border);
-    padding: 12px 10px 12px 10px;
-    background: var(--walforeground);
-    color: var(--color0);
+    border-bottom: 5px solid var(--border);
+    padding: 3px;
+    background: var(--border);
+    color: var(--text);
 }
 
+/* Search Bar Icon */
 #search-icon-holder image {
     transition: 0.1s ease;
 }
@@ -136,50 +148,60 @@ window {
     opacity: 0;
 }
 #search-icon-holder.back image:nth-child(1){
+    padding: 10px 11px 10px 11px;
+    border-radius: 10px;
+    margin-right: 10px;
+    background: mix(var(--accent1), var(--walbackground), 0.3);
     opacity: 0;
 }
 #search-icon-holder.back image:nth-child(2){
     transition-delay: 0.05s;
     opacity: 1;
-}
-
-
-#search-icon {
-    padding: 0px 13px 0px 13px;
-    border-radius: 5px;
+    padding: 10px 11px 10px 11px;
+    border-radius: 10px;
     margin-right: 10px;
-    background: alpha(var(--color7), 0.7);
+    background: mix(var(--accent1), var(--walbackground), 0.3);
+
+}
+#search-icon {
+    padding: 10px 11px 10px 11px;
+    border-radius: 10px;
+    margin-right: 10px;
+    background: mix(var(--accent1), var(--walbackground), 0.3);
     transition: 0.3s ease;
 }
 #search-icon:hover {
-    padding: 0px 13px 0px 13px;
-    border-radius: 5px;
+    padding: 10px 11px 10px 11px;
+    border-radius: 10px;
     margin-right: 10px;
-    background: alpha(var(--color7), 1);
-
+    background: mix(var(--accent1), var(--walbackground), 0.6);
 }
 
 #search-bar:focus {
     outline: none;
 }
 
+/* Search Bar Placeholder Text */
 #search-bar placeholder {
     background: transparent;
     background-color: transparent;
-    color: alpha(var(--color0), 0.7);
-    font-weight: 500;
+    color: var(--text);
+    font-weight: 800;
+    font-size: 16px;
 }
 
+/* Category Bar */
 #category-type {
-    font-size: 13px;
-    font-weight: bold;
-    color: var(--text);
-    opacity: 0.3;
-    padding: 10px 20px 0px 20px;
+    font-size: 15px;
+    font-weight: 800;
+    color: mix(var(--text), #000, 0.2);
+    opacity: 1;
+    padding: 10px 20px 7px 20px;
+    background: alpha(var(--border), 0.5);
 }
 
 .scrolled-window {
-    padding: 10px 10px 5px 10px;
+    padding: 10px;
     min-width: var(--width) * 0.8;
 }
 
@@ -190,10 +212,9 @@ scrollbar {
 }
 
 scrollbar slider {
-    background: alpha(var(--text), 0.1);
+    background: var(--accent1);
     border: none;
 }
-
 
 image {
     color: white;
@@ -202,13 +223,12 @@ image {
 .tile {
     outline: none;
     min-height: 50px;
-    padding: 0px 10px;
+    padding: 0px 10px 0px 15px;
     margin-bottom: 5px;
-    border-radius: 4px;
+    border-radius: 5px;
 }
-.tile:hover *,
 .tile:hover{
-    background: transparent;
+    background: var(--accent2);
 }
 .tile.animate {
     transform: translateY(20px); 
@@ -226,51 +246,42 @@ image {
 .tile.animate:nth-child(9) { animation-delay: 0.45s; }
 .tile.animate:nth-child(10) { animation-delay: 0.5s; }
 
-@keyframes fadeInUp {
-    from {
-        letter-spacing: 1px;
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        letter-spacing: 0px;
-        opacity: 1;
-        transform: translate(0px);
-    }
-}
-
-.tile #title {
-    font-size: 15px;
-    color: var(--text);
-}
-
 .tile #icon {
-    margin: 0px;
-    padding: 0px;
+    margin: 6px;
+    padding: 6px;
+    background-color: alpha(mix(var(--walforeground), var(--accent1), 0.5), 0.2);
+    border-radius: 10px;
+}
+.tile:selected #icon {
+    margin: 6px;
+    padding: 6px;
+    background-color: alpha(mix(var(--walforeground), var(--accent1), 0.7), 0.5);
+    border-radius: 10px;
 }
 
 .tile:selected {
     transition: 0.1s ease;
-    background: alpha(var(--foreground), 1);
-    background-color: alpha(var(--foreground), 1);
+    background-color: alpha(var(--accent1), 0.5);
     outline: none;
     border: none;
 }
 
 .tile:selected .tag,
 .tag {
-    font-size: 11px;
-    border-radius: 3px;
+    font-size: 14px;
+    border-radius: 5px;
     padding: 2px 8px;
-    color: var(--tag-color);
-    box-shadow: 0px 0px 10px 0px alpha(2,2,2,0.4);
-    border: 1px solid alpha(var(--text), 0.1);
+    color: var(--walforeground);
+    font-weight: bold;
+    box-shadow: 0px 0px 10px 0px rgba(2,2,2,0.4);
+    border: 1px solid alpha(var(--walforeground), 0.5);
     margin-left: 7px;
+    background: alpha(var(--accent2), 0.7);
 }
 
 .tile:selected .tag-start,
 .tag-start {
-    background: alpha(var(--tag-background), 0.7);
+    background: alpha(var(--accent2), 0.7);
 }
 
 .tile:selected .tag-end,
@@ -282,59 +293,55 @@ image {
     outline: none;
 }
 
-#launcher-type {
-    font-size: 10px;
-    color: alpha(var(--text), 0.4);
-    margin-left: 0px;
-}
 #color-icon-holder{
     border-radius: 50px;
 }
 
-
 /*SHORTCUT*/
 #shortcut-holder {
-    margin-right: 25px;
+    margin-right: 5px;
     padding: 5px 10px;
-    background: alpha(var(--foreground), 0.8);
+    background: mix(var(--accent1), var(--walbackground), 0.5);
     border-radius: 5px;
-    border: 1px solid alpha(var(--text), 0.1);
-    box-shadow: 0px 0px 6px 0px alpha(15,15,15,1);
+    border: 3px solid alpha(mix(var(--accent1), var(--walforeground), 0.1), 0.5);
+    box-shadow: 0px 0px 6px 0px rgba(15,15,15,1);
+    color: var(--text);
 }
 
 .tile:selected #shortcut-holder {
-    background: alpha(var(--background), 0.5);
-    background-color: alpha(var(--background), 0.5);
-    color: alpha(var(--text), 0.5);
-    box-shadow: 0px 0px 6px 0px alpha(22,22,22,1);
+    background-color: mix(var(--accent1), var(--walbackground), 0.5);
+    color: var(--text);
+    box-shadow: 0px 0px 6px 0px rgba(22,22,22,1);
 }
 
 #shortcut, #shortcut-modkey{
-    background: alpha(var(--background), 0);
-    background-color: alpha(var(--background), 0);
-    font-size: 11px;
+    background: alpha(var(--walbackground), 0);
+    background-color: alpha(var(--walbackground), 0);
+    font-size: 12px;
     font-weight: bold;
-    color: alpha(var(--text), 0.5);
+    color: var(--text);
 }
 #shortcut-modkey{
-    font-size: 13px;
+    font-size: 12px;
 }
 
 
 /*CALCULATOR*/
 .calc-tile {
     padding: 10px 10px 20px 10px;
-    border-radius: 5px;
+    border-radius: 10px;
+    background: var(--accent1);
 }
-
+.tile:hover .calc-tile{
+  background: none;
+}
 #calc-tile-quation {
-    font-size: 10px;
-    color: gray;
+    font-size: 14px;
+    color: var(--walforeground);
 }
-
 #calc-tile-result {
-    font-size: 25px;
-    color: gray;
+    font-size: 30px;
+    color: var(--walforeground);
 }
 
 /*EVENT TILE*/
@@ -355,36 +362,36 @@ image {
 
 
 
-/* BULK TEXT TILE */
-.bulk-text {
-    padding-bottom: 10px;
-    min-height: 50px;
-}
-
-
-#bulk-text-title {
-    margin-left: 10px;
-    padding: 10px 0px;
-    font-size: 10px;
-    color: gray;
-}
-
-#bulk-text-content-title {
-    font-size: 17px;
-    font-weight: bold;
-    color: var(--text);
-    min-height: 20px;
-}
-
-#bulk-text-content-body {
-    font-size: 14px;
-    color: var(--text);
-    line-height: 1.4;
-    min-height: 20px;
-}
-
-
-
+/* /* BULK TEXT TILE */ */
+/* .bulk-text { */
+/*     padding-bottom: 10px; */
+/*     min-height: 50px; */
+/* } */
+/**/
+/**/
+/* #bulk-text-title { */
+/*     margin-left: 10px; */
+/*     padding: 10px 0px; */
+/*     font-size: 10px; */
+/*     color: gray; */
+/* } */
+/**/
+/* #bulk-text-content-title { */
+/*     font-size: 17px; */
+/*     font-weight: bold; */
+/*     color: var(--text); */
+/*     min-height: 20px; */
+/* } */
+/**/
+/* #bulk-text-content-body { */
+/*     font-size: 14px; */
+/*     color: var(--text); */
+/*     line-height: 1.4; */
+/*     min-height: 20px; */
+/* } */
+/**/
+/**/
+/**/
 /* MPRIS TILE*/
 #mpris-icon-holder{
     border-radius: 5px;
@@ -394,229 +401,217 @@ image {
     opacity: 1;
     animation: ease-opacity 0.5s forwards;
 }
-
-
-
-
-
-
-
-/* NEXT PAGE */
-.next_tile {
-    color: var(--text);
-    background: var(--background);
-}
-.next_tile #content-body {
-    background: var(--background);
-    padding: 10px;
-    color: var(--text);
-}
-.raw_text, .next_tile #content-body {
-    font-family: 'Fira Code', monospace;
-    font-feature-settings: "kern" off;
-    font-kerning: None;
-}
-
-
-/*Error*/
-.error-tile #scroll-window {
-    padding: 10px;
-    min-height: 50px;
-}
-
-.error-tile {
-    border-radius: 4px;
-    padding: 5px 10px 10px 10px;
-    color: white;
-    border: 1px solid transparent;
-    margin-bottom: 10px;
-}
-
-.error-tile * {
-    background: transparent;
-}
-
-.error {
-    border: 1px solid alpha(var(--error), 0.5);
-    background: alpha(var(--error), 0.1);
-}
-
-.warning {
-    border: 1px solid alpha(var(--warning), 0.5);
-    background: alpha(var(--warning), 0.1);
-}
-
-.error-tile #title {
-    padding: 10px;
-    font-size: 10px;
-    color: gray;
-}
-
-.error-tile #content-title {
-    margin-left: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--text);
-}
-
-.error-tile #content-body {
-    margin-left: 10px;
-    font-size: 14px;
-    color: var(--text);
-    line-height: 1.4;
-    color: gray;
-}
-
-
-/* STATUS BAR */
-.status-bar {
-    background: alpha(var(--foreground), 0.2);
-    border-top: 1px solid var(--border);
-    padding: 4px 10px 4px 20px;
-}
-.status-bar label {
-    color: var(--text), 0.3);
-}
-
-
-@keyframes slide {
-    from {
-        transform: translate(0px, 0px);
-    }
-
-    to {
-        transform: translate(-20px, 0px);
-    }
-}
-
-/* WEATHER TILE */
-.weather-tile {
-    padding: 0px 20px 0px 10px;
-    background: darkgray;
-    margin-bottom: 10px;
-}
-.tile.weather-tile #content-holder{
-    opacity: 0;
-}
-.tile.weather-tile.weather-animate #content-holder {
-    animation: ease-opacity 0.3s forwards;
-    transition: background 0.3s ease;
-    opacity: 1;
-}
-.tile.weather-tile.weather-no-animate #content-holder{
-    opacity: 1;
-}
-.tile.weather-tile #location {
-    margin-left: 5px;
-    padding: 10px 0px;
-    font-size: 10px;
-}
-.tile.weather-tile #temperature {
-    font-size: 30px;
-}
-.tile.weather-tile #content-holder {
-    margin-bottom: 15px;
-}
-
-
-
-
-
-
-/*WEATHER CLASSES*/
-.tile.weather-tile.weather-clear {
-    background: var(--weather-clear); /* Light sky blue */
-}
-.tile.weather-tile.weather-clear label {
-    color: var(--text);
-}
-
-.tile.weather-tile.weather-few-clouds {
-    background: var(--weather-few-clouds); /* Very light */
-}
-.tile.weather-tile.weather-few-clouds label {
-    color: var(--text-alternate);
-}
-
-.tile.weather-tile.weather-many-clouds {
-    background: var(--weather-many-clouds); /* Medium-light */
-}
-.tile.weather-tile.weather-many-clouds label {
-    color: var(--text);
-}
-
-.tile.weather-tile.weather-mist {
-    background: var(--weather-mist); /* Light beige */
-}
-.tile.weather-tile.weather-mist label {
-    color: var(--text-alternate);
-}
-
-.tile.weather-tile.weather-showers {
-    background: var(--weather-showers); /* Medium-dark blue */
-}
-.tile.weather-tile.weather-showers label {
-    color: var(--text);
-}
-
-.tile.weather-tile.weather-freezing-scattered-rain-storm {
-    background: var(--weather-freezing-scattered-rain-storm);
-}
-.tile.weather-tile.weather-freezing-scattered-rain-storm label {
-    color: var(--text);
-}
-
-.tile.weather-tile.weather-freezing-scattered-rain {
-    background: var(--weather-freezing-scattered-rain);
-}
-.tile.weather-tile.weather-freezing-scattered-rain label {
-    color: var(--text);
-}
-
-.tile.weather-tile.weather-snow-scattered-day {
-    background: var(--weather-snow-scattered-day);
-}
-.tile.weather-tile.weather-snow-scattered-day label {
-    color: var(--text-alternate);
-}
-
-.tile.weather-tile.weather-storm {
-    background: var(--weather-storm); /* Very dark */
-}
-.tile.weather-tile.weather-storm label {
-    color: var(--text);
-}
-
-.tile.weather-tile.weather-snow-storm {
-    background: var(--weather-snow-storm); /* Light */
-}
-.tile.weather-tile.weather-snow-storm label {
-    color: var(--text-alternate);
-}
-
-.tile.weather-tile.weather-snow-scattered-storm {
-    background: var(--weather-snow-scattered-storm); /* Still light */
-}
-.tile.weather-tile.weather-snow-scattered-storm label {
-    color: alpha(var(--text), 0.8);
-}
-
-.tile.weather-tile.weather-showers-scattered {
-    background: var(--weather-showers-scattered);
-}
-.tile.weather-tile.weather-showers-scattered label {
-    color: var(--text);
-}
-
-.tile.weather-tile.weather-none-available {
-    background: var(--weather-none-available); /* Neutral gray */
-}
-.tile.weather-tile.weather-none-available label {
-    color: var(--text);
-}
-
-
-
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/* /* NEXT PAGE */ */
+/* .next_tile { */
+/*     color: var(--text); */
+/*     background: var(--background); */
+/* } */
+/* .next_tile #content-body { */
+/*     background: var(--background); */
+/*     padding: 10px; */
+/*     color: var(--text); */
+/* } */
+/* .raw_text, .next_tile #content-body { */
+/*     font-family: 'Fira Code', monospace; */
+/*     font-feature-settings: "kern" off; */
+/*     font-kerning: None; */
+/* } */
+/**/
+/**/
+/* /*Error*/ */
+/* .error-tile #scroll-window { */
+/*     padding: 10px; */
+/*     min-height: 50px; */
+/* } */
+/**/
+/* .error-tile { */
+/*     border-radius: 4px; */
+/*     padding: 5px 10px 10px 10px; */
+/*     color: white; */
+/*     border: 1px solid transparent; */
+/*     margin-bottom: 10px; */
+/* } */
+/**/
+/* .error-tile * { */
+/*     background: transparent; */
+/* } */
+/**/
+/* .error { */
+/*     border: 1px solid alpha(var(--error), 0.5); */
+/*     background: alpha(var(--error), 0.1); */
+/* } */
+/**/
+/* .warning { */
+/*     border: 1px solid alpha(var(--warning), 0.5); */
+/*     background: alpha(var(--warning), 0.1); */
+/* } */
+/**/
+/* .error-tile #title { */
+/*     padding: 10px; */
+/*     font-size: 10px; */
+/*     color: gray; */
+/* } */
+/**/
+/* .error-tile #content-title { */
+/*     margin-left: 10px; */
+/*     font-size: 16px; */
+/*     font-weight: bold; */
+/*     color: var(--text); */
+/* } */
+/**/
+/* .error-tile #content-body { */
+/*     margin-left: 10px; */
+/*     font-size: 14px; */
+/*     color: var(--text); */
+/*     line-height: 1.4; */
+/*     color: gray; */
+/* } */
+/**/
+/* @keyframes slide { */
+/*     from { */
+/*         transform: translate(0px, 0px); */
+/*     } */
+/**/
+/*     to { */
+/*         transform: translate(-20px, 0px); */
+/*     } */
+/* } */
+/**/
+/* /* WEATHER TILE */ */
+/* .weather-tile { */
+/*     padding: 0px 20px 0px 10px; */
+/*     background: darkgray; */
+/*     margin-bottom: 10px; */
+/* } */
+/* .tile.weather-tile #content-holder{ */
+/*     opacity: 0; */
+/* } */
+/* .tile.weather-tile.weather-animate #content-holder { */
+/*     animation: ease-opacity 0.3s forwards; */
+/*     transition: background 0.3s ease; */
+/*     opacity: 1; */
+/* } */
+/* .tile.weather-tile.weather-no-animate #content-holder{ */
+/*     opacity: 1; */
+/* } */
+/* .tile.weather-tile #location { */
+/*     margin-left: 5px; */
+/*     padding: 10px 0px; */
+/*     font-size: 10px; */
+/* } */
+/* .tile.weather-tile #temperature { */
+/*     font-size: 30px; */
+/* } */
+/* .tile.weather-tile #content-holder { */
+/*     margin-bottom: 15px; */
+/* } */
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/* /*WEATHER CLASSES*/ */
+/* .tile.weather-tile.weather-clear { */
+/*     background: var(--weather-clear); /* Light sky blue */ */
+/* } */
+/* .tile.weather-tile.weather-clear label { */
+/*     color: var(--text); */
+/* } */
+/**/
+/* .tile.weather-tile.weather-few-clouds { */
+/*     background: var(--weather-few-clouds); /* Very light */ */
+/* } */
+/* .tile.weather-tile.weather-few-clouds label { */
+/*     color: var(--text-alternate); */
+/* } */
+/**/
+/* .tile.weather-tile.weather-many-clouds { */
+/*     background: var(--weather-many-clouds); /* Medium-light */ */
+/* } */
+/* .tile.weather-tile.weather-many-clouds label { */
+/*     color: var(--text); */
+/* } */
+/**/
+/* .tile.weather-tile.weather-mist { */
+/*     background: var(--weather-mist); /* Light beige */ */
+/* } */
+/* .tile.weather-tile.weather-mist label { */
+/*     color: var(--text-alternate); */
+/* } */
+/**/
+/* .tile.weather-tile.weather-showers { */
+/*     background: var(--weather-showers); /* Medium-dark blue */ */
+/* } */
+/* .tile.weather-tile.weather-showers label { */
+/*     color: var(--text); */
+/* } */
+/**/
+/* .tile.weather-tile.weather-freezing-scattered-rain-storm { */
+/*     background: var(--weather-freezing-scattered-rain-storm); */
+/* } */
+/* .tile.weather-tile.weather-freezing-scattered-rain-storm label { */
+/*     color: var(--text); */
+/* } */
+/**/
+/* .tile.weather-tile.weather-freezing-scattered-rain { */
+/*     background: var(--weather-freezing-scattered-rain); */
+/* } */
+/* .tile.weather-tile.weather-freezing-scattered-rain label { */
+/*     color: var(--text); */
+/* } */
+/**/
+/* .tile.weather-tile.weather-snow-scattered-day { */
+/*     background: var(--weather-snow-scattered-day); */
+/* } */
+/* .tile.weather-tile.weather-snow-scattered-day label { */
+/*     color: var(--text-alternate); */
+/* } */
+/**/
+/* .tile.weather-tile.weather-storm { */
+/*     background: var(--weather-storm); /* Very dark */ */
+/* } */
+/* .tile.weather-tile.weather-storm label { */
+/*     color: var(--text); */
+/* } */
+/**/
+/* .tile.weather-tile.weather-snow-storm { */
+/*     background: var(--weather-snow-storm); /* Light */ */
+/* } */
+/* .tile.weather-tile.weather-snow-storm label { */
+/*     color: var(--text-alternate); */
+/* } */
+/**/
+/* .tile.weather-tile.weather-snow-scattered-storm { */
+/*     background: var(--weather-snow-scattered-storm); /* Still light */ */
+/* } */
+/* .tile.weather-tile.weather-snow-scattered-storm label { */
+/*     color: alpha(var(--text), 0.8); */
+/* } */
+/**/
+/* .tile.weather-tile.weather-showers-scattered { */
+/*     background: var(--weather-showers-scattered); */
+/* } */
+/* .tile.weather-tile.weather-showers-scattered label { */
+/*     color: var(--text); */
+/* } */
+/**/
+/* .tile.weather-tile.weather-none-available { */
+/*     background: var(--weather-none-available); /* Neutral gray */ */
+/* } */
+/* .tile.weather-tile.weather-none-available label { */
+/*     color: var(--text); */
+/* } */
+/**/
+/**/
+/**/
 /*ANIMATIONS*/
 @keyframes vanish-rotate{
     from {
@@ -657,4 +652,18 @@ image {
         transform: translate(-20px, 0px);
     }
 }
+
+@keyframes fadeInUp {
+    from {
+        letter-spacing: 1px;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        letter-spacing: 0px;
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+
 

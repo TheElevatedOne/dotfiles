@@ -1,0 +1,119 @@
+@define-color bg darker(@color1);
+@define-color text00 mix(@color7, @color6, 0.2);
+@define-color text01 lighter(lighter(@color6));
+@define-color text02 lighter(lighter(@color5));
+@define-color text03 lighter(lighter(@color4));
+@define-color text04 lighter(lighter(@color3));
+@define-color border alpha(lighter(@color3), 0.8);
+@define-color buttons alpha(@color10, 0.4);
+
+.musepaper {
+  border-radius: 15px;
+  background: alpha(@bg, 0.7);
+  font-family: "GeistMono Nerd Font"
+}
+
+.muse-cover {
+  margin-left: 42px;
+  margin-top: 42px;
+  margin-bottom: 42px;
+  padding: 5px;
+  opacity: 0.9;
+  background: @border;
+}
+
+.muse-info {
+  margin-top: 75px;
+  margin-bottom: 75px;
+  margin-right: 42px;
+  font-size: 20px;
+}
+
+.muse-tt, .muse-ar, .muse-al, .muse-gn {
+  font-size: 16px;
+  opacity: 0.5;
+  font-weight: 800;
+}
+
+.muse-tt {
+  color: @text01;
+}
+.muse-title {
+  font-size: 22px;
+  color: @text01;
+  font-weight: bold;
+}
+
+.muse-ar {
+  color: @text02;
+}
+.muse-artist {
+  color: @text02;
+  font-weight: 800;
+}
+
+.muse-al {
+  color: @text03;
+}
+.muse-album {
+  color: @text03;
+  font-weight: 600;
+}
+
+.muse-gn {
+  color: @text04;
+}
+.muse-genre {
+  color: @text04;
+  font-weight: 500;
+}
+
+.muse-sep {
+  background: alpha(@border, 0.4);
+  margin: 21px 42px;
+  padding-left: 5px;
+}
+
+.muse-ctl {
+  margin-left: 42px;
+  margin-bottom: 42px;
+  margin-top: -21px;
+}
+.muse-bw, .muse-fw {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  background: @buttons;
+  color: @text00;
+  border: 5px solid @border;
+  border-radius: 0px;
+}
+.muse-bwl, .muse-fwl {
+  font-size: 25px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.muse-bwl {
+  margin-left: -9px;
+}
+.muse-fwl {
+  margin-left: -6px;
+}
+.muse-bw:hover, .muse-fw:hover {
+  background: lighter(@buttons);
+  color: lighter(@text00);
+}
+.muse-pp {
+  background: @buttons;
+  color: @text00;
+  border: 5px solid @border;
+  border-radius: 0px;
+}
+.muse-ppl {
+  font-size: 35px;
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+.muse-pp:hover {
+  background: lighter(@buttons);
+  color: lighter(@text00);
+}

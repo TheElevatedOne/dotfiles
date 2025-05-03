@@ -1,5 +1,19 @@
 [
   {
+    "name": "Weather",
+    "type": "weather",
+    "args": {
+      "location": "mojmirovce",
+      "update_interval": 60
+    },
+    "priority": 1,
+    "home": true,
+    "async": true,
+    "only_home": true,
+    "shortcut": false,
+    "spawn_focus": false
+  },
+  {
     "name": "Clipboard",
     "type": "clipboard-execution",
     "args": {},
@@ -8,7 +22,6 @@
   },
   {
     "name": "Spotify",
-    "alias": "mu",
     "type": "audio_sink",
     "args": {},
     "async": true,

@@ -1,0 +1,30 @@
+/* ####################
+   ### Volume Toast ###
+   ####################
+
+   Description: Show floating window with volume change */
+
+.toastvolume {
+  background: alpha(@background, 0.5);
+  border: 5px solid alpha(@color14, 0.8);
+  border-radius: 15px;
+}
+
+.volume-label {
+  color: @foreground;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "GeistMono Nerd Font";
+}
+
+.volume-prog {
+ background: alpha(@color9, 0.5);
+ margin-top: -10px;
+ padding: 20px;
+ border: 3px solid @color10;
+ border-radius: 10px;
+}
+
+.volume-prog > trough > progress {
+  background-color: mix(@color14, #FFF, 0.5);
+}

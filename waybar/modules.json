@@ -165,8 +165,8 @@
     "tooltip-format": "Night Light Toggle",
     "exec-on-event": true,
     "interval": 1,
-    "exec": "python3 $HOME/.config/waybar/scripts/nightlight.py return",
-    "on-click": "python3 $HOME/.config/waybar/scripts/nightlight.py toggle",
+    "exec": "$HOME/.config/waybar/scripts/nightlight.py return",
+    "on-click": "$HOME/.config/waybar/scripts/nightlight.py toggle",
     "return-type": "json"
   },
   "custom/rp-nightlight": {

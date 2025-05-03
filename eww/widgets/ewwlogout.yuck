@@ -1,0 +1,91 @@
+;; #################
+;; ### Ewwlogout ###
+;; #################
+;;
+;; Description: wlogout alternative with kde plasma style
+
+(defwindow ewwlogout
+  :monitor 0
+  :geometry (geometry
+              :x "0px"
+              :y "-46px"
+              :width "100%"
+              :height "100%"
+              :anchor "center top")
+  :stacking "overlay"
+  :exclusive false
+  (logout-screen)
+  )
+
+(defpoll logout-user
+  :interval "1s"
+  :initial "user | host"
+  "scripts/get-user")
+
+(defwidget logout-screen []
+  (box
+    :class "logout-box"
+    :orientation "v"
+    :valign "center center"
+    :haligh "center center"
+    :hexpand false
+    :vexpand false
+    (box
+      :class "logout-image"
+      :orientation "v"
+      :valign "center center"
+      :haligh "center center"
+      :hexpand false
+      :vexpand false
+      (image
+        :class "logout-avatar"
+        :path "assets/avatar.png"
+        :image-width 250
+        )
+      (label
+        :class "logout-name"
+        :text "${logout-user}")
+      )
+    (box
+      :class "logout-buttons"
+      :orientation "h"
+      :valign "center center"
+      :haligh "center center"
+      :hexpand false
+      :vexpand false
+      :spacing 20
+      (button
+        :class "logout-shutdown"
+        :tooltip "Power Off"
+        :onclick "scripts/power-commands poweroff"
+        "󰐥")
+      (button
+        :class "logout-reboot"
+        :tooltip "Reboot"
+        :onclick "scripts/power-commands reboot"
+        "󰜉")
+      (button
+        :class "logout-lock"
+        :tooltip "Lock"
+        :onclick "scripts/power-commands lock"
+        "󰌾")
+      (button
+        :class "logout-logout"
+        :tooltip "Logout"
+        :onclick "scripts/power-commands logout"
+        "󰍃")
+      (button
+        :class "logout-sleep"
+        :tooltip "Sleep"
+        :onclick "scripts/power-commands suspend"
+        "󰤄")
+      (button
+        :class "logout-cancel"
+        :tooltip "Cancel / Exit"
+        :onclick "scripts/power-commands cancel"
+        "󰜺")
+      )
+    )
+  )
+
+

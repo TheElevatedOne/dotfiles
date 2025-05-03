@@ -394,7 +394,8 @@ image {
 /**/
 /* MPRIS TILE*/
 #mpris-icon-holder{
-    border-radius: 5px;
+    margin: 6px;
+    padding: 6px;
 }
 /*Animation for replacing album covers*/
 .image-replace-overlay #album-cover{
@@ -473,52 +474,60 @@ image {
 /*     line-height: 1.4; */
 /*     color: gray; */
 /* } */
-/**/
-/* @keyframes slide { */
-/*     from { */
-/*         transform: translate(0px, 0px); */
-/*     } */
-/**/
-/*     to { */
-/*         transform: translate(-20px, 0px); */
-/*     } */
-/* } */
-/**/
-/* /* WEATHER TILE */ */
-/* .weather-tile { */
-/*     padding: 0px 20px 0px 10px; */
-/*     background: darkgray; */
-/*     margin-bottom: 10px; */
-/* } */
-/* .tile.weather-tile #content-holder{ */
-/*     opacity: 0; */
-/* } */
-/* .tile.weather-tile.weather-animate #content-holder { */
-/*     animation: ease-opacity 0.3s forwards; */
-/*     transition: background 0.3s ease; */
-/*     opacity: 1; */
-/* } */
-/* .tile.weather-tile.weather-no-animate #content-holder{ */
-/*     opacity: 1; */
-/* } */
-/* .tile.weather-tile #location { */
-/*     margin-left: 5px; */
-/*     padding: 10px 0px; */
-/*     font-size: 10px; */
-/* } */
-/* .tile.weather-tile #temperature { */
-/*     font-size: 30px; */
-/* } */
-/* .tile.weather-tile #content-holder { */
-/*     margin-bottom: 15px; */
-/* } */
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/* /*WEATHER CLASSES*/ */
+
+@keyframes slide {
+    from {
+        transform: translate(0px, 0px);
+    }
+
+    to {
+        transform: translate(-20px, 0px);
+    }
+}
+
+/* WEATHER TILE */
+.tile.weather-tile {
+    padding: 10px 10px 0px 20px;
+    background: url("/tmp/user-config/sherlock/assets/weather.jpg");
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-size: 900px;
+    background-position: center;
+}
+.tile.weather-tile.weather-animate #content-holder {
+    animation: ease-opacity 0.3s forwards;
+    transition: background 0.3s ease;
+    opacity: 1;
+}
+.tile.weather-tile.weather-no-animate #content-holder{
+    opacity: 1;
+}
+.tile.weather-tile #location {
+    margin-left: 5px;
+    padding: 10px 0px;
+    font-size: 15px;
+}
+.tile.weather-tile #temperature {
+    font-size: 30px;
+    color: var(--text);
+}
+.tile.weather-tile #content-holder {
+    margin-bottom: 15px;
+    opacity: 0;
+}
+.tile.weather-tile #content-holder #icon-holder #icon {
+  margin-right: -10px;
+  background: transparent;
+  color: var(--text);
+}
+
+
+
+
+
+
+/*WEATHER CLASSES*/
 /* .tile.weather-tile.weather-clear { */
 /*     background: var(--weather-clear); /* Light sky blue */ */
 /* } */
@@ -609,9 +618,9 @@ image {
 /* .tile.weather-tile.weather-none-available label { */
 /*     color: var(--text); */
 /* } */
-/**/
-/**/
-/**/
+
+
+
 /*ANIMATIONS*/
 @keyframes vanish-rotate{
     from {

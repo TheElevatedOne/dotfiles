@@ -1,57 +1,9 @@
 /* Hellwal CSS Import */
 @import '/tmp/user-hellwal/waybar-colors.css';
 
-/* ########################
-   ### BRIGHTNESS TOAST ###
-   ######################## */
-
-
-.toastbright {
-  background: alpha(@background, 0.5);
-  border: 5px solid alpha(@color6, 0.8);
-  border-radius: 15px;
-}
-
-.bright-label {
-  color: @foreground;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: "GeistMono Nerd Font";
-}
-
-.bright-prog {
- background: alpha(@color2, 0.5);
- margin-top: -10px;
- padding: 20px;
- border: 3px solid @color3;
- border-radius: 10px;
-}
-
-.bright-prog > trough > progress {
-  background-color: mix(@color6, #FFF, 0.5);
-}
-
-.toastvolume {
-  background: alpha(@background, 0.5);
-  border: 5px solid alpha(@color14, 0.8);
-  border-radius: 15px;
-}
-
-.volume-label {
-  color: @foreground;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: "GeistMono Nerd Font";
-}
-
-.volume-prog {
- background: alpha(@color9, 0.5);
- margin-top: -10px;
- padding: 20px;
- border: 3px solid @color10;
- border-radius: 10px;
-}
-
-.volume-prog > trough > progress {
-  background-color: mix(@color14, #FFF, 0.5);
-}
+/* Widget Part Imports */
+@import '/tmp/user-config/eww/widgets/ewwlogout.css';
+@import '/tmp/user-config/eww/widgets/hyprlock.css';
+@import '/tmp/user-config/eww/widgets/musepaper.css';
+@import '/tmp/user-config/eww/widgets/toastbright.css';
+@import '/tmp/user-config/eww/widgets/toastvolume.css';

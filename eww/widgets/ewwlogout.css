@@ -1,0 +1,131 @@
+/* Define Colors */
+@define-color shutdown #FF0000;
+@define-color reboot #007BD9;
+@define-color lock #EEA000;
+@define-color logout #00B728;
+@define-color suspend #B600B7;
+@define-color cancel #787878;
+
+/* #################
+   ### Ewwlogout ###
+   #################
+
+   Description: wlogout alternative with kde plasma style */
+
+.ewwlogout {
+  background: alpha(@background, 0.6);
+}
+
+.logout-image {
+  margin-bottom: -315px;
+}
+
+.logout-avatar {
+  margin-top: 240px;
+  opacity: 1;
+  border: 5px solid @color2;
+  border-radius: 200px;
+  margin-left: 850px;
+  margin-right: 850px;
+}
+
+.logout-name {
+  margin-top: -400px;
+  font-size: 20px;
+  font-family: "GeistMono Nerd Font";
+}
+
+.logout-buttons {
+  opacity: 1;
+  margin: 515px;
+  margin-bottom: 545px;
+  margin-top: 0px;
+}
+
+.logout-buttons button {
+  border-radius: 200px;
+  font-family: "GeistMono Nerd Font";
+}
+
+.logout-shutdown {
+  background: darker(mix(@color3, @shutdown, 0.6));
+  padding-right: 11px;
+  padding-bottom: 5px;
+  font-size: 95px;
+  border: 5px solid darker(mix(@color7, @shutdown, 0.6));
+}
+.logout-shutdown:hover {
+  background: mix(@color3, @shutdown, 0.6);
+  padding-right: 11px;
+  padding-bottom: 5px;
+  font-size: 95px;
+  border: 5px solid mix(@color7, @shutdown, 0.6);
+}
+
+.logout-reboot {
+  background: darker(mix(@color3, @reboot, 0.6));
+  padding-right: 10px;
+  padding-bottom: 10px;
+  font-size: 90px;
+  border: 5px solid darker(mix(@color7, @reboot, 0.6));
+}
+.logout-reboot:hover {
+  background: mix(@color3, @reboot, 0.6);
+  padding-right: 10px;
+  padding-bottom: 10px;
+  font-size: 90px;
+  border: 5px solid mix(@color7, @reboot, 0.6);
+}
+
+.logout-lock {
+  background: darker(mix(@color3, @lock, 0.6));
+  padding-right: 10px;
+  padding-bottom: 10px;
+  font-size: 80px;
+  border: 5px solid darker(mix(@color7, @lock, 0.6));
+}
+.logout-lock:hover {
+  background: mix(@color3, @lock, 0.6);
+  padding-right: 10px;
+  padding-bottom: 10px;
+  font-size: 80px;
+  border: 5px solid mix(@color7, @lock, 0.6);
+}
+
+.logout-logout {
+  background: darker(mix(@color3, @logout, 0.6));
+  font-size: 80px;
+  border: 5px solid darker(mix(@color7, @logout, 0.6));
+}
+.logout-logout:hover {
+  background: mix(@color3, @logout, 0.6);
+  font-size: 80px;
+  border: 5px solid mix(@color7, @logout, 0.6);
+}
+
+.logout-sleep {
+  background: darker(mix(@color3, @suspend, 0.5));
+  padding-right: 15px;
+  font-size: 90px;
+  border: 5px solid darker(mix(@color7, @suspend, 0.6));
+}
+.logout-sleep:hover {
+  background: mix(@color3, @suspend, 0.5);
+  padding-right: 15px;
+  font-size: 90px;
+  border: 5px solid mix(@color7, @suspend, 0.6);
+}
+
+.logout-cancel {
+  background: darker(mix(@color3, @cancel, 0.5));
+  padding-right: 25px;
+  font-size: 90px;
+  border: 5px solid darker(mix(@color7, @cancel, 0.6));
+}
+.logout-cancel:hover {
+  background: mix(@color3, @cancel, 0.5);
+  padding-right: 25px;
+  font-size: 90px;
+  border: 5px solid mix(@color7, @cancel, 0.6);
+}
+

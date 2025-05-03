@@ -1,0 +1,154 @@
+(defwindow musepaper
+  :monitor 0
+  :geometry (geometry :x "10px"
+                      :y "7px"
+                      :width "40%"
+                      :height "30%"
+                      :anchor "top left")
+  :stacking "bottom"
+  :exclusive false
+  (muse-main)
+  )
+
+(defpoll cover
+  :interval "5s"
+  "scripts/museinfo cover")
+(defpoll title
+  :interval "5s"
+  "scripts/museinfo title")
+(defpoll artist
+  :interval "5s"
+  "scripts/museinfo artist")
+(defpoll album
+  :interval "5s"
+  "scripts/museinfo album")
+(defpoll genre
+  :interval "5s"
+  "scripts/museinfo genre")
+(defpoll status
+  :interval "1s"
+  "scripts/museinfo ppicon")
+
+
+(defwidget muse-main []
+  (box
+    :class "muse-box"
+    :orientation "h"
+    :space-evenly false
+    (box
+      :class "muse-left"
+      :orientation "v"
+      :space-evenly false
+      (image
+        :class "muse-cover"
+        :path "${cover}"
+        :image-width 300
+        :halign "start"
+        )
+      (box
+        :class "muse-ctl"
+        :orientation "h"
+        :space-evenly true
+        :spacing 21
+        (eventbox
+          :cursor "pointer"
+          :tooltip "Previous Song"
+          (button
+            :class "muse-bw"
+            :onclick "scripts/museinfo backward"
+            (label
+              :class "muse-bwl"
+              :text "")
+            )
+          )
+        (eventbox
+          :cursor "pointer"
+          :tooltip "Play / Pause"
+          (button
+            :class "muse-pp"
+            :onclick "scripts/museinfo pptoggle"
+            (label
+              :class "muse-ppl"
+              :text "${status}")
+            )
+          )
+        (eventbox
+          :cursor "pointer"
+          :tooltip "Next Song"
+          (button
+            :class "muse-fw"
+            :onclick "scripts/museinfo forward"
+            (label
+              :class "muse-fwl"
+              :text "")
+            )
+          )
+        )
+      )
+    (box
+      :class "muse-sep")
+    (box
+      :class "muse-info"
+      :orientation "v"
+      :space-evenly false
+      :spacing 42
+      :halign "start"
+      (box
+        :orientation "v"
+        :spacing 0
+        :halign "start"
+        (label
+          :class "muse-tt"
+          :text "Title:"
+          :halign "start")
+        (label
+          :class "muse-title"
+          :text "${title}"
+          :halign "start"
+          :limit-width 50)
+        )
+      (box
+        :orientation "v"
+        :spacing 0
+        :halign "start"
+        (label
+          :class "muse-ar"
+          :text "Artist:"
+          :halign "start")
+        (label
+          :class "muse-artist"
+          :text "${artist}"
+          :halign "start"
+          :limit-width 50)
+        )
+      (box
+        :orientation "v"
+        :spacing 0
+        :halign "start"
+        (label
+          :class "muse-al"
+          :text "Album:"
+          :halign "start")
+        (label
+          :class "muse-album"
+          :text "${album}"
+          :halign "start"
+          :limit-width 50)
+        )
+      (box
+        :orientation "v"
+        :spacing 0
+        :halign "start"
+        (label
+          :class "muse-gn"
+          :text "Genre:"
+          :halign "start")
+        (label
+          :class "muse-genre"
+          :text "${genre}"
+          :halign "start"
+          :limit-width 50)
+        )
+      )
+    )
+  )

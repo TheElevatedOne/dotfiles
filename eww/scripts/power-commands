@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+case $1 in
+
+poweroff)
+  systemctl poweroff
+  ;;
+
+reboot)
+  systemctl reboot
+  ;;
+
+lock)
+  eww close ewwlogout
+  hyprlock
+  ;;
+
+logout)
+  kill -9 -1
+  ;;
+
+suspend)
+  eww close ewwlogout
+  hyprlock &
+  systemctl suspend
+  ;;
+
+cancel)
+  eww close ewwlogout
+  ;;
+
+esac

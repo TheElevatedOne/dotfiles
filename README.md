@@ -4,13 +4,13 @@
 
 ## TODO
 
-- [x] Waybar
-- [ ] Sherlock
+- [x] Waybar (Maybe Switching to Eww Widget for a bar)
+- [ ] Sherlock (On the way)
 - [ ] SwayNC
 - [ ] GTK Theme
-- [ ] QT Theme
-- [ ] SDDM Theme
-- [ ] Plymouth Theme
+- [ ] QT Theme (Something, something kvantum...)
+- [ ] SDDM Theme (In a bit)
+- [ ] Plymouth Theme (When I finish the logo)
 - [ ] Hyprland Config
 - [ ] Kitty Config & Theme
 - [ ] Maybe More...

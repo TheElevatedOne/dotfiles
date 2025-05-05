@@ -3,4 +3,6 @@
 (include "./widgets/hyprlock.yuck")    ;; Hyprlock Timer
 (include "./widgets/ewwlogout.yuck")   ;; Kde Plasma Style wlogout Interface
 (include "./widgets/musepaper.yuck")   ;; Musepaper Eww Style
+(include "./widgets/ewwbar.yuck")
+(include "./widgets/info-graphs.yuck")
 

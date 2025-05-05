@@ -19,46 +19,6 @@
       "custom/rp-menu"
     ]
   },
-  "custom/shutdown": {
-    "format": "󰐥",
-    "tooltip-format": "Power Off / Shutdown",
-    "on-click": "systemctl poweroff"
-  },
-  "custom/rp-shutdown": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/reboot": {
-    "format": "󰜉",
-    "tooltip-format": "Restart / Reboot",
-    "on-click": "systemctl reboot"
-  },
-  "custom/rp-reboot": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/logout": {
-    "format": "󰍃",
-    "tooltip-format": "Logout",
-    "on-click": "kill -9 -1"
-  },
-  "custom/rp-logout": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/sleep": {
-    "format": "󰤄",
-    "tooltip-format": "Sleep / Suspend",
-    "on-click": "hyprlock & systemctl suspend"
-  },
-  "custom/rp-sleep": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/lp-workspaces": {
-    "format": "",
-    "tooltip": false
-  },
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
@@ -181,9 +141,9 @@
     "format-muted": "󰖁",
     "format-icons": {
       "default": [
-        "󰕿",
-        "󰖀",
-        "󰕾"
+        "<big>󰕿</big>",
+        "<big>󰖀</big>",
+        "<big>󰕾</big>"
       ]
     },
     "on-click": "pamixer -t",

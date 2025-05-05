@@ -397,6 +397,8 @@ image {
     margin: 6px;
     padding: 6px;
 }
+#mpris-icon-holder #album-cover {
+}
 /*Animation for replacing album covers*/
 .image-replace-overlay #album-cover{
     opacity: 1;

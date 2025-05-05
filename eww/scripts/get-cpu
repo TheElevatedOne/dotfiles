@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+CPU=$(top -bn1 | grep '%Cpu' | tail -1 | grep -P '(....|...) id,'|awk '{print 100-$8}')
+echo $CPU

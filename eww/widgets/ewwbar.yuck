@@ -1,0 +1,35 @@
+;; ##############
+;; ### Ewwbar ###
+;; ##############
+;;
+;; Description: Eww recreation of my waybar
+
+(defwindow ewwbar
+  :monitor 0
+  :geometry (geometry
+              :x "0px"
+              :y "0px"
+              :width "98%"
+              :height: "10px"
+              :anchor "center top")
+  :stacking "fg"
+  :exclusive false
+  (bar)
+  )
+
+(defwidget bar []
+  (box
+    :class "window"
+    :halign "start"
+    :orientation "h"
+    (eventbox
+      :cursor "pointer"
+      (button
+        :class "appmenu-b"
+        (label
+          :class "appmenu-l"
+          :text "")
+        )
+      )
+    )
+  )

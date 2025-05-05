@@ -1,0 +1,41 @@
+ /*  __  __           _       _              _____           _             */
+ /* |  \/  |         | |     | |            / ____|         | |            */
+ /* | \  / | ___   __| |_   _| | ___  ___  | |     ___ _ __ | |_ ___ _ __  */
+ /* | |\/| |/ _ \ / _` | | | | |/ _ \/ __| | |    / _ \ '_ \| __/ _ \ '__| */
+ /* | |  | | (_) | (_| | |_| | |  __/\__ \ | |___|  __/ | | | ||  __/ |    */
+ /* |_|  |_|\___/ \__,_|\__,_|_|\___||___/  \_____\___|_| |_|\__\___|_|    */
+
+/*####################*/
+/*### Clock & Date ###*/
+/*####################*/
+
+#custom-lp-clock {
+  font-size: 20px;
+  color: @date;
+}
+#clock.date {
+    padding: 0px 5px;
+    color: @text-light;
+    transition: all .3s ease;
+    font-weight: bold;
+    background: @date;
+    font-size: 14px;
+}
+#custom-mp-clock {
+  font-size: 20px;
+  background: @date;
+  color: @time;
+}
+#clock.time {
+    padding: 0px 5px;
+    color: @text-light;
+    transition: all .3s ease;
+    font-weight: bold;
+    background: @time;
+    font-size: 14px;
+}
+#custom-rp-clock {
+  font-size: 20px;
+  color: @time;
+}
+

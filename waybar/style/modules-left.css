@@ -1,0 +1,92 @@
+/*  __  __           _       _             _           __ _   */
+/* |  \/  |         | |     | |           | |         / _| |  */
+/* | \  / | ___   __| |_   _| | ___  ___  | |     ___| |_| |_ */
+/* | |\/| |/ _ \ / _` | | | | |/ _ \/ __| | |    / _ \  _| __|*/
+/* | |  | | (_) | (_| | |_| | |  __/\__ \ | |___|  __/ | | |_ */
+/* |_|  |_|\___/ \__,_|\__,_|_|\___||___/ |______\___|_|  \__|*/
+
+/* ############################# */
+/* ### App Menu & Power Menu ### */
+/* ############################# */
+
+#custom-lp-menu {
+  font-size: 20px;
+  color: @apps;
+}
+#custom-menu{
+    color: @text-light;
+    transition: all .3s ease;
+    background: @apps;
+    padding: 0px 12px 0px 8px;
+    font-size: 18px;
+}
+#custom-rp-menu {
+  font-size: 20px;
+  color: @apps;
+  background: @workspaces-bg;
+}
+
+/*##########################*/
+/*### Workspace  & Window###*/
+/*##########################*/
+
+#custom-lp-workspaces {
+  margin-left: 0px;
+  color: @workspaces-bg;
+  font-size: 20px;
+}
+#workspaces {
+  background: @workspaces-bg;
+  padding-right: 2px;
+}
+#workspaces button {
+    all:unset;
+    font-size: 13px;
+    padding: 0px 6px;
+    color: alpha(@workspaces, 0.7);
+    transition: all .2s ease;
+}
+#workspaces button:hover {
+    color: alpha(@workspaces, 0.2);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
+}
+#workspaces button.active {
+    color: @workspaces;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#workspaces button.empty {
+    color: alpha(@workspaces, 0.4);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
+}
+#workspaces button.empty:hover {
+    color: alpha(@workspaces, 0.2);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
+}
+#workspaces button.empty.active {
+    color: @workspaces;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#custom-rp-workspaces {
+  color: @workspaces-bg;
+  font-size: 20px;
+  background: @window;
+}
+#window {
+  color: white;
+  background: @window;
+  padding: 0px 5px 0px 7px;
+  font-size: 15px;
+  font-weight: bold;
+}
+#custom-rp-window {
+  color: @window;
+  font-size: 20px;
+}
+

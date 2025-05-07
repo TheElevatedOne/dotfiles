@@ -7,8 +7,8 @@
       "right": 2
     },
     "width": 50,
-    "type": "file",
-    "source": "~/.config/fastfetch/logo/end-ascii-art.txt"
+    "type": "kitty",
+    "source": "~/.config/fastfetch/logo/logo.png"
   },
   "display": {
     "separator": "  "
@@ -23,7 +23,7 @@
     {
       "type": "os",
       "key": "{#separator}│  {#38;2;244;108;107}󰍹 OS",
-      "format": "{pretty-name} {arch} {#white}({id-like}){#}"
+      "format": "{pretty-name} {#white}({id-like}){#}"
     },
     {
       "type": "kernel",
@@ -87,7 +87,7 @@
     {
       "type": "cpu",
       "key": "{#separator}│  {#38;2;108;107;244}󰻠 CPU",
-      "format": "{name}{#} [{#light_red}{cores-physical}{#}/{#bright_red}{cores-logical}{#}] {#white}@ {freq-max}"
+      "format": "{name}{#}"
     },
     {
       "type": "gpu",
@@ -105,7 +105,7 @@
     {
       "type": "disk",
       "key": "{#separator}│  {#38;2;108;107;244}󰋊 Partition",
-      "format": "{size-used} {#bright_white}/ {size-total}{#reset_} [{#light_red}{name}{#reset_} | {#light_green}{filesystem}{#reset_}] ({size-percentage})"
+      "format": "[{#light_red}{name}{#reset_} | {#light_green}{filesystem}{#reset_}] {size-used} {#bright_white}/ {size-total}{#reset_}"
     },
     {
       "type": "custom",

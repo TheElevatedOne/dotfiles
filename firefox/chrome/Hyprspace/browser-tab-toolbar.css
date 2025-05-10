@@ -1,0 +1,109 @@
+/* _______       ____   _____
+  |__   __|/\   |  _ \ / ____|
+     | |  /  \  | |_) | (___
+     | | / /\ \ |  _ < \___ \
+     | |/ ____ \| |_) |____) |
+     |_/_/    \_|____/|_____/  */
+
+/* Bar Container */
+.browser-toolbox-background .toolbar-items { 
+  margin-left: -3px !important;
+  background-color: hsl(from rgb(var(--color2)) h s calc(l - 10));
+}
+
+/* Tab Title Text */
+.tab-text:is([selected]) {
+  color: rgb(var(--cursor)) !important;
+  font-weight: 1000;
+  transition: ease 0.3s !important;
+  margin-bottom: 2px !important;
+}
+.tab-text:not([selected]) {
+  color: hsl(from rgb(var(--cursor)) h s calc(l / 1.2)) !important;
+  font-weight: 600;
+  transition: ease 0.3s !important;
+}
+
+/* Tab Icon */
+/*  Pinned  */
+.tabbrowser-tab:is([pinned]):not([selected]) .tab-icon-image {
+  width: 18px !important;
+  height: 18px !important;
+  background-color: rgba(var(--background), 0.3) !important;
+  padding: 5px !important;
+  margin: 0px -4px 0px -4px !important;
+  border-radius: 100px !important;
+  transition: ease 0.3s !important;
+}
+.tabbrowser-tab:is([pinned]):is([selected]) .tab-icon-image {
+  width: 18px !important;
+  height: 18px !important;
+  background-color: rgba(var(--background), 0.8) !important;
+  padding: 5px !important;
+  margin: 0px -4px 2px -4px !important;
+  border-radius: 100px !important;
+  transition: ease 0.3s !important;
+}
+
+/*  Normal  */
+.tabbrowser-tab:not([pinned]):not([selected]) .tab-icon-image {
+  width: 18px !important;
+  height: 18px !important;
+  background-color: rgba(var(--background), 0.3) !important;
+  padding: 5px !important;
+  margin: 0px 4px 0px -2px !important;
+  border-radius: 100px !important;
+  transition: ease 0.3s !important;
+}
+.tabbrowser-tab:not([pinned]):is([selected]) .tab-icon-image {
+  width: 18px !important;
+  height: 18px !important;
+  background-color: rgba(var(--background), 0.8) !important;
+  padding: 5px !important;
+  margin: 0px 4px 3px -2px !important;
+  border-radius: 100px !important;
+  transition: ease 0.3s !important;
+}
+
+/* Pinned Tabs */
+.tabbrowser-tab:is([pinned]) .tab-background:is([selected]) {
+  background-color: hsl(from rgb(var(--color1)) h s calc(l + 7)) !important;
+  border-bottom: 3px solid hsl(from rgb(var(--color1)) h s calc(l + 60)) !important;
+  transition: ease 0.2s !important;
+}
+.tabbrowser-tab:is([pinned]) .tab-background:not([selected]) {
+  background-color: hsl(from rgb(var(--color1)) h s calc(l + 7)) !important;
+  transition: ease 0.2s !important;
+}
+
+/* Normal Tabs */
+.tabbrowser-tab:not([pinned]) .tab-background:is([selected]) {
+  background-color: rgba(var(--color1), 0.7) !important;
+  border-bottom: 3px solid hsl(from rgb(var(--color1)) h s calc(l + 50)) !important;
+  transition: ease 0.2s !important;
+}
+.tabbrowser-tab:not([pinned]) .tab-background:not([selected]) {
+  background-color: rgba(var(--color1), 0.7) !important;
+  border: none;
+  transition: ease 0.2s !important;
+}
+
+tab.tabbrowser-tab:nth-last-of-type(1) {
+  margin-right: 3px !important;
+}
+
+/* New Tab Button */
+hbox#tabbrowser-arrowscrollbox-periphery, toolbarbutton#new-tab-button {
+  margin: 3px 3px 3px auto !important;
+  background-color: hsl(from rgb(var(--color1)) h s calc(l + 7)) !important;
+  border-radius: 5px !important;
+  border-bottom: 3px solid hsl(from rgb(var(--color1)) h s calc(l + 50)) !important;
+  & image.toolbarbutton-icon {
+    color: rgb(var(--cursor)) !important;
+  }
+}
+
+toolbarbutton#scrollbutton-down, toolbarbutton#scrollbutton-up {
+  background-color: rgba(var(--color1), 0.5) !important;
+  padding: 0px 5px !important;
+}

@@ -1,0 +1,136 @@
+/* _   _     __      ______          _____
+  | \ | |   /\ \    / |  _ \   /\   |  __ \
+  |  \| |  /  \ \  / /| |_) | /  \  | |__) |
+  | . ` | / /\ \ \/ / |  _ < / /\ \ |  _  /
+  | |\  |/ ____ \  /  | |_) / ____ \| | \ \
+  |_| \_/_/    \_\/   |____/_/    \_|_|  \_\ */
+
+/* Bar Container */
+.browser-toolbox-background #nav-bar-customization-target, .browser-toolbox-background #PanelUI-button {
+  background-color: hsl(from rgb(var(--color2)) h s calc(l - 5));
+  padding-bottom: 2px !important;
+}
+
+/* Back Next Buttons */
+toolbarbutton#back-button:is([disabled]), toolbarbutton#forward-button:is([disabled]) {
+  background-color: hsl(from rgb(var(--color6)) h calc(s + 40) calc(l + 50)) !important;
+  color: rgb(var(--background)) !important;
+  transition: ease 0.3s !important;
+}
+toolbarbutton#back-button:not([disabled]), toolbarbutton#forward-button:not([disabled]) {
+  /*box-shadow: 0px 0px 0px 1.5px rgba(var(--color14), 0.7) inset;*/
+  background-color: hsl(from rgba(var(--color1), 0.7) h s calc(l - 20)) !important;
+  transition: ease 0.3s !important;
+}
+toolbarbutton#back-button {
+  padding-left: 4px !important;
+  margin: 4px 0px 4px 6px !important;
+  border-radius: 5px 0px 0px 5px;
+}
+toolbarbutton#forward-button {
+  margin: 4px 6px 4px 0px !important;
+  border-radius: 0px 5px 5px 0px;
+}
+
+/* Reload */
+toolbarbutton#reload-button:is([disabled]) {
+  background-color: rgba(var(--color1)) !important;
+  margin: 4px !important;
+}
+toolbarbutton#reload-button:not([disabled]) {
+  background-color: hsl(from rgba(var(--color1), 0.7) h s calc(l - 10)) !important;
+  margin: 4px 2px 4px 0px !important;
+  padding-left: 1px !important;
+  padding-right: 1px !important;
+  border-radius: 5px !important;
+}
+
+/* Identity Box (Next to the shield icon) */
+.browser-toolbox-background #identity-box {
+  /* background-color: rgba(var(--color2), 0.5);
+  border-radius: 5px;
+  padding: 0px 2px 0px 2px !important;*/
+  display: none !important;
+}
+
+/* Search Bar */
+#urlbar-container {
+  background: transparent !important;
+}
+.urlbar-input-box {
+  margin-left: 8px;
+  margin-right: 8px;
+  color: white !important;
+}
+.urlbar-input-container, .urlbarView {
+  background-color: hsl(from rgb(var(--color2)) h s calc(l - 20)) !important;
+}
+.urlbarView {
+  border-inline: none !important;
+  margin-inline: 0px !important;
+  padding-inline: 10px !important;
+  width: auto !important;
+  border: 2px solid rgba(var(--color12), 1) !important;
+}
+.urlbarView-row {
+  border: 2px solid rgba(var(--color12), 0.5) !important;
+  border-radius: 10px !important;
+  margin: 5px !important;
+  padding: 3px !important;
+}
+.urlbarView-row:is([label="Recent Searches"]), .urlbarView-row:is([label="Firefox Suggest"])  {
+  margin-top: 20px !important;
+}
+.urlbarView-url {
+  color: hsl(from rgb(var(--color6)) h s calc(l + 10)) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  margin-left: 0px !important;
+}
+.urlbarView-title {
+  color: rgb(var(--cursor)) !important;
+  font-weight: 1000 !important;
+  font-size: 16px !important;
+}
+.search-one-offs {
+  padding-left: 20px !important;
+  justify-content: center !important;
+}
+
+/* Search Shield */
+box#tracking-protection-icon-container {
+  padding: 0px 7px 0px 7px !important;
+  margin-right: 2px !important;
+  background: rgba(var(--color4), 0.5) !important;
+  transition: 0.3s ease;
+}
+box#tracking-protection-icon-container:hover {
+  padding: 0px 7px 0px 7px !important;
+  margin-right: 2px !important;
+  background: rgba(var(--color4), 1) !important;
+}
+
+/* Ext & User Buttons */
+#downloads-button,
+#fxa-toolbar-menu-button,
+#simple-tab-groups_drive4ik-browser-action,
+#unified-extensions-button,
+#ublock0_raymondhill_net-browser-action,
+#addon_darkreader_org-browser-action,
+#logins-button,
+#_29edd886-c5e0-40d6-a369-31c5b9f4bb4e_-browser-action {
+  background-color: hsl(from rgba(var(--color1), 0.7) h s calc(l - 10)) !important;
+  margin: 4px 0px 4px 0px !important;
+}
+#downloads-button {
+  border-radius: 5px 0px 0px 5px !important;
+}
+#_29edd886-c5e0-40d6-a369-31c5b9f4bb4e_-browser-action {
+  border-radius: 0px 5px 5px 0px !important;
+}
+
+/* Hamburger Menu */
+toolbarbutton#PanelUI-menu-button {
+  margin-left: 3px !important;
+}
+

@@ -1,4 +1,8 @@
+/* Hellwal Colors Symlink */
 @import url("./Hyprspace/colors-rgb.css");
+
+@import url("./Hyprspace/browser-tab-toolbar.css"); /* Top Toolbar With Tabs */
+@import url("./Hyprspace/browser-navbar.css"); /* Navigation Bar */
 
 * {
   font-family: "GeistMono Nerd Font";
@@ -11,135 +15,13 @@
 #alltabs-button, 
 #save-to-pocket-button, 
 #customizableui-special-spring1,
-#customizableui-special-spring2{ 
-  display:none;
+#customizableui-special-spring2,
+.urlbarView-favicon,
+.urlbarView-type-icon,
+.urlbarView-tail-prefix,
+#urlbar-anon-search-settings { 
+  display: none !important;
 } 
-
-/* Top Bar */
-.browser-toolbox-background .toolbar-items { 
-  background-color: hsl(from rgb(var(--color2)) h s calc(l - 10));
-}
-
-.tab-text:is([selected]) {
-  color: rgb(var(--cursor)) !important;
-  font-weight: bold;
-}
-.tab-text:not([selected]) {
-  color: hsl(from rgb(var(--cursor)) h s calc(l / 1.2)) !important;
-  transition: ease 0.3s;
-}
-
-/* New Tab Button */
-toolbarbutton#tabs-newtab-button.toolbarbutton-1 {
-}
-
-/* Pinned Tabs */
-.tabbrowser-tab:is([pinned]) .tab-background:is([selected]) {
-  background-color: hsl(from rgb(var(--color1)) h s calc(l + 7)) !important;
-  border-bottom: 3px solid hsl(from rgb(var(--color1)) h s calc(l + 60)) !important;
-}
-.tabbrowser-tab:is([pinned]) .tab-background:not([selected]) {
-  background-color: hsl(from rgb(var(--color1)) h s calc(l + 7)) !important;
-}
-
-/* Normal Tabs */
-.tabbrowser-tab:not([pinned]) .tab-background:is([selected]) {
-  background-color: rgba(var(--color1), 0.7) !important;
-  border-bottom: 3px solid hsl(from rgb(var(--color1)) h s calc(l + 50)) !important;
-}
-.tabbrowser-tab:not([pinned]) .tab-background:not([selected]) {
-  background-color: rgba(var(--color1), 0.7) !important;
-  border: none;
-}
-
-/* Middle Bar */
-.browser-toolbox-background #nav-bar-customization-target, .browser-toolbox-background #PanelUI-button {
-  background-color: hsl(from rgb(var(--color2)) h s calc(l - 5));
-}
-
-/* Back Forw Buttons */
-toolbarbutton#back-button:is([disabled]), toolbarbutton#forward-button:is([disabled]) {
-  background-color: rgb(var(--color1)) !important;
-}
-toolbarbutton#back-button:not([disabled]), toolbarbutton#forward-button:not([disabled]) {
-  /*box-shadow: 0px 0px 0px 1.5px rgba(var(--color14), 0.7) inset;*/
-  background-color: rgba(var(--color1), 0.7) !important;
-}
-toolbarbutton#back-button {
-  padding-left: 4px !important;
-  margin: 4px 0px 4px 6px !important;
-  border-radius: 5px 0px 0px 5px;
-}
-toolbarbutton#forward-button {
-  margin: 4px 6px 4px 0px !important;
-  border-radius: 0px 5px 5px 0px;
-}
-
-/* Reload */
-toolbarbutton#reload-button:is([disabled]) {
-  background-color: rgba(var(--color1)) !important;
-  margin: 4px !important;
-}
-toolbarbutton#reload-button:not([disabled]) {
-  background-color: rgba(var(--color1), 0.5) !important;
-  margin: 4px 2px 4px 0px !important;
-  padding-left: 1px !important;
-  padding-right: 1px !important;
-  border-radius: 5px !important;
-}
-
-/* Identity Box (Next to the shield icon) */
-.browser-toolbox-background #identity-box {
-  background-color: rgba(var(--color2), 0.5);
-  border-radius: 5px;
-  padding: 0px 2px 0px 2px !important;
-}
-
-/* Search Bar Text */
-.urlbar-input-box {
-  margin-left: 8px;
-  margin-right: 8px;
-}
-.urlbar-input-container, .urlbarView {
-  background-color: hsl(from rgb(var(--color2)) h s calc(l - 15)) !important;
-}
-
-/* Search Shield */
-box#tracking-protection-icon-container {
-  padding: 0px 7px 0px 7px !important;
-  margin-right: 2px !important;
-  background: rgba(var(--color4), 0.5) !important;
-  transition: 0.3s ease;
-}
-box#tracking-protection-icon-container:hover {
-  padding: 0px 7px 0px 7px !important;
-  margin-right: 2px !important;
-  background: rgba(var(--color4), 1) !important;
-}
-
-/* Ext & User Buttons */
-#downloads-button,
-#fxa-toolbar-menu-button,
-#simple-tab-groups_drive4ik-browser-action,
-#unified-extensions-button,
-#ublock0_raymondhill_net-browser-action,
-#addon_darkreader_org-browser-action,
-#logins-button,
-#_29edd886-c5e0-40d6-a369-31c5b9f4bb4e_-browser-action {
-  background-color: rgba(var(--color1), 0.5) !important;
-  margin: 4px 0px 4px 0px !important;
-}
-#downloads-button {
-  border-radius: 5px 0px 0px 5px !important;
-}
-#_29edd886-c5e0-40d6-a369-31c5b9f4bb4e_-browser-action {
-  border-radius: 0px 5px 5px 0px !important;
-}
-
-/* Hamburger Menu */
-toolbarbutton#PanelUI-menu-button {
-  margin-left: 3px !important;
-}
 
 /* Bookmarks Toolbar */
 toolbar#PersonalToolbar {

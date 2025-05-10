@@ -1,4 +1,4 @@
-@import '~/.cache/hellwal/waybar-colors.css';
+@import '/tmp/user-hellwal/waybar-colors.css';
 
 @define-color cc-bg rgba(46, 46, 46, 0.7);
 @define-color noti-border-color rgba(255, 255, 255, 0.15);
@@ -262,14 +262,16 @@
 
 .control-center {
   /* The Control Center which contains the old notifications + widgets */
-  background: @cc-bg;
-  color: @text-color;
-  border-radius: 12px;
+  background: alpha(@color1, 0.8);
+  color: @cursor;
+  margin: 7px 22px 500px 0px;
+  border-radius: 15px;
+  border: 5px solid @color2;
 }
 
 .control-center .control-center-list-placeholder {
   /* The placeholder when there are no notifications */
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .control-center .control-center-list {

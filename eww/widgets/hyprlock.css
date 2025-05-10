@@ -6,7 +6,7 @@
                 until hyprlock triggers. */
 
 .hyprlock {
-  background-color: alpha(@background, 0.7);
+  background-color: darker(alpha(@color1, 0.7));
   font-size: 50px;
   font-family: "GeistMono Nerd Font";
   border-radius: 15px;

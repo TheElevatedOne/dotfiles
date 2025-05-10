@@ -1,6 +1,6 @@
 (defwindow musepaper
   :monitor 0
-  :geometry (geometry :x "10px"
+  :geometry (geometry :x "20px"
                       :y "7px"
                       :width "40%"
                       :height "30%"

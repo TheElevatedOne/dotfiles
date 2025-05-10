@@ -121,6 +121,7 @@
   }
 }
 
+/* New Tab */
 @-moz-document url-prefix("about:newtab") {
   html, body {
     background: var(--wallpaper) !important;
@@ -145,18 +146,21 @@
     padding: 0px !important;
     margin: 0px !important;
   }
-  div.icon-pin-small {
+  div.icon-pin-small, div.wallpapers-section, div.wallpapers-section + span.divider {
     display: none !important;
   }
   div.tile {
     background: rgba(var(--color10), 0.5) !important;
+  }
+  div.icon-wrapper {
+    background: transparent !important;
   }
   div.logo {
     background-image: url('./Hyprspace/icons/firefox-icon.svg') !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-position: center !important;
-    padding: 35px !important;
+    padding: 45px !important;
   }
   div.wordmark {
     background: rgb(var(--cursor)) !important;
@@ -164,6 +168,48 @@
     mask-repeat: no-repeat !important;
     mask-size: contain !important;
     mask-position: center !important;
-    padding: 0px 70px 0px 70px !important;
+    padding: 0px 100px 0px 100px !important;
+  }
+  li.top-site-outer {
+    margin: -5px !important;
+  }
+  a.top-site-button {
+    margin: -5px !important;
+    padding: -10px !important;
+  }
+  button.context-menu-button {
+    margin-right: 3px;
+    margin-top: 27px;
+    opacity: 0.1;
+  }
+  span.context-menu {
+    background: hsl(from rgb(var(--color2)) h s calc(l / 2));
+  }
+  div.customize-menu {
+    background: rgba(var(--color2), 0.3) !important;
+    backdrop-filter: blur(5px) brightness(35%) !important;
+    -webkit-backdrop-filter: blur(5px) brightness(35%) !important;
+    height: 300px !important;
+    overflow: hidden !important;
+    margin-top: auto !important;
+    border-radius: 25px 0px 0px 0px !important;
+  }
+  select#row-selector {
+    background-color: hsl(from rgba(var(--color5), 0.5) h calc(s + 40) l) !important;
+    border: 1px solid rgb(var(--color14));
+  }
+  option:is([data-l10n-id="newtab-custom-row-selector"]) {
+    background-color: hsl(from rgba(var(--color5), 0.5) h calc(s + 40) l) !important;
+  }
+  button.close-button {
+    position: absolute !important;
+    top: 240px !important;
+    left: 330px
+  }
+  div.close-button-wrapper {
+    background: transparent !important;
+  }
+  button.personalize-button {
+    margin-top: 0px !important;
   }
 }

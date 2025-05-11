@@ -156,6 +156,7 @@
     background: transparent !important;
   }
   div.logo {
+    background: transparent !important;
     background-image: url('./Hyprspace/icons/firefox-icon.svg') !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;

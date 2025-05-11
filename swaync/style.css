@@ -1,5 +1,11 @@
 @import '/tmp/user-hellwal/waybar-colors.css';
 
+@define-color main-bg alpha(mix(@color1, #000, 0.2), 0.8);
+@define-color main-border @color2;
+@define-color notif-bg darker(@color4);
+
+@define-color hover rgba(0, 0, 0, 0.2);
+
 @define-color cc-bg rgba(46, 46, 46, 0.7);
 @define-color noti-border-color rgba(255, 255, 255, 0.15);
 @define-color noti-bg rgba(48, 48, 48, 0.8);
@@ -13,27 +19,74 @@
 @define-color text-color rgb(255, 255, 255);
 @define-color text-color-disabled rgb(150, 150, 150);
 @define-color bg-selected rgb(0, 128, 255);
+
+* {
+  font-family: "GeistMono Nerd Font Propo";
+}
+
+.control-center {
+  /* The Control Center which contains the old notifications + widgets */
+  background: @main-bg;
+  color: @cursor;
+  margin: 7px 22px 200px 0px;
+  border-radius: 15px;
+  border: 5px solid @main-border;
+}
+.control-center .control-center-list-placeholder {
+  /* The placeholder when there are no notifications */
+  opacity: 0.8;
+}
+.control-center .control-center-list {
+  /* List of notifications */
+  background: transparent;
+}
+.control-center .control-center-list .notification {
+  box-shadow: none;
+}
+.control-center .control-center-list .notification .notification-default-action,
+.control-center .control-center-list .notification .notification-action {
+  transition: opacity 400ms ease-in-out, background 0.15s ease-in-out;
+}
+.control-center .control-center-list .notification .notification-default-action:hover,
+.control-center .control-center-list .notification .notification-action:hover {
+  background-color: @noti-bg-hover;
+}
+
+.blank-window {
+  /* Window behind control center and on all other monitors */
+  background: transparent;
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+.floating-notifications .notification {
+  box-shadow: none;
+}
+
 .notification-row {
   outline: none;
+  background: transparent;
 }
 
 .notification-row:focus, .notification-row:hover {
-  background: @noti-bg-focus;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .notification-row .notification-background {
-  padding: 6px 12px;
+  padding: 4px 16px 4px 16px;
 }
 
 .notification-row .notification-background .close-button {
   /* The notification Close Button */
-  background: @noti-close-bg;
-  color: @text-color;
+  background: @color6;
+  color: @cursor;
   text-shadow: none;
-  padding: 0;
-  border-radius: 100%;
-  margin-top: 5px;
-  margin-right: 5px;
+  padding: 0px;
+  border-radius: 6px;
+  margin-top: 4px;
+  margin-right: 4px;
   box-shadow: none;
   border: none;
   min-width: 24px;
@@ -42,7 +95,7 @@
 
 .notification-row .notification-background .close-button:hover {
   box-shadow: none;
-  background: @noti-close-bg-hover;
+  background: darker(@color6);
   transition: background 0.15s ease-in-out;
   border: none;
 }
@@ -50,26 +103,31 @@
 .notification-row .notification-background .notification {
   /* The actual notification */
   border-radius: 12px;
-  border: 1px solid @noti-border-color;
-  padding: 0;
+  border: none;
+  border-bottom: 4px solid @color7;
+  padding: 4px 4px 4px 4px;
   transition: background 0.15s ease-in-out;
-  background: @noti-bg;
+  background: @notif-bg;
 }
 
 .notification-row .notification-background .notification.low {
   /* Low Priority Notification */
+  background: @notif-bg;
+  border-bottom: 4px solid mix(@color7, #F00, 0.3);
 }
-
 .notification-row .notification-background .notification.normal {
   /* Normal Priority Notification */
+  background: @notif-bg;
+  border-bottom: 4px solid mix(@color7, #F00, 0.6);
 }
-
 .notification-row .notification-background .notification.critical {
   /* Critical Priority Notification */
+  background: @notif-bg;
+  border-bottom: 4px solid mix(@color7, #F00, 0.9);
 }
 
 .notification-row .notification-background .notification .notification-action, .notification-row .notification-background .notification .notification-default-action {
-  padding: 4px;
+  padding: 0px;
   margin: 0;
   box-shadow: none;
   background: transparent;
@@ -80,7 +138,7 @@
 
 .notification-row .notification-background .notification .notification-action:hover, .notification-row .notification-background .notification .notification-default-action:hover {
   -gtk-icon-effect: none;
-  background: @noti-bg-hover;
+  background: mix(@hover, @notif-bg, 0.9);
 }
 
 .notification-row .notification-background .notification .notification-default-action {
@@ -243,7 +301,7 @@
 }
 
 .notification-group.collapsed .notification-row .notification {
-  background-color: @noti-bg-opaque;
+  background-color: @notif-bg;
 }
 
 .notification-group.collapsed .notification-row:not(:last-child) {
@@ -257,98 +315,60 @@
 }
 
 .notification-group.collapsed:hover .notification-row:not(:only-child) .notification {
-  background-color: @noti-bg-hover-opaque;
-}
-
-.control-center {
-  /* The Control Center which contains the old notifications + widgets */
-  background: alpha(@color1, 0.8);
-  color: @cursor;
-  margin: 7px 22px 500px 0px;
-  border-radius: 15px;
-  border: 5px solid @color2;
-}
-
-.control-center .control-center-list-placeholder {
-  /* The placeholder when there are no notifications */
-  opacity: 0.8;
-}
-
-.control-center .control-center-list {
-  /* List of notifications */
-  background: transparent;
-}
-
-.control-center .control-center-list .notification {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7), 0 2px 6px 2px rgba(0, 0, 0, 0.3);
-}
-
-.control-center .control-center-list .notification .notification-default-action,
-.control-center .control-center-list .notification .notification-action {
-  transition: opacity 400ms ease-in-out, background 0.15s ease-in-out;
-}
-
-.control-center .control-center-list .notification .notification-default-action:hover,
-.control-center .control-center-list .notification .notification-action:hover {
-  background-color: @noti-bg-hover;
-}
-
-.blank-window {
-  /* Window behind control center and on all other monitors */
-  background: transparent;
-}
-
-.floating-notifications {
-  background: transparent;
-}
-
-.floating-notifications .notification {
-  box-shadow: none;
+  background-color: mix(@hover, @notif-bg, 0.9);
 }
 
 /*** Widgets ***/
 /* Title widget */
 .widget-title {
-  color: @text-color;
+  color: @cursor;
   margin: 8px;
   font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 8px;
+  border-bottom: 3px solid darker(darker(@color1));
 }
 
 .widget-title > button {
   font-size: initial;
-  color: @text-color;
+  color: @cursor;
   text-shadow: none;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background: darker(@color4);
+  border: none;
+  border-bottom: 3px solid @color7;
+  padding: 6px 8px;
   box-shadow: none;
-  border-radius: 12px;
+  border-radius: 6px;
 }
 
 .widget-title > button:hover {
-  background: @noti-bg-hover;
+  background: darker(darker(@color4));
 }
 
 /* DND widget */
 .widget-dnd {
-  color: @text-color;
-  margin: 8px;
-  font-size: 1.1rem;
+  color: @cursor;
+  margin: 0px 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .widget-dnd > switch {
   font-size: initial;
-  border-radius: 12px;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  border-radius: 100px;
+  background: darker(@color4);
+  border: 3px solid @color3;
   box-shadow: none;
+  transition: 0.3s ease;
+  color: @color5;
 }
 
 .widget-dnd > switch:checked {
-  background: @bg-selected;
+  background: @color14;
 }
 
 .widget-dnd > switch slider {
-  background: @noti-bg-hover;
+  background: @color8;
   border-radius: 12px;
 }
 
@@ -356,58 +376,55 @@
 .widget-label {
   margin: 8px;
 }
-
 .widget-label > label {
   font-size: 1.1rem;
 }
 
 /* Mpris widget */
-@define-color mpris-album-art-overlay rgba(0, 0, 0, 0.55);
-@define-color mpris-button-hover rgba(0, 0, 0, 0.50);
 .widget-mpris {
+  margin: 5px 0px -25px 0px;
+  transition: 0.3s ease;
   /* The parent to all players */
 }
-
 .widget-mpris .widget-mpris-player {
-  padding: 8px;
   padding: 16px;
   margin: 16px 20px;
-  background-color: @mpris-album-art-overlay;
+  background-color: mix(@color10, #000, 0.4);
   border-radius: 12px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  border-bottom: 4px solid @color7;
 }
-
 .widget-mpris .widget-mpris-player button:hover {
   /* The media player buttons (play, pause, next, etc...) */
-  background: @noti-bg-hover;
+  background: darker(@color9);
 }
-
 .widget-mpris .widget-mpris-player .widget-mpris-album-art {
   border-radius: 12px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 }
-
 .widget-mpris .widget-mpris-player .widget-mpris-title {
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
-
 .widget-mpris .widget-mpris-player .widget-mpris-subtitle {
   font-size: 1.1rem;
 }
-
 .widget-mpris .widget-mpris-player > box > button {
   /* Change player control buttons */
+  border-radius: 12px;
+  transition: 0.3s ease;
+  border: none;
+  padding-bottom: 4px;
 }
-
 .widget-mpris .widget-mpris-player > box > button:hover {
-  background-color: @mpris-button-hover;
+  background-color: darker(@color9);
+  border-radius: 6px;
+  border-bottom: 3px solid @color7;
+  margin-bottom: -2px;
 }
-
 .widget-mpris > box > button {
   /* Change player side buttons */
 }
-
 .widget-mpris > box > button:disabled {
   /* Change player side buttons insensitive */
 }

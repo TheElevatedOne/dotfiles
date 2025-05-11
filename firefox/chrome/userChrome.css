@@ -8,6 +8,10 @@
   font-family: "GeistMono Nerd Font";
 }
 
+html#main-window {
+  background: transparent;
+}
+
 /* Hiding Shit */
 .titlebar-buttonbox-container,
 .titlebar-spacer, #firefox-view-button,

@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+#COLORS
+C_RESET="\e[0m"
+L_BLUE="\e[38;2;81;194;255m"
+L_RED="\e[38;2;245;105;105m"
+L_YEL="\e[38;2;255;194;70m"
+
+UN=$(grep timeout ~/.config/hypr/hypridle.conf | awk '{print $3}' | sed '3q;d')
+GET=$(grep timeout ~/.config/hypr/hypridle.conf | awk '{print $3}' | sed '5q;d')
+
+minutes() {
+  local MIN=$(date --date="@$1" +"%-M")
+  echo $MIN
+}
+
+TIMEOUT=(
+  "300"
+  "600"
+  "900"
+  "1200"
+  "1800"
+)
+
+case $1 in
+
+get)
+  RET=$(minutes $GET)
+  echo "$RET"
+  ;;
+
+set)
+  RET="$(minutes $2)"
+  TM=$(echo "$2 30" | awk '{print $1 - $2}')
+
+  sed -i "s/timeout\ =\ $UN/timeout\ =\ $TM/g" ~/.config/hypr/hypridle.conf
+  sed -i "s/timeout\ =\ $GET/timeout\ =\ $2/g" ~/.config/hypr/hypridle.conf
+  ;;
+
+toggle)
+  for i in "${!TIMEOUT[@]}"; do
+    if [[ "${TIMEOUT[$i]}" = "$GET" ]]; then
+      INDEX=$i
+      break
+    fi
+  done
+
+  if [[ "$INDEX" -eq "4" ]]; then
+    INDEX=0
+  elif [[ "$INDEX" -lt "5" ]]; then
+    INDEX=$((INDEX += 1))
+  else
+    INDEX=0
+  fi
+
+  TM=$(echo "${TIMEOUT[$INDEX]} 30" | awk '{print $1 - $2}')
+  RET=$(minutes ${TIMEOUT[$INDEX]})
+
+  sed -i "s/timeout\ =\ $UN/timeout\ =\ $TM/g" ~/.config/hypr/hypridle.conf
+  sed -i "s/timeout\ =\ $GET/timeout\ =\ ${TIMEOUT[$INDEX]}/g" ~/.config/hypr/hypridle.conf
+
+  echo "$RET"
+  pkill -f hypridle
+  ;;
+
+*)
+  printf "> \e[38;2;81;194;255mhypridle-timeout\e[0m \e[38;2;245;105;105m[-h/--help]\e[0m \e[38;2;255;194;70m[set SECONDS]\e[0m \e[38;2;255;194;70m[get]\e[0m \e[38;2;255;194;70m[toggle]\e[0m\n"
+  printf "  ---------------------------------------------------------\n"
+  printf "  \e[38;2;245;105;105m-h / --help\e[0m -> Show Help\n"
+  printf "  \e[38;2;255;194;70mset SECONDS\e[0m -> Set hyprlock timeout to specific seconds\n"
+  printf "          \e[38;2;255;194;70mget\e[0m -> Get timeout in minutes\n"
+  printf "       \e[38;2;255;194;70mtoggle\e[0m -> Toggle between built-in timeouts\n"
+  printf "  ---------------------------------------------------------\n"
+  printf "  built-in timeouts: 300s [5min]\n"
+  printf "                     600s [10min]\n"
+  printf "                     900s [15min]\n"
+  printf "                    1200s [20min]\n"
+  printf "                    1800s [30min]\n"
+  printf "  ---------------------------------------------------------\n"
+  ;;
+esac

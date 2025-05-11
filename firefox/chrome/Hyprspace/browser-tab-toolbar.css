@@ -9,6 +9,7 @@
 .browser-toolbox-background .toolbar-items { 
   margin-left: -3px !important;
   background-color: hsl(from rgb(var(--color2)) h s calc(l - 10));
+  padding-bottom: 1px !important;
 }
 
 /* Tab Title Text */
@@ -22,6 +23,25 @@
   color: hsl(from rgb(var(--cursor)) h s calc(l / 1.2)) !important;
   font-weight: 600;
   transition: ease 0.3s !important;
+}
+
+/* Activity Icon */
+/*  Pinned  */
+.tabbrowser-tab:is([pinned]) image.tab-icon-overlay {
+  margin: 5px 0px 0px 3px !important;
+}
+.tabbrowser-tab:not([pinned]) moz-button.tab-audio-button {
+  margin: 0px 0px 18px -20px !important;
+}
+button:is([aria-label="Mute tab"]), button:is([aria-label="Unmute tab"]) {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  border-radius: 100% !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+span:is([class=" button-background "]) {
+  padding: 0px !important;
+  margin: -1.5px 0px 0px -1.5px !important;
 }
 
 /* Tab Icon */
@@ -44,7 +64,6 @@
   border-radius: 100px !important;
   transition: ease 0.3s !important;
 }
-
 /*  Normal  */
 .tabbrowser-tab:not([pinned]):not([selected]) .tab-icon-image {
   width: 18px !important;
@@ -75,7 +94,6 @@
   background-color: hsl(from rgb(var(--color1)) h s calc(l + 7)) !important;
   transition: ease 0.2s !important;
 }
-
 /* Normal Tabs */
 .tabbrowser-tab:not([pinned]) .tab-background:is([selected]) {
   background-color: rgba(var(--color1), 0.7) !important;

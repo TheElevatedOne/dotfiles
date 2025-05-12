@@ -2,6 +2,17 @@
 
 ---
 
+## Previews
+<details>
+  <summary>Waybar, Cava, Waypaper, Eww (Desktop)</summary>
+  </br>
+  
+  https://github.com/user-attachments/assets/731ac888-8ade-4fe9-aca9-26ee6888408f
+  
+</details>
+
+---
+
 ## TODO
 
 - [x] Waybar (Gonna add a few modules)

@@ -3,11 +3,12 @@
 ---
 
 ## Previews
+
 <details>
   <summary>Waybar, Cava, Waypaper, Eww (Desktop)</summary>
   </br>
   
-  https://github.com/user-attachments/assets/731ac888-8ade-4fe9-aca9-26ee6888408f
+  <https://github.com/user-attachments/assets/731ac888-8ade-4fe9-aca9-26ee6888408f>
   
 </details>
 
@@ -37,3 +38,32 @@
 
 - [ ] Tauon
 - [ ] QBitTorrent
+
+---
+
+## Used Software
+
+- python3.12
+- [btop](https://github.com/aristocratos/btop)
+- [cava](https://github.com/karlstav/cava)
+- [eww](https://github.com/elkowar/eww)
+- [fastfetch](https://github.com/fastfetch-cli/fastfetch)
+- [firefox](https://www.mozilla.org/en-US/firefox)
+- [hellwal](https://github.com/danihek/hellwal)
+- [hyprwm](https://github.com/hyprwm):
+  - [Hyprland](https://github.com/hyprwm/Hyprland)
+  - [hyprpaper](https://github.com/hyprwm/hyprpaper)
+  - [hyprlock](https://github.com/hyprwm/hyprlock)
+  - [hyprsunset](https://github.com/hyprwm/hyprsunset)
+  - [hypridle](https://github.com/hyprwm/hypridle)
+  - [hyprland-plugins](https://github.com/hyprwm/hyprland-plugins):
+    - [hyprwinwrap](https://github.com/hyprwm/hyprland-plugins/tree/main/hyprwinwrap)
+    - [Hyprspace](https://github.com/KZDKM/Hyprspace)
+- [kitty](https://github.com/kovidgoyal/kitty)
+- [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh):
+  - [distrous.omp.json](https://github.com/TheElevatedOne/distrous.omp.json) (My Repo xd) -> Modified
+- [sddm](https://github.com/sddm/sddm)
+- [sherlock](https://github.com/Skxxtz/sherlock)
+- [swaync](https://github.com/ErikReider/SwayNotificationCenter)
+- [waybar](https://github.com/Alexays/Waybar)
+- [waypaper](https://github.com/anufrievroman/waypaper)

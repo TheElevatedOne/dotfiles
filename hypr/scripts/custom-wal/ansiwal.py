@@ -123,7 +123,7 @@ color15-b=c15-b"""
     for k, v in colors.items():
         template = template.replace(k, str(v))
 
-    ret_file = open(op.join(usr_dir, wal_dir, "ansi-colors.sh"), "w")
+    ret_file = open(op.join(usr_dir, wal_dir, "ansi-colors-rgb-separate.sh"), "w")
     ret_file.write(template)
     ret_file.close()
 

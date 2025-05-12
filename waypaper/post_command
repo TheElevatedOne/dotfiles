@@ -2,8 +2,11 @@
 
 echo "$1"
 
-hellwal -i "$1" -m --no-cache
+hellwal -i "$1" -m --no-cache --skip-term-colors
+pkill -f kitty --signal USR1
+/tmp/user-config/hypr/scripts/custom-wal/poshwal
 /tmp/user-config/hypr/scripts/custom-wal/walsktop
 /tmp/user-config/hypr/scripts/custom-wal/walcava
 eww reload
 python3 /tmp/user-config/hypr/scripts/custom-wal/ansiwal.py
+swaync-client -rs

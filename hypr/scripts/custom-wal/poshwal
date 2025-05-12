@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+source /tmp/user-hellwal/ansi-colors-hex.sh
+declare -a TEXT_COLOR
+declare -A DICTIONARY
+
+is_bright() {
+  local RED=${1:1:2}
+  local GREEN=${1:3:2}
+  local BLUE=${1:5:2}
+
+  local RED_I="$((16#$RED))"
+  local GREEN_I="$((16#$GREEN))"
+  local BLUE_I="$((16#$BLUE))"
+
+  local LUM=$(echo "$RED_I $GREEN_I $BLUE_I" | awk '{ print ($1 * 0.299 + $2 * 0.587 + $3 * 0.114)/255 }')
+  local RET=$(echo "$LUM" | awk '{ if ($1 > 0.5) { print 1 } else { print 0 }}')
+  echo "$RET"
+}
+
+main() {
+  TEXT_COLOR=(
+    "#FFFFFF"
+    "#000000"
+  )
+
+  DICTIONARY=(
+    ["icon_bg"]="$COLOR_2"
+    ["icon_fg"]="${TEXT_COLOR[$(is_bright $COLOR_2)]}"
+    ["name_bg"]="$COLOR_4"
+    ["name_fg"]="${TEXT_COLOR[$(is_bright $COLOR_4)]}"
+    ["user_fg"]="$COLOR_5"
+    ["host_fg"]="$COLOR_6"
+    ["dir_fg"]="$CURSOR"
+    ["time_fg"]="$COLOR_15"
+    ["date_fg"]="$COLOR_14"
+  )
+
+  cp -f /tmp/user-config/oh-my-posh/hyprspace-temp.omp.json /tmp/user-config/oh-my-posh/hyprspace.omp.json
+  for i in "${!DICTIONARY[@]}"; do
+    sed -i "s/$i/${DICTIONARY["$i"]}/g" /tmp/user-config/oh-my-posh/hyprspace.omp.json
+  done
+}
+
+main

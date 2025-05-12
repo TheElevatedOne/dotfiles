@@ -151,6 +151,11 @@
   }
   div.tile {
     background: rgba(var(--color10), 0.5) !important;
+    border-bottom: 4px solid rgb(var(--color7)) !important;
+    transition: 0.3s ease
+  }
+  div.tile:hover {
+    border: 0px solid rgb(var(--color7)) !important;
   }
   div.icon-wrapper {
     background: transparent !important;

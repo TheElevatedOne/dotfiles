@@ -6,8 +6,8 @@
 
 /* Left Modules */
 @define-color apps @color10;
-@define-color workspaces-bg lighter(@color6);
-@define-color workspaces @color2;
+@define-color workspaces-bg mix(lighter(@color15), #FFF, 0.2);
+@define-color workspaces darker(@color2);
 @define-color window @color2;
 
 /* Center Modules */

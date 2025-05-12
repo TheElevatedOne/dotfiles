@@ -14,13 +14,13 @@
 
 /* Tab Title Text */
 .tab-text:is([selected]) {
-  color: rgb(var(--cursor)) !important;
+  color: hsl(from rgb(var(--cursor)) h s calc(l * 1.5)) !important;
   font-weight: 1000;
   transition: ease 0.3s !important;
   margin-bottom: 2px !important;
 }
 .tab-text:not([selected]) {
-  color: hsl(from rgb(var(--cursor)) h s calc(l / 1.2)) !important;
+  color: hsl(from rgb(var(--cursor)) h s calc(l * 1.2)) !important;
   font-weight: 600;
   transition: ease 0.3s !important;
 }
@@ -99,29 +99,53 @@ span:is([class=" button-background "]) {
   background-color: rgba(var(--color1), 0.7) !important;
   border-bottom: 3px solid hsl(from rgb(var(--color1)) h s calc(l + 50)) !important;
   transition: ease 0.2s !important;
+  & + .tab-content > image.tab-close-button {
+    margin-bottom: 3px !important;
+  }
 }
 .tabbrowser-tab:not([pinned]) .tab-background:not([selected]) {
   background-color: rgba(var(--color1), 0.7) !important;
   border: none;
   transition: ease 0.2s !important;
+  & + .tab-content > image.tab-close-button {
+    transition: ease 0.2s !important;
+  }
 }
 
 tab.tabbrowser-tab:nth-last-of-type(1) {
   margin-right: 3px !important;
 }
 
+panel#tab-preview-panel > .tab-preview-text-container {
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border-radius: 5px !important;
+  border-bottom: 3px solid rgb(var(--color7)) !important;
+}
+/*panel#tab-preview-panel > .tab-preview-thumbnail-container {
+  box-sizing: border-box !important;
+  border-bottom: 5px solid hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+}*/
+
 /* New Tab Button */
-hbox#tabbrowser-arrowscrollbox-periphery, toolbarbutton#new-tab-button {
-  margin: 3px 3px 3px auto !important;
-  background-color: hsl(from rgb(var(--color1)) h s calc(l + 7)) !important;
+hbox#tabbrowser-arrowscrollbox-periphery, 
+toolbarbutton#new-tab-button {
+  margin: 4px 4px 4px auto !important;
+  background-color: rgb(var(--color1)) !important;
   border-radius: 5px !important;
   border-bottom: 3px solid hsl(from rgb(var(--color1)) h s calc(l + 50)) !important;
+  transition: 0.1s ease !important;
   & image.toolbarbutton-icon {
-    color: rgb(var(--cursor)) !important;
+    color: hsl(from rgb(var(--cursor)) h s calc(l * 1.5)) !important;
   }
+}
+hbox#tabbrowser-arrowscrollbox-periphery:hover, 
+toolbarbutton#new-tab-button:hover {
+  border-bottom: 0px solid hsl(from rgb(var(--color1)) h s calc(l + 50)) !important;
+  padding-bottom: 3px !important;
 }
 
 toolbarbutton#scrollbutton-down, toolbarbutton#scrollbutton-up {
   background-color: rgba(var(--color1), 0.5) !important;
   padding: 0px 5px !important;
+  margin: 0px 0px 0px 0px !important;
 }

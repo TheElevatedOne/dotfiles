@@ -6,24 +6,31 @@
   |_| \_/_/    \_\/   |____/_/    \_|_|  \_\ */
 
 /* Bar Container */
-.browser-toolbox-background #nav-bar-customization-target, .browser-toolbox-background #PanelUI-button {
+.browser-toolbox-background #nav-bar-customization-target, 
+.browser-toolbox-background #PanelUI-button {
   background-color: hsl(from rgb(var(--color2)) h s calc(l - 5));
   padding-bottom: 2px !important;
   margin-top: -1px !important;
 }
 
 /* Back Next Buttons */
-toolbarbutton#back-button:is([disabled]), toolbarbutton#forward-button:is([disabled]) {
+toolbarbutton#back-button:is([disabled]), 
+toolbarbutton#forward-button:is([disabled]) {
   background-color: hsl(from rgb(var(--color6)) h calc(s + 40) calc(l + 50)) !important;
   color: rgb(var(--background)) !important;
   transition: ease 0.3s !important;
 }
-toolbarbutton#back-button:not([disabled]), toolbarbutton#forward-button:not([disabled]) {
+toolbarbutton#back-button:not([disabled]), 
+toolbarbutton#forward-button:not([disabled]) {
   /*box-shadow: 0px 0px 0px 1.5px rgba(var(--color14), 0.7) inset;*/
   background-color: hsl(from rgba(var(--color1), 0.7) h s calc(l - 20)) !important;
-  transition: ease 0.3s !important;
+  transition: ease 0.1s !important;
   box-sizing: border-box !important;
   border-bottom: 2px solid rgb(var(--color7)) !important;
+}
+toolbarbutton#back-button:not([disabled]):hover, 
+toolbarbutton#forward-button:not([disabled]):hover {
+  border-bottom: 0px solid rgb(var(--color7)) !important;
 }
 toolbarbutton#back-button {
   padding-left: 4px !important;
@@ -33,6 +40,12 @@ toolbarbutton#back-button {
 toolbarbutton#forward-button {
   margin: 4px 6px 4px 0px !important;
   border-radius: 0px 5px 5px 0px;
+}
+.menupopup-arrowscrollbox {
+  appearance: none !important;
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border-radius: 10px !important;
+  border-bottom: 3px solid rgb(var(--color7)) !important;
 }
 
 /* Reload */
@@ -51,6 +64,10 @@ toolbarbutton#reload-button:not([disabled]) {
   border-radius: 5px !important;
   box-sizing: border-box !important;
   border-bottom: 2px solid rgb(var(--color7)) !important;
+  transition: 0.1s ease !important;
+}
+toolbarbutton#reload-button:not([disabled]):hover {
+  border-bottom: 0px solid rgb(var(--color7)) !important;
 }
 toolbarbutton#stop-button:not([disabled]) {
   background-color: hsl(from rgba(var(--color8), 0.7) h s calc(l - 10)) !important;
@@ -81,8 +98,12 @@ toolbarbutton#stop-button:not([disabled]) {
   margin-right: 8px;
   color: white !important;
 }
-.urlbar-input-container, .urlbarView {
+.urlbar-input-container {
   background-color: hsl(from rgb(var(--color2)) h s calc(l - 20)) !important;
+}
+.urlbarView {
+  background: linear-gradient(0deg, hsl(from rgb(var(--color2)) h s calc(l - 15)) 0%, hsl(from rgb(var(--color2)) h s calc(l - 20)) 100%) !important;
+  
 }
 .urlbar-input-container {
   padding: 2px !important;
@@ -155,8 +176,57 @@ box#tracking-protection-icon-container:hover {
   margin-right: 2px !important;
   background: rgba(var(--color4), 1) !important;
 }
+panel#protections-popup > * {
+  appearance: none !important;
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border: 10px !important;
+  border-bottom: 3px solid rgb(var(--color7)) !important;
+}
+panel#editBookmarkPanel > * {
+  appearance: none !important;
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border: 5px !important;
+}
+panel#editBookmarkPanel > .panel-header {
+  border-bottom: 3px solid rgba(var(--color7), 0.5) !important;
+}
+panel#editBookmarkPanel > .panel-subview-body {
+  appearance: none !important;
+  border-bottom: 3px solid rgb(var(--color7)) !important;
+  margin-top: -1px !important;
+}
+panel#downloadsPanel > *{
+  appearance: none !important;
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border: 10px !important;
+}
+panelmultiview#downloadsPanel-multiView {
+  border-bottom: 3px solid rgb(var(--color7)) !important;
+}
+panel#unified-extensions-panel {
+  height: 75% !important;
+  & > * {
+    background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  }
+  & > panelmultiview {
+    border-bottom: 3px solid rgb(var(--color7)) !important;
+  }
+}
 
 /* Ext & User Buttons */
+panel#customizationui-widget-panel:is([viewId="PanelUI-fxa"]) > * {
+  appearance: none !important;
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border-bottom: 3px solid rgb(var(--color7)) !important;
+  border-radius: 5px !important;
+}
+panel#customizationui-widget-panel:is([viewId="PanelUI-webext-simple-tab-groups_drive4ik-BAV"]) > * {
+  appearance: none !important;
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border-bottom: 3px solid rgb(var(--color7)) !important;
+  border-radius: 5px !important;
+}
+
 #downloads-button,
 #fxa-toolbar-menu-button,
 #simple-tab-groups_drive4ik-browser-action,
@@ -166,6 +236,7 @@ box#tracking-protection-icon-container:hover {
 #logins-button,
 #_29edd886-c5e0-40d6-a369-31c5b9f4bb4e_-browser-action {
   background-color: hsl(from rgba(var(--color1), 0.7) h s calc(l - 10)) !important;
+  border-bottom: 2px solid rgb(var(--color7)) !important;
   margin: 4px 0px 4px 0px !important;
   transition: 0.1s ease !important;
 }
@@ -183,7 +254,7 @@ box#tracking-protection-icon-container:hover {
 #addon_darkreader_org-browser-action:hover,
 #logins-button:hover,
 #_29edd886-c5e0-40d6-a369-31c5b9f4bb4e_-browser-action:hover {
-  border-bottom: 2px solid rgb(var(--color7)) !important;
+  border-bottom: 0px solid rgb(var(--color7)) !important;
 }
 
 /* Hamburger Menu */
@@ -191,10 +262,12 @@ toolbarbutton#PanelUI-menu-button {
   margin: 4px 5px !important;
   padding: 0px 1px !important;
   border-radius: 4px !important;
+  border-bottom: 2px solid rgb(var(--color7)) !important;
   background-color: hsl(from rgba(var(--color1), 0.7) h s calc(l - 10)) !important;
+  transition: 0.1s ease !important;
 }
 toolbarbutton#PanelUI-menu-button:hover {
-  border-bottom: 2px solid rgb(var(--color7)) !important;
+  border-bottom: 0px solid rgb(var(--color7)) !important;
 }
 panel#appMenu-popup {
   border-radius: 5px !important;
@@ -202,8 +275,8 @@ panel#appMenu-popup {
   background: transparent !important;
 }
 panel#appMenu-popup > * {
-  background: hsl(from rgb(var(--color2)) h s calc(l / 2)) !important;
-  border: 3px solid rgb(var(--color7)) !important;
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border-bottom: 3px solid rgb(var(--color7)) !important;
   border-radius: 10px !important;
 }
 toolbarbutton#appMenu-fxa-label2 {
@@ -222,6 +295,8 @@ toolbarseparator#appMenu-fxa-separator, toolbarseparator#PanelUI-fxa-menu-profil
 
 /* Tooltips */
 tooltip {
-  background: hsl(from rgb(var(--color1)) h s calc(l / 2)) !important;
+  appearance: none !important;
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
   border-radius: 5px !important;
+  border-bottom: 3px solid rgb(var(--color7)) !important;
 }

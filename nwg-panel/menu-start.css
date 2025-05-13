@@ -1,0 +1,49 @@
+@import '/tmp/user-hellwal/waybar-colors.css';
+
+window {
+    background-color: alpha(@background, 0.8);
+    border-radius: 10px;
+    color: @cursor;
+    border: 4px solid lighter(@color3);
+}
+
+/* Search & Categories */
+window > box > box > box:first-child {
+  margin: 10px -10px 10px 0px;
+  padding: 0px 15px 0px 15px;
+  border: 2px solid @color7;
+  border-radius: 5px;
+}
+
+window > box > box > box:last-child > box > list:first-child {
+  padding: 15px;
+  border: 2px solid @color5;
+  border-radius: 5px;
+}
+
+window > box > box > box:last-child > box > box:nth-child(3) {
+  padding: 15px;
+  border: 2px solid @color6;
+  margin: -20px 0px 10px 0px;
+  border-radius: 5px;
+}
+
+
+
+list {
+    background: none;
+    border-radius: 15px
+}
+
+entry {
+    background-color: rgba (0, 0, 0, 0.2)
+}
+
+button {
+    background: none;
+    border: none
+}
+
+button:hover {
+    background-color: rgba (255, 255, 255, 0.1)
+}

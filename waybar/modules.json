@@ -5,7 +5,8 @@
   },
   "custom/menu": {
     "format": "",
-    "tooltip-format": "App Menu / Drawer"
+    "tooltip-format": "App Menu / Drawer",
+    "on-click": "~/.config/hypr/scripts/general/app_menu"
   },
   "custom/rp-menu": {
     "format": "",

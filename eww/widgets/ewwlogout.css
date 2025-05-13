@@ -17,29 +17,26 @@
 }
 
 .logout-image {
-  margin-bottom: -315px;
+  margin: 200px 0px -200px 0px;
 }
 
 .logout-avatar {
-  margin-top: 240px;
+  margin: 5px 830px 5px 830px;
   opacity: 1;
+  padding: 0px;
   border: 5px solid @color2;
   border-radius: 200px;
-  margin-left: 850px;
-  margin-right: 850px;
 }
 
 .logout-name {
-  margin-top: -400px;
+  margin: -150px 0px 0px 0px;
   font-size: 20px;
   font-family: "GeistMono Nerd Font";
 }
 
 .logout-buttons {
   opacity: 1;
-  margin: 515px;
-  margin-bottom: 545px;
-  margin-top: 0px;
+  margin: 100px 495px 300px 495px;
 }
 
 .logout-buttons button {

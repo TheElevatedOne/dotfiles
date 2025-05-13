@@ -6,7 +6,7 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "#7a2b1e",
+          "background": "#751e7a",
           "foreground": "#FFFFFF",
           "leading_diamond": "\ue0b2",
           "style": "diamond",
@@ -44,7 +44,7 @@
           "type": "os"
         },
         {
-          "background": "#7a411e",
+          "background": "#2828a0",
           "foreground": "#FFFFFF",
           "powerline_symbol": "\ue0b0",
           "style": "powerline",
@@ -165,9 +165,9 @@
           "type": "text"
         },
         {
-          "foreground": "#828a8e",
+          "foreground": "#847093",
           "properties": {
-            "time_format": " <#fcd697>\uf017 03:04:05 PM</> <#79DFE1>|</> \uf073 06/01/02 \uf104 January \uf142 Wednesday \uf105"
+            "time_format": " <#ffcadc>\uf017 03:04:05 PM</> <#79DFE1>|</> \uf073 06/01/02 \uf104 January \uf142 Wednesday \uf105"
           },
           "style": "plain",
           "template": "{{ .CurrentDate | date .Format }}",
@@ -189,7 +189,7 @@
         },
         {
           "style": "plain",
-          "template": "  <#932435>\uf007 {{ .UserName }}</> <#79DFE1>|</> <#38a0cd>\udb80\udf79 {{ .HostName }}</>",
+          "template": "  <#982db8>\uf007 {{ .UserName }}</> <#79DFE1>|</> <#9140cf>\udb80\udf79 {{ .HostName }}</>",
           "type": "session"
         }
       ]
@@ -224,7 +224,7 @@
             }
           },
           "style": "diamond",
-          "template": "  <#fcd697>{{ if not .Writable }}<#FF4444>\uf09c {{ end }}{{ if .RootDir }}\ue216{{ else }}{{ .Path }}{{ end }}</> ",
+          "template": "  <#ffcadc>{{ if not .Writable }}<#FF4444>\uf09c {{ end }}{{ if .RootDir }}\ue216{{ else }}{{ .Path }}{{ end }}</> ",
           "type": "path"
         }
       ]

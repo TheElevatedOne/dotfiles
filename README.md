@@ -26,6 +26,7 @@
 - [x] Vesktop/BetterDiscord -> Create your own script, f&#k
 - [x] Firefox -> FirefoxCSS is quite the rabbit-hole
 - [x] oh-my-posh -> Just modified my distrous.omp.json with a script
+- [ ] fastfetch
 - [ ] Sherlock (On the way)
 - [ ] SwayNC (Getting There)
 - [ ] GTK Theme

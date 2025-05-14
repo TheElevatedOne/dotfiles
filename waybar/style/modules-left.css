@@ -14,16 +14,26 @@
   color: @apps;
 }
 #custom-menu{
-    color: @text-light;
-    transition: all .3s ease;
-    background: @apps;
-    padding: 0px 12px 0px 8px;
-    font-size: 18px;
+  color: @text-light;
+  transition: all .3s ease;
+  background: @apps;
+  padding: 0px 12px 0px 8px;
+  font-size: 18px;
 }
 #custom-rp-menu {
   font-size: 20px;
   color: @apps;
+  background: @power;
+}
+#custom-power {
+  background: @power;
+  font-size: 16px;
+  padding: 0px 2px 0px 8px;
+}
+#custom-rp-power {
+  color: @power;
   background: @workspaces-bg;
+  font-size: 20px;
 }
 
 /*##########################*/
@@ -87,6 +97,17 @@
 }
 #custom-rp-window {
   color: @window;
+  background: @lock;
+  font-size: 20px;
+}
+#custom-lock-timer {
+  padding: 0px 5px 0px 7px;
+  background: @lock;
+  font-size: 15px;
+  font-weight: bold;
+}
+#custom-rp-lock {
+  color: @lock;
   font-size: 20px;
 }
 

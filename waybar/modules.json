@@ -12,13 +12,14 @@
     "format": "",
     "tooltip": false
   },
-  "group/menu": {
-    "orientation": "horizontal",
-    "modules": [
-      "custom/lp-menu",
-      "custom/menu",
-      "custom/rp-menu"
-    ]
+  "custom/power": {
+    "format": " ",
+    "tooltip-format": "Power Menu",
+    "on-click": "eww open ewwlogout"
+  },
+  "custom/rp-power": {
+    "format": "",
+    "tooltip": false
   },
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -42,6 +43,7 @@
   },
   "hyprland/window": {
     "format": "{class}",
+    "tooltip-format": "\tActive Window\t\nTitle: {title}",
     "icon": true,
     "icon-size": 20,
     "separate-outputs": true,
@@ -56,6 +58,17 @@
     "format": "",
     "tooltip": false
   },
+  "custom/lock-timer": {
+    "format": " {text}m",
+    "interval": 1,
+    "exec": "$HOME/.config/hypr/scripts/hypr/hypridle-timeout get",
+    "on-click": "$HOME/.config/hypr/scripts/hypr/hypridle-timeout toggle",
+    "return-type": "json"
+  },
+  "custom/rp-lock": {
+    "format": "",
+    "tooltip": false
+  },
   "custom/lp-clock": {
     "format": "",
     "tooltip": false
@@ -63,7 +76,19 @@
   "clock#date": {
     "format": "{:%y/%m/%d}",
     "interval": 1,
-    "timezone": "Europe/Bratislava"
+    "timezone": "Europe/Bratislava",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "right",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>{:%W}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    }
   },
   "custom/mp-clock": {
     "format": "",
@@ -72,7 +97,8 @@
   "clock#time": {
     "format": "{:%I:%M:%S}",
     "interval": 1,
-    "timezone": "Europe/Bratislava"
+    "timezone": "Europe/Bratislava",
+    "tooltip": false
   },
   "custom/rp-clock": {
     "format": "",
@@ -103,10 +129,10 @@
   "backlight": {
     "format": "{icon}",
     "format-icons": [
-      "󰃞",
-      "󰃝",
-      "󰃟",
-      "󰃠"
+      "󰃞 ",
+      "󰃝 ",
+      "󰃟 ",
+      "󰃠 "
     ],
     "reverse-scrolling": true,
     "tooltip-format": "Brightness: {percent}%",
@@ -171,13 +197,30 @@
     "tooltip": false
   },
   "network": {
-    "format-wifi": "󰖩",
-    "format-ethernet": "",
-    "format-disconnected": "",
+    "format-wifi": "󰖩 ",
+    "format-ethernet": " ",
+    "format-disconnected": " ",
     "tooltip-format-disconnected": "Error",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "tooltip-format-ethernet": "{ifname} 🖧 ",
     "on-click": "better-control -w"
+  },
+  "custom/rp-network": {
+    "format": "",
+    "tooltip": false,
+    "interval": 5
+  },
+  "custom/hotspot": {
+    "format": "{icon}",
+    "format-icons": {
+      "on": "󰀂 ",
+      "off": "󰯡 "
+    },
+    "tooltip": true,
+    "tooltip-format": "{text}",
+    "exec": "$HOME/.config/waybar/scripts/hotspot",
+    "on-click": "$HOME/.config/waybar/scripts/hotspot c",
+    "return-type": "json"
   },
   "battery#network": {
     "format": "",
@@ -211,27 +254,12 @@
   },
   "custom/notification": {
     "tooltip": false,
-    "format": "",
+    "format": " ",
     "on-click": "swaync-client -t -sw",
     "escape": true
   },
   "custom/rp-notif": {
     "format": "",
     "tooltip": false
-  },
-  "custom/hotspot": {
-    "format": "󰀂",
-    "tooltip": false
-  },
-  "cpu": {
-    "format": "󰻠",
-    "tooltip": true
-  },
-  "memory": {
-    "format": ""
-  },
-  "temperature": {
-    "critical-threshold": 80,
-    "format": ""
   }
 }

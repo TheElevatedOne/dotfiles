@@ -1,6 +1,8 @@
 @import '/tmp/user-hellwal/waybar-colors.css';
 
-@define-color main-bg alpha(mix(@color1, #000, 0.2), 0.8);
+/* alpha(mix(@color1, #000, 0.2), 0.8) */
+
+@define-color main-bg alpha(@background, 0.8);
 @define-color main-border @color2;
 @define-color notif-bg darker(@color4);
 

@@ -26,7 +26,7 @@ case $1 in
 
 get)
   RET=$(minutes $GET)
-  echo "$RET"
+  echo "{'text': '$RET', 'tooltip': '\tHyprlock Timeout\t\n\nTimeout: $RET Minutes ($GET Seconds)'}" | sed "s/'/\"/g" | jq --unbuffered --compact-output
   ;;
 
 set)
@@ -35,6 +35,8 @@ set)
 
   sed -i "s/timeout\ =\ $UN/timeout\ =\ $TM/g" ~/.config/hypr/hypridle.conf
   sed -i "s/timeout\ =\ $GET/timeout\ =\ $2/g" ~/.config/hypr/hypridle.conf
+
+  systemctl --user restart hypridle >>/dev/null
   ;;
 
 toggle)
@@ -59,8 +61,9 @@ toggle)
   sed -i "s/timeout\ =\ $UN/timeout\ =\ $TM/g" ~/.config/hypr/hypridle.conf
   sed -i "s/timeout\ =\ $GET/timeout\ =\ ${TIMEOUT[$INDEX]}/g" ~/.config/hypr/hypridle.conf
 
-  echo "$RET"
-  pkill -f hypridle
+  systemctl --user restart hypridle >>/dev/null
+
+  echo "{'text': '$RET', 'tooltip': '\tHyprlock Timeout\t\n\nTimeout: $RET Minutes (${TIMEOUT[$INDEX]} Seconds)'}" | sed "s/'/\"/g" | jq --unbuffered --compact-output
   ;;
 
 *)

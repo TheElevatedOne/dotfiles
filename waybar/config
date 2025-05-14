@@ -15,7 +15,11 @@
   "include": ["~/.dotfiles/waybar/modules.json"],
 
   "modules-left": [
-    "group/menu",
+    "custom/lp-menu",
+    "custom/menu",
+    "custom/rp-menu",
+    "custom/power",
+    "custom/rp-power",
     "custom/shutdown",
     "custom/rp-shutdown",
     "custom/reboot",
@@ -28,7 +32,9 @@
     "hyprland/workspaces",
     "custom/rp-workspaces",
     "hyprland/window",
-    "custom/rp-window"
+    "custom/rp-window",
+    "custom/lock-timer",
+    "custom/rp-lock"
   ],
 
   "modules-center": ["custom/lp-clock", "clock#date", "custom/mp-clock", "clock#time", "custom/rp-clock"],
@@ -48,6 +54,8 @@
     "bluetooth",
     "custom/rp-bluetooth",
     "network",
+    "custom/rp-network",
+    "custom/hotspot",
     "battery#network",
     "battery#main",
     "battery#rp",

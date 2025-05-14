@@ -5,10 +5,12 @@
 @import '../../.cache/hellwal/waybar-colors.css';
 
 /* Left Modules */
-@define-color apps @color10;
+@define-color apps mix(@color2, #000, 0.2);
+@define-color power @color2;
 @define-color workspaces-bg mix(lighter(@color15), #FFF, 0.2);
 @define-color workspaces darker(@color2);
 @define-color window @color2;
+@define-color lock mix(@color2, #000, 0.3);
 
 /* Center Modules */
 @define-color date darker(@color4);
@@ -17,12 +19,13 @@
 /* Right Modules */
 @define-color tray darker(@color2);
 
-@define-color lang lighter(@color2);
-@define-color backlight mix(lighter(@color2), #000, 0.1);
-@define-color nightlight mix(lighter(@color2), #000, 0.2);
-@define-color sound mix(lighter(@color2), #000, 0.3);
-@define-color bluetooth mix(lighter(@color2), #000, 0.4);
-@define-color network mix(lighter(@color2), #000, 0.5);
+@define-color lang mix(lighter(@color2), #FFF, 0.1);
+@define-color backlight mix(lighter(@color2), #000, 0.0);
+@define-color nightlight mix(lighter(@color2), #000, 0.1);
+@define-color sound mix(lighter(@color2), #000, 0.2);
+@define-color bluetooth mix(lighter(@color2), #000, 0.3);
+@define-color network mix(lighter(@color2), #000, 0.4);
+@define-color hotspot mix(lighter(@color2), #000, 0.5);
 @define-color battery mix(lighter(@color2), #000, 0.6);
 
 @define-color notifications mix(lighter(@color2), #000, 0.7);
@@ -38,10 +41,13 @@
 window#waybar{
     all: unset;
 }
-tooltip { 
+tooltip {
     background: alpha(@background, 0.7);
-    color: @text-light;
+    color: lighter(@color7);
     font-weight: bold;
+    border: 2px solid @color7;
+    border-radius: 10px;
+    font-size: 15px;
 }
 
 @import './style/modules-left.css';

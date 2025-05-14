@@ -7,8 +7,8 @@
       "right": 2
     },
     "width": 50,
-    "type": "kitty",
-    "source": "~/.config/fastfetch/logo/logo.png"
+    "type": "file",
+    "source": "~/.config/fastfetch/logo/black_hole.txt"
   },
   "display": {
     "separator": "  "

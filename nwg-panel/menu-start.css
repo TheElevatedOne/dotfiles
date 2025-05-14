@@ -37,6 +37,9 @@ window > box > box > box:first-child > box > entry {
   margin-bottom: -4px;
 }
 /*  Category List */
+window > box > box > box:first-child > box > list {
+  background: none;
+}
 window > box > box > box:first-child > box > list > .activatable {
   margin: 3px 0px;
   padding: 5px 7px;
@@ -79,14 +82,14 @@ window > box > box > box:last-child > box > box:nth-child(3) {
   border-radius: 5px;
 }
 /*  Buttons */
-window > box > box > box:last-child > box > box:nth-child(3) > * > box > box > button {
+window > box > box > box:last-child > box > box:nth-child(3) > * button {
   background: none;
   background-color: alpha(mix(@color2, #000, 0.5), 0.8);
   border-radius: 5px;
   border: 0px;
   padding: 7px;
 }
-window > box > box > box:last-child > box > box:nth-child(3) > * > box > box > button:hover {
+window > box > box > box:last-child > box > box:nth-child(3) > * button:hover {
   background-color: alpha(mix(@color2, #000, 0.2), 0.8);
   border-bottom: 2px solid @color5;
 }
@@ -105,10 +108,10 @@ window > box > box > box:last-child > box > box:nth-child(1) > box > button {
   border: 0px;
   background: none;
   border-radius: 5px;
-  background-color: alpha(mix(@color6, #000, 0.2), 0.8);
+  background-color: alpha(mix(@color6, #000, 0.4), 0.8);
 }
 window > box > box > box:last-child > box > box:nth-child(1) > box > button:hover {
-  background-color: alpha(mix(@color6, #000, 0.5), 0.8); 
+  background-color: alpha(mix(@color6, #000, 0.7), 0.8); 
   border-bottom: 2px solid @color7;
 }
 /*  App List  */

@@ -122,7 +122,7 @@
 }
 
 /* New Tab */
-@-moz-document url-prefix("about:newtab") {
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
   html, body {
     background: var(--wallpaper) !important;
     background-size: cover !important;

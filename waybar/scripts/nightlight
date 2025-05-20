@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+config="$HOME/.config/waybar/scripts/nightlight.conf"
+
+source $config
+
+alt="off"
+temp="6500"
+
+case $1 in
+"return")
+  if $active; then
+    alt="on"
+    temp="$saved"
+  fi
+  ;;
+
+"toggle")
+  if $active; then
+    active=false
+    saved=0
+
+    hyprctl hyprsunset identity >>/dev/null
+
+    alt="off"
+  elif ! $active; then
+    active=true
+    saved=$default
+
+    hyprctl hyprsunset temperature "$saved" >>/dev/null
+
+    alt="on"
+    temp="$saved"
+  fi
+  ;;
+esac
+
+echo "#!/usr/bin/env bash
+
+default=$default
+saved=$saved
+active=$active" >$config
+
+echo "{'text': '$temp', 'alt': '$alt'}" | sed "s/'/\"/g" | jq --unbuffered --compact-output

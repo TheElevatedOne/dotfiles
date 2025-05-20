@@ -12,7 +12,11 @@
   "passthrough": false,
   "gtk-layer-shell": true,
 
-  "include": ["~/.dotfiles/waybar/modules.json"],
+  "include": [
+    "$HOME/.config/waybar/modules/modules-left.json",
+    "$HOME/.config/waybar/modules/modules-center.json",
+    "$HOME/.config/waybar/modules/modules-right.json"
+  ],
 
   "modules-left": [
     "custom/lp-menu",
@@ -34,17 +38,31 @@
     "hyprland/window",
     "custom/rp-window",
     "custom/lock-timer",
-    "custom/rp-lock"
+    "custom/rp-lock",
+    "group/sysmon"
   ],
 
-  "modules-center": ["custom/lp-clock", "clock#date", "custom/mp-clock", "clock#time", "custom/rp-clock"],
+  "modules-center": [
+    "custom/lp-clock",
+    "clock#date",
+    "custom/mp-clock",
+    "custom/clock",
+    "custom/rp-clock"
+  ],
 
   "modules-right": [
+    "custom/lp-uptime",
+    "custom/uptime",
+    "custom/rp-uptime",
     "custom/lp-tray",
     "tray",
     "custom/lp-lang",
     "hyprland/language",
     "custom/rp-lang",
+    "custom/capslock",
+    "custom/rp-caps",
+    "custom/numlock",
+    "custom/rp-num",
     "backlight",
     "custom/rp-backlight",
     "custom/nightlight",

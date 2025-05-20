@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+source ~/.bashrc_files/functions
+
+# Time
+TIME=$(date +"%I:%M:%S")
+
+# Uptime
+DAY=false
+HOUR=false
+
+UPTIME=$(uptime -r | awk '{printf "%.0f",$2}')
+
+if [ "$(echo "$UPTIME" | awk '{print int($1 / 3600)}')" -eq "1" ]; then
+  HOUR=true
+fi
+
+if [ "$(echo "$UPTIME" | awk '{printf int($1 / 86400)}')" -eq "1" ]; then
+  DAY=true
+fi
+
+if $DAY; then
+  UPTIME_F=$(date -u -d @${UPTIME} +"%-d day/s %H:%M:%S")
+elif $HOUR; then
+  UPTIME_F=$(date -u -d @${UPTIME} +"%H:%M:%S")
+else
+  UPTIME_F=$(date -u -d @${UPTIME} +"%M:%S")
+fi
+
+BIRTH_TIME=$(stat / | tail -1 | awk '{print $2}')
+BIRTH_TIME_F=$(date -d"$BIRTH_TIME" +"%s%N" | awk '{printf "%.0f",($1 / 1000000) - 8}')
+TIME_SINCE_BIRTH=$(echo "$((($(CTIME) - $BIRTH_TIME_F) / 86400000))")
+
+echo "{'text': '$TIME', 'tooltip': 'Clock\t\n\nUptime: $UPTIME_F\nBirth: $TIME_SINCE_BIRTH day/s'}" | sed "s/'/\"/g" | jq -c
+
+unset DAY
+unset HOUR
+unset UPTIME
+unset UPTIME_F
+unset BIRTH_TIME_F
+unset BIRTH_TIME
+unset TIME_SINCE_BIRTH
+unset TIME

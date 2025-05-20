@@ -111,3 +111,45 @@
   font-size: 20px;
 }
 
+/* ######################
+   ### System Monitor ###
+   ###################### */
+
+#custom-lp-sysmon, #custom-rp-sysmon, #custom-rp-cpu, #custom-rp-ram {
+  font-size: 20px;
+}
+#sysmon {
+  margin-left: 10px;
+}
+#custom-lp-sysmon {
+  color: @sysmon-cpu;
+}
+#custom-cpu {
+  background: @sysmon-cpu;
+  font-size: 1.1em;
+  padding: 0px 2px 0px 5px;
+  font-weight: bold;
+}
+#custom-rp-cpu {
+  color: @sysmon-cpu;
+  background: @sysmon-ram;
+}
+#custom-memory {
+  background: @sysmon-ram;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0px 5px 0px 7px;
+}
+#custom-rp-ram {
+  color: @sysmon-ram;
+  background: @sysmon-gpu;
+}
+#custom-gpu {
+  background: @sysmon-gpu;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0px 3px 0px 7px;
+}
+#custom-rp-sysmon {
+  color: @sysmon-gpu;
+}

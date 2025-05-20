@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+ACTIVE_STATS=()
+
+JSON=$(gpustat --json)
+GPU_UTIL=$(echo "$JSON" | jq -r '.gpus[0]."utilization.gpu"')
+ENC_UTIL=$(echo "$JSON" | jq -r '.gpus[0]."utilization.enc"')
+DEC_UTIL=$(echo "$JSON" | jq -r '.gpus[0]."utilization.dec"')
+
+GPU_NAME=$(echo "$JSON" | jq -r '.gpus[0].name')
+GPU_PWR=$(echo "$JSON" | jq -r '.gpus[0]."power.draw"')
+GPU_PWL=$(echo "$JSON" | jq -r '.gpus[0]."enforced.power.limit"')
+GPU_MEMU=$(echo "$JSON" | jq -r '.gpus[0]."memory.used"')
+GPU_MEMT=$(echo "$JSON" | jq -r '.gpus[0]."memory.total"')
+
+if ! [ "$GPU_UTIL" -eq "0" ]; then
+  ACTIVE_STATS+=("$GPU_UTIL")
+fi
+
+if ! [ "$ENC_UTIL" -eq "0" ]; then
+  ACTIVE_STATS+=("$ENC_UTIL")
+fi
+
+if ! [ "$DEC_UTIL" -eq "0" ]; then
+  ACTIVE_STATS+=("$DEC_UTIL")
+fi
+
+if [ "${#ACTIVE_STATS[@]}" -eq "0" ]; then
+  echo "{'text': '0', 'tooltip': '\tGraphics Card\t\n\nName: $GPU_NAME\nPower: $GPU_PWR / $GPU_PWL W\nMemory: $GPU_MEMU / $GPU_MEMT MB\n\nCompute: $GPU_UTIL%\nDecode: $DEC_UTIL%\nEncode: $ENC_UTIL%'}" | sed "s/'/\"/g" | jq --unbuffered --compact-output
+else
+  AVG=0
+  for i in "${ACTIVE_STATS[@]}"; do
+    AVG=$(($AVG + $i))
+  done
+  AVG=$(echo "$AVG ${#ACTIVE_STATS[@]}" | awk '{print ($1 / $2)}')
+  echo "{'text': '$AVG', 'tooltip': '\tGraphics Card\t\n\nName: $GPU_NAME\nPower: $GPU_PWR / $GPU_PWL W\nMemory: $GPU_MEMU / $GPU_MEMT MB\n\nCompute: $GPU_UTIL%\nDecode: $DEC_UTIL%\nEncode: $ENC_UTIL%'}" | sed "s/'/\"/g" | jq --unbuffered --compact-output
+fi

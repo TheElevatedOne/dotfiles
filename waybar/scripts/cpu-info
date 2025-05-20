@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+CPU_UTIL=$(echo -ne "import psutil\nprint('{}'.format(psutil.cpu_percent(interval=0.1)))" | python)
+CPU_NAME=$(cat /proc/cpuinfo | grep "model name" | sed "s/model name\t: //g" | sed "1q;d" | sed "s/Intel(R) Core(TM)/Intel Core/g" | awk '{printf "%s %s %s",$1,$2,$3}')
+CPU_CORES=$(cat /proc/cpuinfo | grep "cpu cores" | sed "s/cpu cores\t: //g" | sed "1q;d")
+CPU_THRDS=$(cat /proc/cpuinfo | grep "processor" | sed "s/processor\t: //g" | tail -1 | awk '{print $1 + 1}')
+
+echo "{'text': '$CPU_UTIL', 'tooltip': '\tProcessor\t\n\nName: $CPU_NAME\nCores: $CPU_CORES\nThreads: $CPU_THRDS'}" | sed -e "s/'/\"/g" | jq -c

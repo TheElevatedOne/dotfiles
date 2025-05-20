@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-#COLORS
-C_RESET="\e[0m"
-L_BLUE="\e[38;2;81;194;255m"
-L_RED="\e[38;2;245;105;105m"
-L_YEL="\e[38;2;255;194;70m"
-
 UN=$(grep timeout ~/.config/hypr/hypridle.conf | awk '{print $3}' | sed '3q;d')
 GET=$(grep timeout ~/.config/hypr/hypridle.conf | awk '{print $3}' | sed '5q;d')
 

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+bytes2mbytes() {
+  local RET=$(echo "$1" | awk '{printf "%.0f",($1/1024/1024)}')
+  echo "$RET"
+}
+
+MEM_TOTAL=$(free -b | grep -i mem | awk '{print $2}')
+MEM_USED=$(free -b | grep -i mem | awk '{print $3}')
+SWAP_TOTAL=$(free -b | grep -i swap | awk '{print $2}')
+SWAP_USED=$(free -b | grep -i swap | awk '{print $3}')
+
+MEM_UTIL=$(echo "$MEM_USED $MEM_TOTAL" | awk '{printf "%.1f",(($1 * 100) / $2)}')
+SWAP_UTIL=$(echo "$SWAP_USED $SWAP_TOTAL" | awk '{printf "%.1f",(($1 * 100) / $2)}')
+
+echo "{'text': '$MEM_UTIL', 'tooltip': '\tMemory\t\n\nRAM: $(bytes2mbytes $MEM_USED) / $(bytes2mbytes $MEM_TOTAL) MB ($MEM_UTIL%)\nSWAP: $(bytes2mbytes $SWAP_USED) / $(bytes2mbytes $SWAP_TOTAL) MB ($SWAP_UTIL%)'}" | sed "s/'/\"/g" | jq -c

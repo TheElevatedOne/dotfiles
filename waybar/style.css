@@ -11,6 +11,10 @@
 @define-color workspaces darker(@color2);
 @define-color window @color2;
 @define-color lock mix(@color2, #000, 0.3);
+@define-color sysmon-cpu @color2;
+@define-color sysmon-ram mix(@sysmon-cpu, #000, 0.3);
+@define-color sysmon-gpu mix(@sysmon-cpu, #000, 0.6);
+@define-color uptime mix(@color2, @color7, 0.5);
 
 /* Center Modules */
 @define-color date darker(@color4);
@@ -19,16 +23,18 @@
 /* Right Modules */
 @define-color tray darker(@color2);
 
-@define-color lang mix(lighter(@color2), #FFF, 0.1);
-@define-color backlight mix(lighter(@color2), #000, 0.0);
-@define-color nightlight mix(lighter(@color2), #000, 0.1);
-@define-color sound mix(lighter(@color2), #000, 0.2);
-@define-color bluetooth mix(lighter(@color2), #000, 0.3);
-@define-color network mix(lighter(@color2), #000, 0.4);
-@define-color hotspot mix(lighter(@color2), #000, 0.5);
+@define-color lang mix(lighter(@color2), #000, 0.15);
+@define-color capslock mix(lighter(@color2), #000, 0.2);
+@define-color numlock mix(lighter(@color2), #000, 0.25);
+@define-color backlight mix(lighter(@color2), #000, 0.3);
+@define-color nightlight mix(lighter(@color2), #000, 0.35);
+@define-color sound mix(lighter(@color2), #000, 0.4);
+@define-color bluetooth mix(lighter(@color2), #000, 0.45);
+@define-color network mix(lighter(@color2), #000, 0.5);
+@define-color hotspot mix(lighter(@color2), #000, 0.55);
 @define-color battery mix(lighter(@color2), #000, 0.6);
 
-@define-color notifications mix(lighter(@color2), #000, 0.7);
+@define-color notifications mix(lighter(@color2), #000, 0.65);
 
 /* Extra Colors */
 @define-color text-light #FFF;

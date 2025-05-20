@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+case $1 in
+caps)
+  while true; do
+    STATE="$(cat /sys/class/leds/input*::capslock/brightness)"
+
+    if [ "$STATE" -eq "1" ]; then
+      TOOLTIP="Capslock On"
+      CLASS="on"
+    else
+      TOOLTIP="Capslock Off"
+      CLASS="off"
+    fi
+    RET=$(echo "{'class': '$CLASS', 'tooltip': '$TOOLTIP'}" | sed "s/'/\"/g" | jq --unbuffered --compact-output)
+    echo "$RET"
+
+    unset RET
+    unset TOOLTIP
+    unset CLASS
+    unset STATE
+
+    sleep 5
+
+  done
+  ;;
+
+num)
+  while true; do
+    STATE="$(cat /sys/class/leds/input*::numlock/brightness)"
+
+    if [ "$STATE" -eq "1" ]; then
+      TOOLTIP="Numlock On"
+      CLASS="on"
+    else
+      TOOLTIP="Numlock Off"
+      CLASS="off"
+    fi
+    RET=$(echo "{'class': '$CLASS', 'tooltip': '$TOOLTIP'}" | sed "s/'/\"/g" | jq --unbuffered --compact-output)
+    echo "$RET"
+
+    unset RET
+    unset TOOLTIP
+    unset CLASS
+    unset STATE
+
+    sleep 5
+
+  done
+  ;;
+esac

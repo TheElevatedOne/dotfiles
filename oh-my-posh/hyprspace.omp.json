@@ -6,7 +6,7 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "#036e95",
+          "background": "#bb2e59",
           "foreground": "#FFFFFF",
           "leading_diamond": "\ue0b2",
           "style": "diamond",
@@ -44,8 +44,8 @@
           "type": "os"
         },
         {
-          "background": "#1e347a",
-          "foreground": "#FFFFFF",
+          "background": "#e3756e",
+          "foreground": "#000000",
           "powerline_symbol": "\ue0b0",
           "style": "powerline",
           "template": "<b> \uf489 {{ .Name }} </b>",
@@ -165,9 +165,9 @@
           "type": "text"
         },
         {
-          "foreground": "#3d3866",
+          "foreground": "#e96447",
           "properties": {
-            "time_format": " <#b8f4ff>\uf017 03:04:05 PM</> <#79DFE1>|</> \uf073 06/01/02 \uf104 January \uf142 Wednesday \uf105"
+            "time_format": " <#fff19d>\uf017 03:04:05 PM</> <#79DFE1>|</> \uf073 06/01/02 \uf104 January \uf142 Wednesday \uf105"
           },
           "style": "plain",
           "template": "{{ .CurrentDate | date .Format }}",
@@ -189,7 +189,7 @@
         },
         {
           "style": "plain",
-          "template": "  <#13509a>\uf007 {{ .UserName }}</> <#79DFE1>|</> <#312596>\udb80\udf79 {{ .HostName }}</>",
+          "template": "  <#f39c95>\uf007 {{ .UserName }}</> <#79DFE1>|</> <#f9c0b4>\udb80\udf79 {{ .HostName }}</>",
           "type": "session"
         }
       ]
@@ -224,7 +224,7 @@
             }
           },
           "style": "diamond",
-          "template": "  <#b8f4ff>{{ if not .Writable }}<#FF4444>\uf09c {{ end }}{{ if .RootDir }}\ue216{{ else }}{{ .Path }}{{ end }}</> ",
+          "template": "  <#fff19d>{{ if not .Writable }}<#FF4444>\uf09c {{ end }}{{ if .RootDir }}\ue216{{ else }}{{ .Path }}{{ end }}</> ",
           "type": "path"
         }
       ]

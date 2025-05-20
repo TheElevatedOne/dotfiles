@@ -1,109 +1,4 @@
 {
-  "custom/lp-menu": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/menu": {
-    "format": "",
-    "tooltip-format": "App Menu / Drawer",
-    "on-click": "~/.config/hypr/scripts/general/app_menu"
-  },
-  "custom/rp-menu": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/power": {
-    "format": " ",
-    "tooltip-format": "Power Menu",
-    "on-click": "eww open ewwlogout"
-  },
-  "custom/rp-power": {
-    "format": "",
-    "tooltip": false
-  },
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "active": "",
-      "default": "",
-      "empty": ""
-    },
-    "persistent-workspaces": {
-      "*": [
-        1,
-        2,
-        3,
-        4
-      ]
-    }
-  },
-  "custom/rp-workspaces": {
-    "format": "",
-    "tooltip": false
-  },
-  "hyprland/window": {
-    "format": "{class}",
-    "tooltip-format": "\tActive Window\t\nTitle: {title}",
-    "icon": true,
-    "icon-size": 20,
-    "separate-outputs": true,
-    "max-length": 35,
-    "rewrite": {
-      "": " 󰍹 desktop",
-      "org.kde.dolphin": "dolphin",
-      "clipse": "󰅍 clipse"
-    }
-  },
-  "custom/rp-window": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/lock-timer": {
-    "format": " {text}m",
-    "interval": 1,
-    "exec": "$HOME/.config/hypr/scripts/hypr/hypridle-timeout get",
-    "on-click": "$HOME/.config/hypr/scripts/hypr/hypridle-timeout toggle",
-    "return-type": "json"
-  },
-  "custom/rp-lock": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/lp-clock": {
-    "format": "",
-    "tooltip": false
-  },
-  "clock#date": {
-    "format": "{:%y/%m/%d}",
-    "interval": 1,
-    "timezone": "Europe/Bratislava",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode": "month",
-      "weeks-pos": "right",
-      "format": {
-        "months": "<span color='#ffead3'><b>{}</b></span>",
-        "days": "<span color='#ecc6d9'><b>{}</b></span>",
-        "weeks": "<span color='#99ffdd'><b>{:%W}</b></span>",
-        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-      }
-    }
-  },
-  "custom/mp-clock": {
-    "format": "",
-    "tooltip": false
-  },
-  "clock#time": {
-    "format": "{:%I:%M:%S}",
-    "interval": 1,
-    "timezone": "Europe/Bratislava",
-    "tooltip": false
-  },
-  "custom/rp-clock": {
-    "format": "",
-    "tooltip": false
-  },
   "custom/lp-tray": {
     "format": "",
     "tooltip": false
@@ -123,6 +18,28 @@
     "keyboard-name": "at-translated-set-2-keyboard"
   },
   "custom/rp-lang": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/capslock": {
+    "format": "󰪛 ",
+    "tooltip": true,
+    "exec": "$HOME/.config/waybar/scripts/lock-keys caps",
+    "restart-interval": 1,
+    "return-type": "json"
+  },
+  "custom/rp-caps": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/numlock": {
+    "format": "󰎾 ",
+    "tooltip": true,
+    "exec": "$HOME/.config/waybar/scripts/lock-keys num",
+    "restart-interval": 1,
+    "return-type": "json"
+  },
+  "custom/rp-num": {
     "format": "",
     "tooltip": false
   },
@@ -149,11 +66,10 @@
       "off": "󰌶"
     },
     "tooltip": true,
-    "tooltip-format": "Night Light Toggle",
-    "exec-on-event": true,
+    "tooltip-format": "\tNight Light Toggle\t\n\nTemperature: {text}K",
     "interval": 1,
-    "exec": "$HOME/.config/waybar/scripts/nightlight.py return",
-    "on-click": "$HOME/.config/waybar/scripts/nightlight.py toggle",
+    "exec": "$HOME/.config/waybar/scripts/nightlight return",
+    "on-click": "$HOME/.config/waybar/scripts/nightlight toggle",
     "return-type": "json"
   },
   "custom/rp-nightlight": {
@@ -220,6 +136,7 @@
     "tooltip-format": "{text}",
     "exec": "$HOME/.config/waybar/scripts/hotspot",
     "on-click": "$HOME/.config/waybar/scripts/hotspot c",
+    "restart-interval": 1,
     "return-type": "json"
   },
   "battery#network": {

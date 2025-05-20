@@ -7,6 +7,22 @@
  /*                                                   __/ |           */
  /*                                                  |___/            */
 
+#custom-lp-uptime {
+  font-size: 20px;
+  color: @uptime;
+}
+#custom-uptime {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0px 5px;
+  background: @uptime;
+}
+#custom-rp-uptime {
+  margin-right: 10px;
+  font-size: 20px;
+  color: @uptime;
+}
+
 /*###############*/
 /*### Systray ###*/
 /*###############*/
@@ -87,6 +103,33 @@
 #custom-rp-lang {
   font-size: 20px;
   color: @lang;
+  background: @capslock;
+  padding-right: 8px;
+}
+#custom-capslock {
+  font-size: 18px;
+  background: @capslock;
+  color: @text-light;
+}
+#custom-capslock.off {
+  color: mix(@text-light, #000, 0.3);
+}
+#custom-rp-caps {
+  font-size: 20px;
+  color: @capslock;
+  background: @numlock;
+  padding-right: 8px;
+}
+#custom-numlock {
+  font-size: 20px;
+  background: @numlock;
+}
+#custom-numlock.off {
+  color: mix(@text-light, #000, 0.3);
+}
+#custom-rp-num {
+  font-size: 20px;
+  color: @numlock;
   background: @backlight;
 }
 #backlight {

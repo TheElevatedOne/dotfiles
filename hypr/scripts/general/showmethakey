@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if ! pgrep -f showmethekey-gtk >>/dev/null; then
+  showmethekey-gtk -kAC
+else
+  pkill -f showmethekey-gtk
+fi

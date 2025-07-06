@@ -94,7 +94,7 @@
   color: @lang;
 }
 #language {
-  padding: 0px 5px;
+  padding: 0px 4px 0px 3px;
   color: @text-light;
   background: @lang;
   font-size: 17px;
@@ -104,28 +104,29 @@
   font-size: 20px;
   color: @lang;
   background: @capslock;
-  padding-right: 8px;
 }
 #custom-capslock {
   font-size: 18px;
   background: @capslock;
   color: @text-light;
+  padding: 0px 0px 0px 6px;
 }
 #custom-capslock.off {
-  color: mix(@text-light, #000, 0.3);
+  color: mix(@capslock, #FFF, 0.5);
 }
 #custom-rp-caps {
   font-size: 20px;
   color: @capslock;
   background: @numlock;
-  padding-right: 8px;
 }
 #custom-numlock {
   font-size: 20px;
+  padding: 0px 0px 0px 6px;
   background: @numlock;
+  color: @text-light;
 }
 #custom-numlock.off {
-  color: mix(@text-light, #000, 0.3);
+  color: mix(@numlock, #FFF, 0.5);
 }
 #custom-rp-num {
   font-size: 20px;
@@ -133,8 +134,8 @@
   background: @backlight;
 }
 #backlight {
-  padding-left: 7px;
-  padding-right: 3px;
+  padding-left: 6px;
+  padding-right: 2px;
   color: @text-light;
   font-size: 15px;
   background: @backlight;
@@ -145,7 +146,7 @@
   background: @nightlight;
 }
 #custom-nightlight {
-  padding-left: 9px;
+  padding-left: 7px;
   padding-right: 7px;
   color: @text-light;
   background: @nightlight;
@@ -157,7 +158,7 @@
   background: @sound;
 }
 #pulseaudio {
-  padding: 0px 7px;
+  padding: 0px 8px 0px 5px;
   color: @text-light;
   background: @sound;
   font-size: 15px;
@@ -169,7 +170,7 @@
   background: @bluetooth;
 }
 #bluetooth {
-    padding: 0px 5px 0px 5px;
+    padding: 0px 7px 0px 4px;
     transition: all .3s ease;
     color:@text-light;
     background: @bluetooth;
@@ -196,9 +197,9 @@
   background: @hotspot;
   font-weight: bold;
   font-size: 15px;
-  padding: 0px 0px 0px 7px;
+  padding: 0px 2px 0px 5px;
 }
-#battery.network {
+#custom-lp-battery {
   font-size: 20px;
   color: @hotspot;
   background: @battery;
@@ -208,37 +209,22 @@
 /*### Battery ###*/
 /*###############*/
 
-#battery.main {
-    padding: 0px 7px;
+#custom-battery {
+    padding: 0px 0px 0px 5px;
     transition: all .3s ease;
     color:@text-light;
     font-size: 15px;
     background: @battery;
+    font-weight: bold;
 }
-#battery.main.critical:not(.charging) {
-    background: #ff0000;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-#battery.rp {
+#custom-rp-battery {
   font-size: 20px;
   color: @battery;
   background: @notifications;
 }
-#battery.rp.critical:not(.charging) {
-    color: #ff0000;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
 
 #custom-notification {
-    padding: 0px 5px 0px 7px;
+    padding: 0px 4px 0px 7px;
     transition: all .3s ease;
     color:@text-light;
     background: @notifications;

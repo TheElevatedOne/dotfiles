@@ -3,7 +3,7 @@
 case $1 in
 caps)
   while true; do
-    STATE="$(cat /sys/class/leds/input*::capslock/brightness)"
+    STATE="$(cat /sys/class/leds/input*::capslock/brightness | sed "1q;d")"
 
     if [ "$STATE" -eq "1" ]; then
       TOOLTIP="Capslock On"
@@ -20,14 +20,14 @@ caps)
     unset CLASS
     unset STATE
 
-    sleep 5
+    sleep 2
 
   done
   ;;
 
 num)
   while true; do
-    STATE="$(cat /sys/class/leds/input*::numlock/brightness)"
+    STATE="$(cat /sys/class/leds/input*::numlock/brightness | sed "1q;d")"
 
     if [ "$STATE" -eq "1" ]; then
       TOOLTIP="Numlock On"
@@ -44,7 +44,7 @@ num)
     unset CLASS
     unset STATE
 
-    sleep 5
+    sleep 2
 
   done
   ;;

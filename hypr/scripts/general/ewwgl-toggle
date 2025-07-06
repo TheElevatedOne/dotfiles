@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if eww active-windows | grep gamelaunch >/dev/null; then
+  eww close gamelaunch
+else
+  eww open gamelaunch
+fi
+

@@ -115,7 +115,7 @@
    ### System Monitor ###
    ###################### */
 
-#custom-lp-sysmon, #custom-rp-sysmon, #custom-rp-cpu, #custom-rp-ram {
+#custom-lp-sysmon, #custom-rp-sysmon, #custom-rp-cpu, #custom-rp-ram, #custom-rp-gpu {
   font-size: 20px;
 }
 #sysmon {
@@ -127,8 +127,14 @@
 #custom-cpu {
   background: @sysmon-cpu;
   font-size: 1.1em;
-  padding: 0px 2px 0px 5px;
+  padding: 0px 0px 0px 5px;
   font-weight: bold;
+}
+#custom-cpu-info {
+  background: @sysmon-cpu;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0px 5px 0px 5px;
 }
 #custom-rp-cpu {
   color: @sysmon-cpu;
@@ -138,7 +144,13 @@
   background: @sysmon-ram;
   font-size: 1.1em;
   font-weight: bold;
-  padding: 0px 5px 0px 7px;
+  padding: 0px 3px 0px 7px;
+}
+#custom-memory-info {
+  background: @sysmon-ram;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0px 3px 0px 7px;
 }
 #custom-rp-ram {
   color: @sysmon-ram;
@@ -148,8 +160,37 @@
   background: @sysmon-gpu;
   font-size: 1.1em;
   font-weight: bold;
+  padding: 0px 0px 0px 7px;
+}
+#custom-gpu-info {
+  background: @sysmon-gpu;
+  font-size: 1.1em;
+  font-weight: bold;
   padding: 0px 3px 0px 7px;
 }
-#custom-rp-sysmon {
+#custom-rp-gpu {
   color: @sysmon-gpu;
+  background: @sysmon-net;
+}
+#custom-network {
+  background: @sysmon-net;
+  padding: 0px 1px 0px 6px;
+}
+#custom-rp-sysmon {
+  color: @sysmon-net;
+}
+#custom-lp-wthr {
+  margin-left: 10px;
+  font-size: 20px;
+  color: @wthr;
+}
+#custom-wthr {
+  background: @wthr;
+  padding: 0px 1px 0px 5px;
+  font-weight: bold;
+  font-size: 1.08em;
+}
+#custom-rp-wthr {
+  font-size: 20px;
+  color: @wthr;
 }

@@ -1,7 +1,8 @@
 {
+  "name": "top-bar",
   "layer": "top",
   "position": "top",
-  "mod": "dock",
+  "mode": "dock",
   "height": 24,
   "margin-top": 10,
   "margin-bottom": 10,
@@ -39,12 +40,15 @@
     "custom/rp-window",
     "custom/lock-timer",
     "custom/rp-lock",
-    "group/sysmon"
+    "group/sysmon",
+    "custom/lp-wthr",
+    "custom/wthr",
+    "custom/rp-wthr"
   ],
 
   "modules-center": [
     "custom/lp-clock",
-    "clock#date",
+    "custom/date",
     "custom/mp-clock",
     "custom/clock",
     "custom/rp-clock"
@@ -74,11 +78,10 @@
     "network",
     "custom/rp-network",
     "custom/hotspot",
-    "battery#network",
-    "battery#main",
-    "battery#rp",
+    "custom/lp-battery",
+    "custom/battery",
+    "custom/rp-battery",
     "custom/notification",
     "custom/rp-notif"
   ]
-} 
-
+}

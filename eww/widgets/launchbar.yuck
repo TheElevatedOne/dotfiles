@@ -1,0 +1,66 @@
+;; #########################
+;; ### Taskbar/Launchbar ###
+;; #########################
+;;
+;; Description: 
+
+(defwindow launchbar
+  :monitor 0
+  :geometry (geometry
+              :x "0px"
+              :y "10px"
+              :width "14.1%"
+              :height "5.5%"
+              :anchor "center bottom")
+  :stacking "overlay"
+  :exclusive false
+  (taskbar)
+  )
+
+(defwidget app [name icon exec]
+  (tooltip
+    (label
+      :text "${name}")
+    (button
+      :onclick "${exec}"
+      (image
+        :icon "${icon}"
+        :icon-size "dnd"
+        )
+      )
+    )
+  )
+
+(defwidget taskbar []
+  (box
+    :class "taskbar"
+    :orientation "h"
+    :space-evenly false
+    :spacing 4
+    (app
+      :name "Firefox"
+      :icon "firefox"
+      :exec "firefox&"
+      )
+    (app
+      :name "Dolphin"
+      :icon "org.kde.dolphin"
+      :exec "dolphin&"
+      )
+    (app
+      :name "Tauon"
+      :icon "tauonmb"
+      :exec "tauon"
+      )
+    (app
+      :name "Steam"
+      :icon "steam"
+      :exec "steam"
+      )
+    (app
+      :name "Thunderbird"
+      :icon "thunderbird"
+      :exec "thunderbird&"
+      )
+    )
+  )

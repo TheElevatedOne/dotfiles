@@ -139,35 +139,19 @@
     "restart-interval": 1,
     "return-type": "json"
   },
-  "battery#network": {
+  "custom/lp-battery": {
     "format": "",
-    "tooltip": false,
-    "interval": 5
+    "tooltip": false
   },
-  "battery#main": {
-    "interval": 5,
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 20
-    },
-    "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}% 󰂄",
-    "format-plugged": "{capacity}% 󰂄 ",
-    "format-icons": [
-      "󰁻",
-      "󰁼",
-      "󰁾",
-      "󰂀",
-      "󰂂",
-      "󰁹"
-    ],
+  "custom/battery": {
+    "interval": 1,
+    "exec": "$HOME/.config/waybar/scripts/batt-info",
+    "return-type": "json",
     "on-click": "better-control -B"
   },
-  "battery#rp": {
+  "custom/rp-battery": {
     "format": "",
-    "tooltip": false,
-    "interval": 5
+    "tooltip": false
   },
   "custom/notification": {
     "tooltip": false,

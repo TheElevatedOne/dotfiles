@@ -25,13 +25,25 @@ if ! [ "$DEC_UTIL" -eq "0" ]; then
   ACTIVE_STATS+=("$DEC_UTIL")
 fi
 
-if [ "${#ACTIVE_STATS[@]}" -eq "0" ]; then
-  echo "{'text': '0', 'tooltip': '\tGraphics Card\t\n\nName: $GPU_NAME\nPower: $GPU_PWR / $GPU_PWL W\nMemory: $GPU_MEMU / $GPU_MEMT MB\n\nCompute: $GPU_UTIL%\nDecode: $DEC_UTIL%\nEncode: $ENC_UTIL%'}" | sed "s/'/\"/g" | jq --unbuffered --compact-output
-else
-  AVG=0
-  for i in "${ACTIVE_STATS[@]}"; do
-    AVG=$(($AVG + $i))
-  done
-  AVG=$(echo "$AVG ${#ACTIVE_STATS[@]}" | awk '{print ($1 / $2)}')
+AVG=0
+for i in "${ACTIVE_STATS[@]}"; do
+  AVG=$(($AVG + $i))
+done
+
+AVG=$(echo "$AVG ${#ACTIVE_STATS[@]}" | awk '{if ($2 == 0) {print 0} else {print ($1 / $2)}}')
+
+case $1 in
+icon)
+  VALUES=(
+    "#FFFFFF"
+    "#FFD8D8"
+    "#FFA7A7"
+    "#FF8787"
+  )
+  STATE="$(echo "$AVG" | awk '{if ($1 >= 85) {print 3} else if ($1 >= 50) {print 2} else if ($1 >= 25) {print 1} else {print 0}}')"
+  echo "{'text': '<span color=''${VALUES[$STATE]}''><big>󰢮 </big></span>'}" | sed -e "s/'/\"/g" | sed -e "s/\"\"/'/g" | jq -c
+  ;;
+*)
   echo "{'text': '$AVG', 'tooltip': '\tGraphics Card\t\n\nName: $GPU_NAME\nPower: $GPU_PWR / $GPU_PWL W\nMemory: $GPU_MEMU / $GPU_MEMT MB\n\nCompute: $GPU_UTIL%\nDecode: $DEC_UTIL%\nEncode: $ENC_UTIL%'}" | sed "s/'/\"/g" | jq --unbuffered --compact-output
-fi
+  ;;
+esac

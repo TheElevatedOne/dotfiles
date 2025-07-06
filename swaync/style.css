@@ -23,7 +23,7 @@
 @define-color bg-selected rgb(0, 128, 255);
 
 * {
-  font-family: "GeistMono Nerd Font Propo";
+  font-family: "GeistMono Nerd Font";
 }
 
 .control-center {

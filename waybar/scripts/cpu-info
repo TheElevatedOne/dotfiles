@@ -1,8 +1,22 @@
 #!/usr/bin/env bash
 
 CPU_UTIL=$(echo -ne "import psutil\nprint('{}'.format(psutil.cpu_percent(interval=0.1)))" | python)
-CPU_NAME=$(cat /proc/cpuinfo | grep "model name" | sed "s/model name\t: //g" | sed "1q;d" | sed "s/Intel(R) Core(TM)/Intel Core/g" | awk '{printf "%s %s %s",$1,$2,$3}')
+CPU_NAME=$(cat /proc/cpuinfo | grep "model name" | sed "s/model name\t: //g" | sed "1q;d" | sed "s/Intel(R) Core(TM) //g" | awk '{printf "%s",$1}')
 CPU_CORES=$(cat /proc/cpuinfo | grep "cpu cores" | sed "s/cpu cores\t: //g" | sed "1q;d")
 CPU_THRDS=$(cat /proc/cpuinfo | grep "processor" | sed "s/processor\t: //g" | tail -1 | awk '{print $1 + 1}')
 
-echo "{'text': '$CPU_UTIL', 'tooltip': '\tProcessor\t\n\nName: $CPU_NAME\nCores: $CPU_CORES\nThreads: $CPU_THRDS'}" | sed -e "s/'/\"/g" | jq -c
+case $1 in
+icon)
+  VALUES=(
+    "#FFFFFF"
+    "#FFD8D8"
+    "#FFA7A7"
+    "#FF8787"
+  )
+  STATE="$(echo "$CPU_UTIL" | awk '{if ($1 >= 85) {print 3} else if ($1 >= 50) {print 2} else if ($1 >= 25) {print 1} else {print 0}}')"
+  echo "{'text': '<span color=''${VALUES[$STATE]}''> </span>'}" | sed -e "s/'/\"/g" | sed -e "s/\"\"/'/g" | jq -c
+  ;;
+*)
+  echo "{'text': '$CPU_UTIL', 'tooltip':'Processor\n\nName: $CPU_NAME\nCores: $CPU_CORES  \nThreads: $CPU_THRDS 󱇫 '}" | sed -e "s/'/\"/g" | jq -c
+  ;;
+esac

@@ -18,7 +18,7 @@ unset IFS
 TOOLTIP="<span color=''$COLOR_5''>$MONTH</span>\n\n<span color=''$COLOR_6''>$WEEKDAYS</span>\n"
 
 for i in "${DAYS_A[@]}"; do
-  i=$(echo "$i" | sed "s/$TODAY/<\/span><span color=''$COLOR_2''>$TODAY<\/span><span color=''$COLOR_7''>/g")
+  i=$(echo "$i" | sed "s/\ $TODAY\ /\ <\/span><span color=''$COLOR_2''>$TODAY<\/span><span color=''$COLOR_7''>\ /g")
   TOOLTIP+="<span color=''$COLOR_7''>$i</span>\n"
 done
 

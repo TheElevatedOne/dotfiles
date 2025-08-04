@@ -3,6 +3,7 @@
 if eww active-windows | grep gamelaunch >/dev/null; then
   eww close gamelaunch
 else
-  eww open gamelaunch
+  FOCUSED="$(/tmp/user-config/hypr/scripts/general/focused)"
+  eww open --screen $FOCUSED gamelaunch
+  unset FOCUSED
 fi
-

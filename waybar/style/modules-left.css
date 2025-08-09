@@ -97,17 +97,6 @@
 }
 #custom-rp-window {
   color: @window;
-  background: @lock;
-  font-size: 20px;
-}
-#custom-lock-timer {
-  padding: 0px 5px 0px 7px;
-  background: @lock;
-  font-size: 15px;
-  font-weight: bold;
-}
-#custom-rp-lock {
-  color: @lock;
   font-size: 20px;
 }
 

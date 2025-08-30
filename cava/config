@@ -14,12 +14,12 @@ waveform = 0
 
 [color]
 gradient = 1
-gradient_color_1 = '#020418'
-gradient_color_2 = '#036e95'
-gradient_color_3 = '#162682'
-gradient_color_4 = '#1e347a'
-gradient_color_5 = '#13509a'
-gradient_color_6 = '#312596'
+gradient_color_1 = '#0b9404'
+gradient_color_2 = '#7a1e1e'
+gradient_color_3 = '#079185'
+gradient_color_4 = '#992a00'
+gradient_color_5 = '#887410'
+gradient_color_6 = '#7f4a19'
 
 [smoothing]
 noise_reduction = 75

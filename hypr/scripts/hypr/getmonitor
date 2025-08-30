@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-JSON="$(hyprctl monitors -j | jq)"
-echo "$JSON"

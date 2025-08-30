@@ -3,6 +3,7 @@
   "layer": "top",
   "position": "top",
   "mode": "dock",
+  "output": "eDP-1",
   "height": 24,
   "margin-top": 10,
   "margin-bottom": 10,
@@ -20,9 +21,7 @@
   ],
 
   "modules-left": [
-    "custom/lp-menu",
-    "custom/menu",
-    "custom/rp-menu",
+    "custom/lp-power",
     "custom/power",
     "custom/rp-power",
     "custom/shutdown",

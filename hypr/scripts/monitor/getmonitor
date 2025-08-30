@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+JSON="$(hyprctl monitors -j | jq)"
+
+case $1 in
+main)
+  NAME="$(echo "$JSON" | jq .[].name)"
+  if echo "$NAME" | grep HDMI >>/dev/null; then
+    echo "1"
+  else
+    echo "0"
+  fi
+  ;;
+focused)
+  readarray -t IDS <<<"$(echo "$JSON" | jq .[].id)"
+  readarray -t FOC <<<"$(echo "$JSON" | jq .[].focused)"
+
+  for i in $(seq 0 $((${#IDS[@]} - 1))); do
+    if [ "${FOC[i]}" = "true" ]; then
+      FOCUSED="${IDS[$i]}"
+    fi
+  done
+
+  echo "$FOCUSED"
+  ;;
+*)
+  printf "> getmonitor [-h | --help] [type]\n"
+  printf "  ----------------------------------------\n"
+  printf "  types:\n"
+  printf "  focused - returns focused display id\n"
+  printf "  main - return 1 if external is connected\n"
+  printf "         otherwise returns 0\n"
+
+  ;;
+esac

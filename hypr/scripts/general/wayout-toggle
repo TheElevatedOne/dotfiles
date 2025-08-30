@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if pgrep -f wlogout >>/dev/null; then
+  pkill -f wlogout >>/dev/null
+else
+  /tmp/user-config/hypr/scripts/general/way-out
+fi

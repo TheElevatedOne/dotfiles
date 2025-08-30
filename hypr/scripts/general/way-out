@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+grim -t jpeg /tmp/wl-shot.jpg
+magick /tmp/wl-shot.jpg -scale 10% -blur 0x1.5 -resize 1000% /tmp/wl-blur.jpg
+MONITOR=$(/tmp/user-config/hypr/scripts/monitor/getmonitor main)
+wlogout -l /tmp/user-config/wlogout/layout -C /tmp/user-config/wlogout/style.css -b 5 -c 10 -T 360 -B 360 -L 50 -R 50 -n -P $MONITOR
+rm /tmp/wl-*.jpg

@@ -8,4 +8,32 @@
 # Dependencies: waybar
 # Description: Reload WayBar Config
 
-pkill -f waybar --signal USR2
+MAIN="$(/tmp/user-config/hypr/scripts/monitor/getmonitor main)"
+MULTI="/tmp/user-config/waybar/config-multi"
+
+if pgrep -f waybar >>/dev/null; then
+  printf "\e[1m[\e[38;5;11mLOG\e[0m\e[1m]\e[0m process waybar found\n"
+  pkill -f waybar >>/dev/null
+  printf "\e[1m[\e[38;5;11mLOG\e[0m\e[1m]\e[0m process waybar killed\n"
+  if [ "$MAIN" -eq "1" ]; then
+    printf "\e[1m[\e[38;5;11mLOG\e[0m\e[1m]\e[0m process waybar created on external monitor\n"
+    waybar -c $MULTI >>/dev/null &
+    disown
+  else
+    printf "\e[1m[\e[38;5;11mLOG\e[0m\e[1m]\e[0m process waybar created on internal monitor\n"
+
+    waybar >>/dev/null &
+    disown
+  fi
+else
+  printf "\e[1m[\e[38;5;11mLOG\e[0m\e[1m]\e[0m process waybar not found\n"
+  if [ "$MAIN" -eq "1" ]; then
+    printf "\e[1m[\e[38;5;11mLOG\e[0m\e[1m]\e[0m process waybar created on external monitor\n"
+    waybar -c $MULTI >>/dev/null &
+    disown
+  else
+    printf "\e[1m[\e[38;5;11mLOG\e[0m\e[1m]\e[0m process waybar created on internal monitor\n"
+    waybar >>/dev/null &
+    disown
+  fi
+fi

@@ -9,29 +9,17 @@
 /* ### App Menu & Power Menu ### */
 /* ############################# */
 
-#custom-lp-menu {
+#custom-lp-power {
   font-size: 20px;
   color: @apps;
-}
-#custom-menu{
-  color: @text-light;
-  transition: all .3s ease;
-  background: @apps;
-  padding: 0px 12px 0px 8px;
-  font-size: 18px;
-}
-#custom-rp-menu {
-  font-size: 20px;
-  color: @apps;
-  background: @power;
 }
 #custom-power {
-  background: @power;
+  background: @apps;
   font-size: 16px;
   padding: 0px 2px 0px 8px;
 }
 #custom-rp-power {
-  color: @power;
+  color: @apps;
   background: @workspaces-bg;
   font-size: 20px;
 }

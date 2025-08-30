@@ -2,14 +2,14 @@
 
 get_ap_info() {
   local conf_file="$(pgrep -a -f create_ap | grep "config" | awk '{print $5}' | sed "1q;d")"
-  source $conf_file
+  source $conf_file >/dev/null
   local JSON=$(echo "{'text': 'SSID: <b>$SSID</b>\nPASS: <b>$PASSPHRASE</b>\nFREQ-BAND: <b>$FREQ_BAND GHz</b>\n\nETH-IFACE: <b>$INTERNET_IFACE</b>\nWLAN-IFACE: <b>$WIFI_IFACE</b>$(echo "$HIDDEN" | awk '{if ($1==1) {print "\\n\\nHIDDEN"} else {pass}}')', 'alt': 'on'}" | sed "s/'/\"/g" | jq --unbuffered --compact-output)
   echo "$JSON"
 }
 
 case $1 in
 c)
-  sh -c 'env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY /usr/bin/wihotspot'
+  sh -c 'env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY /usr/bin/wihotspot' >/dev/null
   ;;
 *)
   while true; do

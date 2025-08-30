@@ -2,9 +2,9 @@
 
 declare -A WIF
 
-START="$(awk '/wlan0/ {print $2, $10}' <(cat /proc/net/dev)) $(awk '/enp3s0/ {print $2, $10}' <(cat /proc/net/dev))"
+START="$(awk '/wlo1/ {print $2, $10}' <(cat /proc/net/dev)) $(awk '/enp3s0/ {print $2, $10}' <(cat /proc/net/dev))"
 sleep 1
-END="$(awk '/wlan0/ {print $2, $10}' <(cat /proc/net/dev)) $(awk '/enp3s0/ {print $2, $10}' <(cat /proc/net/dev))"
+END="$(awk '/wlo1/ {print $2, $10}' <(cat /proc/net/dev)) $(awk '/enp3s0/ {print $2, $10}' <(cat /proc/net/dev))"
 WIF=(
   ["NET_DL"]="$(echo "$END $START" | awk '{print ($1 - $5) + ($3 - $7)}' | awk '{if ($1 >= 1073741824) {printf "%.2f %s", ($1 / 1073741824), "GiB/s"} else if ($1 >= 1048576) {printf "%.2f %s", ($1 / 1048576), "MiB/s"} else if ($1 >= 1024) {printf "%.2f %s", ($1 / 1024), "kiB/s"} else {printf "%.2f %s", $1, "B/s"}}' | awk '{if ($1 % 1 == 0) {printf "%.0f %s", $1, $2} else {print $1, $2}}')"
   ["NET_UP"]="$(echo "$END $START" | awk '{print ($2 - $6) + ($4 - $8)}' | awk '{if ($1 >= 1073741824) {printf "%.2f %s", ($1 / 1073741824), "GiB/s"} else if ($1 >= 1048576) {printf "%.2f %s", ($1 / 1048576), "MiB/s"} else if ($1 >= 1024) {printf "%.2f %s", ($1 / 1024), "kiB/s"} else {printf "%.2f %s", $1, "B/s"}}' | awk '{if ($1 % 1 == 0) {printf "%.0f %s", $1, $2} else {print $1, $2}}')"

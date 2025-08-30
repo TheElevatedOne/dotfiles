@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
+FOC=$(/tmp/user-config/hypr/scripts/monitor/getmonitor focused)
+
 splitcmd() {
   IFS=" " read -ra VOL <<<"$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
   VOLUME=$(echo "print(round(${VOL[1]} * 100))" | python3)
   echo "$VOLUME"
 }
 
-if ! eww active-windows | grep toastvolume >>/dev/null; then eww open toastvolume; fi
+if ! eww active-windows | grep toastvolume >>/dev/null; then eww open toastvolume --screen $FOC; fi
 
 while true; do
   TEST1=$(splitcmd)

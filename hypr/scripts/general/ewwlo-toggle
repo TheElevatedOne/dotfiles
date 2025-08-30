@@ -11,7 +11,7 @@
 if eww active-windows | grep ewwlogout >/dev/null; then
   eww close ewwlogout
 else
-  FOCUSED="$(/tmp/user-config/hypr/scripts/general/focused)"
+  FOCUSED="$(/tmp/user-config/hypr/scripts/monitor/getmonitor focused)"
   eww open --screen $FOCUSED ewwlogout
   unset FOCUSED
 fi

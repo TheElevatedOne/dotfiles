@@ -1,21 +1,12 @@
 {
-  "custom/lp-menu": {
+  "custom/lp-power": {
     "format": "",
-    "tooltip": false
-  },
-  "custom/menu": {
-    "format": "",
-    "tooltip-format": "App Menu / Drawer",
-    "on-click": "~/.config/hypr/scripts/general/app_menu"
-  },
-  "custom/rp-menu": {
-    "format": "",
     "tooltip": false
   },
   "custom/power": {
     "format": " ",
     "tooltip-format": "Power Menu",
-    "on-click": "eww open ewwlogout"
+    "on-click": "/tmp/user-config/hypr/scripts/general/way-out"
   },
   "custom/rp-power": {
     "format": "",
@@ -49,9 +40,9 @@
     "separate-outputs": true,
     "max-length": 35,
     "rewrite": {
-      "": " 󰍹 desktop",
+      "": "🖥️ desktop",
       "org.kde.dolphin": "dolphin",
-      "clipse": "󰅍 clipse",
+      "clipse": "📋 clipse",
       "org.qbittorrent.qBittorrent": "qbittorrent",
       "ableton live 11 suite.exe": "ableton_live_11"
     }

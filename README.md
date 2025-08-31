@@ -33,12 +33,11 @@
 - [x] Vesktop/BetterDiscord -> Create your own script, f&#k
 - [x] Firefox -> FirefoxCSS is quite the rabbit-hole
 - [x] oh-my-posh -> Just modified my distrous.omp.json with a script
-- [ ] fastfetch
-- [ ] Sherlock (On the way)
+- [x] rofi
+- [x] fastfetch
 - [ ] SwayNC (Getting There)
 - [ ] GTK Theme
 - [ ] QT Theme (Something, something kvantum...)
-- [ ] Plymouth Theme (When I finish the logo)
 - [ ] Btop
 - [ ] Maybe More...
 
@@ -71,7 +70,7 @@
 - [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh):
   - [distrous.omp.json](https://github.com/TheElevatedOne/distrous.omp.json) (My Repo xd) -> Modified
 - [sddm](https://github.com/sddm/sddm)
-- [sherlock](https://github.com/Skxxtz/sherlock)
 - [swaync](https://github.com/ErikReider/SwayNotificationCenter)
+- [rofi-wayland](https://github.com/A417ya/rofi-wayland)
 - [waybar](https://github.com/Alexays/Waybar)
 - [waypaper](https://github.com/anufrievroman/waypaper)

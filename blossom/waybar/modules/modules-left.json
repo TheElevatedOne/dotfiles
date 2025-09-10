@@ -1,0 +1,160 @@
+{
+  "custom/power": {
+    "format": " ",
+    "tooltip-format": "Power Menu",
+    "on-click": "/tmp/user-config/hypr/scripts/general/way-out"
+  },
+  "group/power": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/power"
+    ]
+  },
+  "hyprland/workspaces": {
+    "format": "{id}",
+    "persistent-workspaces": {
+      "*": [
+        1
+      ]
+    }
+  },
+  "hyprland/window": {
+    "format": "{class}",
+    "tooltip-format": "\tActive Window\t\n\nTitle: {title}",
+    "icon": true,
+    "icon-size": 20,
+    "separate-outputs": true,
+    "max-length": 35,
+    "rewrite": {
+      "org.kde.dolphin": "dolphin",
+      "clipse": "📋 clipse",
+      "org.qbittorrent.qBittorrent": "qbittorrent",
+      "ableton live 11 suite.exe": "ableton_live_11",
+      "org.fooyin.fooyin": "fooyin"
+    }
+  },
+  "hyprland/windowcount": {
+    "format": "{}",
+    "separate-outputs": false
+  },
+  "group/windows": {
+    "orientation": "horizontal",
+    "modules": [
+      "hyprland/window",
+      "hyprland/windowcount"
+    ]
+  },
+  "group/sysmon": {
+    "orientation": "horizontal",
+    "modules": [
+      "group/processor",
+      "group/ram",
+      "group/gpu",
+      "custom/network"
+    ]
+  },
+  "group/processor": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/cpu",
+      "custom/cpu-info"
+    ],
+    "drawer": {
+      "transition-left-to-right": false,
+      "transition-duration": 500
+    }
+  },
+  "custom/cpu": {
+    "interval": 10,
+    "format": "{text}",
+    "tooltip": false,
+    "on-click": "kitty btop",
+    "return-type": "json",
+    "restart-interval": 1,
+    "exec": "$HOME/.config/waybar/scripts/cpu-info icon"
+  },
+  "custom/cpu-info": {
+    "interval": 10,
+    "format": "{text}%",
+    "max-length": 10,
+    "return-type": "json",
+    "restart-interval": 1,
+    "exec": "$HOME/.config/waybar/scripts/cpu-info",
+    "on-click": "kitty btop"
+  },
+  "group/ram": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/memory",
+      "custom/memory-info"
+    ],
+    "drawer": {
+      "transition-left-to-right": false,
+      "transition-duration": 500
+    }
+  },
+  "custom/memory": {
+    "interval": 10,
+    "format": "{text}",
+    "tooltip": false,
+    "on-click": "kitty btop",
+    "return-type": "json",
+    "restart-interval": 1,
+    "exec": "$HOME/.config/waybar/scripts/mem-info icon"
+  },
+  "custom/memory-info": {
+    "interval": 10,
+    "format": "{text}%",
+    "max-length": 10,
+    "exec": "$HOME/.config/waybar/scripts/mem-info",
+    "on-click": "kitty btop",
+    "return-type": "json",
+    "restart-interval": 1
+  },
+  "group/gpu": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/gpu",
+      "custom/gpu-info"
+    ],
+    "drawer": {
+      "transition-left-to-right": false,
+      "transition-duration": 500
+    }
+  },
+  "custom/gpu": {
+    "format": "{text}",
+    "tooltip": false,
+    "on-click": "kitty btop",
+    "interval": 10,
+    "return-type": "json",
+    "restart-interval": 1,
+    "exec": "$HOME/.config/waybar/scripts/gpu-info icon"
+  },
+  "custom/gpu-info": {
+    "interval": 10,
+    "format": "{text}%",
+    "exec": "$HOME/.config/waybar/scripts/gpu-info",
+    "return-type": "json",
+    "on-click": "kitty btop",
+    "restart-interval": 1
+  },
+  "custom/network": {
+    "format": "󰛳 ",
+    "interval": 2,
+    "exec": "$HOME/.config/waybar/scripts/get-net",
+    "return-type": "json"
+  },
+  "custom/wthr": {
+    "format": "{text}",
+    "interval": 900,
+    "exec": "$HOME/.config/waybar/scripts/get-wthr",
+    "return-type": "json"
+  },
+  "group/wthr": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/wthr"
+    ]
+  }
+}

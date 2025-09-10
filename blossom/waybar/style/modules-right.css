@@ -1,0 +1,218 @@
+ /*  __  __           _       _             _____  _       _     _    */
+ /* |  \/  |         | |     | |           |  __ \(_)     | |   | |   */
+ /* | \  / | ___   __| |_   _| | ___  ___  | |__) |_  __ _| |__ | |_  */
+ /* | |\/| |/ _ \ / _` | | | | |/ _ \/ __| |  _  /| |/ _` | '_ \| __| */
+ /* | |  | | (_) | (_| | |_| | |  __/\__ \ | | \ \| | (_| | | | | |_  */
+ /* |_|  |_|\___/ \__,_|\__,_|_|\___||___/ |_|  \_\_|\__, |_| |_|\__| */
+ /*                                                   __/ |           */
+ /*                                                  |___/            */
+
+/*###############*/
+/*### Systray ###*/
+/*###############*/
+
+#workaround2{
+    padding: 0px 7px;
+    background: alpha(#FFF, 0.5);
+    border-radius: 6px;
+    border: 3px solid @border;
+    margin: 0px 5px 0px 0px;
+    padding: 0px 2px 0px 2px;
+}
+#workaround {
+  background: @accent;
+  margin: 2px 0px 2px 0px;
+  border-radius: 3px;
+}
+#tray {
+  padding: 0px 6px;
+}
+#tray window.popup{
+  outline-color: rgba(0, 0, 0, 0);
+  background: none;
+  border: 0px;
+  /* background-blend-mode: screen; */
+}
+#tray window.popup decoration {
+  opacity: 0;
+}
+#tray window.popup menu {
+  padding: 5px 5px;
+  border: 2px solid @color7;
+  border-radius: 10px;
+  background: none;
+  background-color: alpha(@background, 0.8);
+  margin: -50px 0px;
+}
+#tray window.popup menu menuitem {
+  background-color: alpha(@color2, 0.3);
+  margin: 2px;
+  padding: 7px 0px;
+  border-radius: 5px;
+  transition: 0.2s ease;
+  font-size: 14px;
+}
+#tray window.popup menu > menuitem:hover {
+  background-color: alpha(@color2, 0.5);
+  border-radius: 5px;
+  margin: 2px;
+  padding: 7px 0px;
+  font-weight: bold;
+  /* border-bottom: 2px solid @color7; */
+}
+#tray window.popup menu > separator {
+  margin: 2px 5px;
+  background-color: alpha(@color6, 0.5);
+}
+#tray window.popup menu > arrow {
+  background-color: alpha(@color6, 0.3);
+  margin: 2px;
+  border-radius: 5px;
+}
+#tray window.popup menu > arrow:hover {
+  background-color: alpha(@color6, 0.5);
+}
+#tray window.popup menu > arrow.bottom {
+  margin: 10px 0px -10px 0px;
+}
+
+/*############################*/
+/*### Other Simple Configs ###*/
+/*############################*/
+
+#keyboard {
+  background: alpha(#FFF, 0.6);
+  border: 3px solid @border;
+  border-radius: 6px;
+  margin: 0px 5px 0px 0px;
+}
+#language {
+  margin: 2px;
+  padding: 0px 5px;
+  color: #FFF;
+  background: @accent;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+#custom-capslock {
+  margin: 2px 2px 2px 0px;
+  font-size: 18px;
+  background: mix(@accent, #000, 0.1);
+  color: #FFF;
+  padding: 0px 1px 0px 7px;
+  border-radius: 3px;
+}
+#custom-capslock.off {
+  color: alpha(#FFF, 0.6);
+}
+#custom-numlock {
+  margin: 2px 2px 2px 0px;
+  font-size: 20px;
+  padding: 0px 0px 0px 8px;
+  background: mix(@accent, #000, 0.2);
+  color: #FFF;
+  border-radius: 3px;
+}
+#custom-numlock.off {
+  color: alpha(#FFF, 0.6);
+}
+#lighting {
+  background: alpha(#FFF, 0.6);
+  border: 3px solid @border;
+  border-radius: 6px;
+  margin: 0px 5px 0px 0px;
+}
+#backlight {
+  margin: 2px;
+  padding: 0px 4px 0px 8px;
+  color: #FFF;
+  font-size: 15px;
+  background: @accent;
+  border-radius: 3px;
+}
+#custom-nightlight {
+  margin: 2px 2px 2px 0px;
+  padding: 0px 10px;
+  color: #FFF;
+  background: mix(@accent, #000, 0.1);
+  font-size: 15px;
+  border-radius: 3px;
+}
+#devices {
+  background: alpha(#FFF, 0.6);
+  border: 3px solid @border;
+  border-radius: 6px;
+  margin: 0px 5px 0px 0px;
+}
+#pulseaudio {
+  margin: 2px;
+  padding: 0px 11px 0px 9px;
+  color: #FFF;
+  background: @accent;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+#bluetooth {
+  margin: 2px 2px 2px 0px;
+  padding: 0px 11px 0px 9px;
+  transition: all .3s ease;
+  color: #FFF;
+  background: mix(@accent, #000, 0.1);
+  font-size: 14px;
+  border-radius: 3px;
+}
+#network {
+  margin: 2px 2px 2px 0px;
+  padding: 0px 6px 0px 7px;
+  transition: all .3s ease;
+  color: #FFF;
+  background: mix(@accent, #000, 0.2);
+  font-size: 13px;
+  border-radius: 3px;
+}
+#custom-hotspot {
+  margin: 2px 2px 2px 0px;
+  background: mix(@accent, #000, 0.3);
+  color: #FFF;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0px 3px 0px 8px;
+  border-radius: 3px;
+}
+
+/*###############*/
+/*### Battery ###*/
+/*###############*/
+#batt {
+  background: alpha(#FFF, 0.6);
+  border-radius: 6px;
+  border: 3px solid @border;
+  margin: 0px 5px 0px 0px;
+}
+#custom-battery {
+  margin: 2px;
+  padding: 0px 2px 0px 7px;
+  transition: all .3s ease;
+  color: #FFF;
+  font-size: 15px;
+  background: @accent;
+  font-weight: bold;
+  border-radius: 3px;
+}
+#notif {
+  background: alpha(#FFF, 0.6);
+  border-radius: 6px;
+  border: 3px solid @border;
+}
+#custom-notification {
+  margin: 2px;
+  padding: 0px 4px 0px 9px;
+  transition: all .3s ease;
+  color: #FFF;
+  background: mix(@accent, #000, 0.2);
+  font-size: 15px;
+  border-radius: 3px;
+}
+

@@ -1,0 +1,37 @@
+ /*  __  __           _       _              _____           _             */
+ /* |  \/  |         | |     | |            / ____|         | |            */
+ /* | \  / | ___   __| |_   _| | ___  ___  | |     ___ _ __ | |_ ___ _ __  */
+ /* | |\/| |/ _ \ / _` | | | | |/ _ \/ __| | |    / _ \ '_ \| __/ _ \ '__| */
+ /* | |  | | (_) | (_| | |_| | |  __/\__ \ | |___|  __/ | | | ||  __/ |    */
+ /* |_|  |_|\___/ \__,_|\__,_|_|\___||___/  \_____\___|_| |_|\__\___|_|    */
+
+/*####################*/
+/*### Clock & Date ###*/
+/*####################*/
+
+#center {
+  background: alpha(#FFF, 0.5);
+  border: 3px solid @border;
+  border-radius: 6px;
+}
+#custom-date {
+    padding: 0px 5px;
+    margin: 2px 0px 2px 2px;
+    color: @text-light;
+    transition: all .3s ease;
+    font-weight: bold;
+    background: @accent;
+    font-size: 14px;
+    border-radius: 3px;
+}
+#custom-clock {
+    padding: 0px 5px;
+    margin: 2px;
+    color: @text-light;
+    transition: all .3s ease;
+    font-weight: bold;
+    background: mix(@accent, #000, 0.2);
+    font-size: 14px;
+    border-radius: 3px;
+}
+

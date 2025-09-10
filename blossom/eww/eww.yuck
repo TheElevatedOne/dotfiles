@@ -1,0 +1,5 @@
+(include "./widgets/toastbright.yuck") ;; Brightness Toast Overlay
+(include "./widgets/toastvolume.yuck") ;; Volume Toast Overlay
+(include "./widgets/hyprlock.yuck")    ;; Hyprlock Timer
+(include "./widgets/musepaper.yuck")   ;; Musepaper Eww Style
+(include "./widgets/game-launcher.yuck")

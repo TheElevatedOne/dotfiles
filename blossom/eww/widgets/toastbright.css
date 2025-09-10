@@ -1,0 +1,31 @@
+/* ########################
+   ### Brightness Toast ###
+   ########################
+
+   Description: Show floating window with brightness change */
+
+.toastbright {
+  background: alpha(#35000e, 0.5);
+  border: 5px solid alpha(#e8003f, 0.8);
+  border-radius: 15px;
+}
+
+.bright-label {
+  color: #ffbfd1;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "GeistMono Nerd Font";
+}
+
+.bright-prog {
+ background: alpha(#b30030, 0.5);
+ margin-top: -10px;
+ padding: 20px;
+ border: 3px solid #810023;
+ border-radius: 10px;
+}
+
+.bright-prog > trough > progress {
+  background-color: #ff4074;
+}
+

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo "$1"
+
+hellwal -i "$1" -m --no-cache --skip-term-colors
+/tmp/user-config/hypr/scripts/custom-wal/walsktop
+eww reload
+python3 /tmp/user-config/hypr/scripts/custom-wal/ansiwal.py
+swaync-client -rs

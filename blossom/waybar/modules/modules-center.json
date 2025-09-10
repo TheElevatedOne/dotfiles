@@ -1,0 +1,23 @@
+{
+  "custom/date": {
+    "format": "{text}",
+    "interval": 1,
+    "exec": "$HOME/.config/waybar/scripts/get-date",
+    "return-type": "json",
+    "restart-interval": 1
+  },
+  "custom/clock": {
+    "format": "{text}",
+    "interval": 1,
+    "exec": "$HOME/.config/waybar/scripts/get-time",
+    "return-type": "json",
+    "restart-interval": 1
+  },
+  "group/center": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/date",
+      "custom/clock"
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+@import '/tmp/user-hellwal/waybar-colors.css';
+
+window {
+    font-family: GeistMono Nerd Font;
+    font-weight: bold;
+    font-size: 16pt;
+    color: @foreground; /* text */
+    background-image: url("/tmp/wl-blur.jpg");
+
+} 
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    background-color: alpha(#b30030, 0.5);
+    transition: all 0.3s ease-in;
+    border-radius: 25px;
+    box-shadow: none;
+    border: none;
+}
+
+button:focus {
+    box-shadow: none;
+    background-color: alpha(#e8003f, 0.5);
+    border-bottom: 10px solid alpha(#FFF, 0.5);
+    color: mix(#ff4074, #FFF, 0.7);
+}
+
+#shutdown {
+    background-image: url("./icons/power.png");
+}
+
+#logout {
+    background-image: url("./icons/logout.png");
+}
+
+#reboot {
+    background-image: url("./icons/restart.png");
+}
+
+#lock {
+    background-image: url("./icons/lock.png");
+}
+
+#sleep {
+  background-image: url("./icons/sleep.png");
+}

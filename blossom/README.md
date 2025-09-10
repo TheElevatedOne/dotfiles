@@ -1,23 +1,8 @@
-# HyprSpace Dotfiles
+# Blossom Dotfiles
 
----
+**A Theme Around the Color:**
 
-## Previews
-
-<details>
-  <summary>Waybar, Cava, Waypaper, Eww (Desktop)</summary>
-  </br>
-  
-  <https://github.com/user-attachments/assets/731ac888-8ade-4fe9-aca9-26ee6888408f>
-  
-</details>
-<details>
-  <summary>Wallpapers</summary>
-  <br>
-
-  ![wallpapers-gif](https://github.com/TheElevatedOne/dotfiles/blob/main/assets/wallpapers.gif?raw=true)
-  
-</details>
+**It Assumes Japaneses Cherry Trees, so here's Blossom.**
 
 ---
 

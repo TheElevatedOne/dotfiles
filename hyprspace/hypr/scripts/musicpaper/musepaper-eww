@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+##########################
+### SCRIPT INFORMATION ###
+##########################
+
+# Name: musepaper-eww
+# Dependencies: tauon, eww, playerctl
+# Description: Script for showing album art and song info on desktop
+
+MAIN=$(/tmp/user-config/hypr/scripts/monitor/getmonitor main)
+
+while true; do
+  if playerctl -p tauon status >/dev/null 2>&1; then
+    if ! eww active-windows | grep musepaper >/dev/null; then
+      eww open musepaper --screen $MAIN
+    fi
+  else
+    if eww active-windows | grep musepaper >/dev/null; then
+      eww close musepaper
+    fi
+  fi
+  sleep 5
+done

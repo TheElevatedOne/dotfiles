@@ -1,0 +1,54 @@
+;; ####################
+;; ### Volume Toast ###
+;; ####################
+;;
+;; Description: Show floating window with volume change
+
+(defwindow toastvolume
+  :monitor 0
+  :geometry (geometry
+            :x "0px"
+            :y "150px"
+            :width "13%"
+            :height "13%"
+            :anchor "center bottom")
+  :stacking "overlay"
+  :exclusive false
+  (volume-widget)
+  )
+
+(defpoll volume-value
+  :interval "0.01s"
+  :initial ""
+  "scripts/get-volume vol")
+
+(defpoll volume-mute
+  :interval "0.01s"
+  :initial ""
+  "scripts/get-volume mute")
+
+(defwidget volume-widget []
+  (box
+    :class "volume-box"
+    :orientation "v"
+    :valign "center center"
+    :haligh "center center"
+    :hexpand false
+    :vexpand false
+    (box
+      :class "volume-label"
+      :orientation "h"
+      (label
+        :class "volume-info"
+        :text "Volume: ${volume-value}% (${volume-mute} )"
+        )
+      )
+    (progress
+      :class "volume-prog"
+      :value "${volume-value}"
+      :valign "center"
+      :halign "center"
+      )
+    )
+  )
+

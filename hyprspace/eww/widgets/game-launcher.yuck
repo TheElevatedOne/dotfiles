@@ -1,0 +1,224 @@
+(defwindow gamelaunch
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "0px"
+                               :width "90%"
+                               :height "80%"
+                               :anchor "center")
+           :stacking "overlay"
+           :exclusive false
+  (main)
+  )
+
+(defwidget game [name image run ?alt-run]
+  (eventbox
+    :class "game-box"
+    :onclick "${run} && eww close gamelaunch"
+    :onrightclick "${alt-run}"
+    :cursor "pointer"
+    (tooltip
+      (label
+        :class "game-label"
+        :text "${name}")
+      (image
+        :class "game-image"
+        :path "${image}"
+        :image-height 198
+        )
+      )
+    )
+  )
+
+(defwidget main []
+  (scroll
+    :class "scrollable"
+    :vscroll true
+    :hscroll false
+    (box
+      :class "vertical-box"
+      :orientation "v"
+      :space-evenly false
+      (box
+        :class "horizontal-box"
+        :orientation "h"
+        :space-evenly false
+        (game
+          :name "Steam"
+          :image "/tmp/user-config/eww/widgets/game-launcher/steam.png"
+          :run "steam"
+          )
+        (game
+          :name "Elite"
+          :image "/tmp/user-config/eww/widgets/game-launcher/elite.jpg"
+          :run "steam steam://rungameid/359320"
+          )
+        (game
+          :name "Haven"
+          :image "/tmp/user-config/eww/widgets/game-launcher/haven.jpg"
+          :run "steam steam://rungameid/983970"
+          )
+        (game
+          :name "Dead Cells"
+          :image "/tmp/user-config/eww/widgets/game-launcher/dead-cells.jpg"
+          :run "steam steam://rungameid/588650"
+          )
+        (game
+          :name "Rain World"
+          :image "/tmp/user-config/eww/widgets/game-launcher/rain-world.jpg"
+          :run "steam steam://rungameid/312520"
+          )
+        (game
+          :name "Jusant"
+          :image "/tmp/user-config/eww/widgets/game-launcher/jusant.jpg"
+          :run "steam steam://rungameid/1977170"
+          )
+        (game
+          :name "Journey To The Savage Planet"
+          :image "/tmp/user-config/eww/widgets/game-launcher/jttsp.jpg"
+          :run "steam steam://rungameid/973810"
+          )
+        (game
+          :name "Antichamber"
+          :image "/tmp/user-config/eww/widgets/game-launcher/antichamber.jpg"
+          :run "steam steam://rungameid/219890"
+          )
+        (game
+          :name "Manifold Garden"
+          :image "/tmp/user-config/eww/widgets/game-launcher/manifold.jpg"
+          :run "steam steam://rungameid/473950"
+          )
+        (game
+          :name "MO: Astray"
+          :image "/tmp/user-config/eww/widgets/game-launcher/mo.jpg"
+          :run "steam steam://rungameid/1104660"
+          )
+        (game
+          :name "Tetris Effect"
+          :image "/tmp/user-config/eww/widgets/game-launcher/tetris-effect.jpg"
+          :run "steam steam://rungameid/1003590"
+          )
+        (game
+          :name "Venineth"
+          :image "/tmp/user-config/eww/widgets/game-launcher/venineth.jpg"
+          :run "steam steam://rungameid/976500"
+          )
+        )
+      (box
+        :class "horizontal-box"
+        :orientation "h"
+        :space-evenly false
+        (game
+          :name "Ogu and the Secret Forest"
+          :image "/tmp/user-config/eww/widgets/game-launcher/ogu.jpg"
+          :run "steam steam://rungameid/1985960"
+          )
+        (game
+          :name "Satisfactory"
+          :image "/tmp/user-config/eww/widgets/game-launcher/satisfactory.jpg"
+          :run "steam steam://rungameid/526870"
+          )
+        (game
+          :name "OPUS: Echo of Starsong"
+          :image "/tmp/user-config/eww/widgets/game-launcher/opus.jpg"
+          :run "steam steam://rungameid/1504500"
+          )
+        (game
+          :name "Solar Ash"
+          :image "/tmp/user-config/eww/widgets/game-launcher/solar.png"
+          :run "steam steam://rungameid/1867530"
+          )
+        )
+      (box
+        :class "horizontal-box"
+        :orientation "h"
+        :space-evenly false
+        (game
+          :name "The Talos Principle - Reawakened"
+          :image "/tmp/user-config/eww/widgets/game-launcher/talos-rew.jpg"
+          :run "steam steam://rungameid/2806640"
+          )
+        (game
+          :name "The Talos Principle 2"
+          :image "/tmp/user-config/eww/widgets/game-launcher/talos2.jpg"
+          :run "steam steam://rungameid/835960"
+          )
+        (game
+          :name "Hyper Light Drifter"
+          :image "/tmp/user-config/eww/widgets/game-launcher/hyper.jpg"
+          :run "steam steam://rungameid/257850"
+          )
+        (game
+          :name "Sable"
+          :image "/tmp/user-config/eww/widgets/game-launcher/sable.jpg"
+          :run "steam steam://rungameid/757310"
+          )
+        )
+      (box
+        :class "horizontal-box"
+        :orientation "h"
+        :space-evenly false
+        (game
+          :name "Celeste"
+          :image "/tmp/user-config/eww/widgets/game-launcher/celeste.jpg"
+          :run "steam steam://rungameid/504230"
+          )
+        (game
+          :name "Hollow Knight"
+          :image "/tmp/user-config/eww/widgets/game-launcher/hk.png"
+          :run "steam steam://rungameid/367520"
+          )
+        (game
+          :name "Super Meat Boy"
+          :image "/tmp/user-config/eww/widgets/game-launcher/smb.png"
+          :run "steam steam://rungameid/40800"
+          )
+        (game
+          :name "Thumper"
+          :image "/tmp/user-config/eww/widgets/game-launcher/thumper.jpg"
+          :run "steam steam://rungameid/356400"
+          )
+        (game
+          :name "ULTRAKILL"
+          :image "/tmp/user-config/eww/widgets/game-launcher/ultrakill.jpg"
+          :run "steam steam://rungameid/1229490"
+          )
+        (game
+          :name "Fear & Hunger"
+          :image "/tmp/user-config/eww/widgets/game-launcher/fnh.jpg"
+          :run "steam steam://rungameid/1002300"
+          )
+        (game
+          :name "Fear & Hunger 2: Termina"
+          :image "/tmp/user-config/eww/widgets/game-launcher/fnh-termina.jpg"
+          :run "steam steam://rungameid/2171440"
+          )
+        (game
+          :name "Besiege"
+          :image "/tmp/user-config/eww/widgets/game-launcher/besiege.png"
+          :run "steam steam://rungameid/346010"
+          )
+        (game
+          :name "Furi"
+          :image "/tmp/user-config/eww/widgets/game-launcher/furi.png"
+          :run "steam steam://rungameid/423230"
+          )
+        (game
+          :name "Signalis"
+          :image "/tmp/user-config/eww/widgets/game-launcher/signalis.png"
+          :run "steam steam://rungameid/1262350"
+          )
+        (game
+          :name "Worldless"
+          :image "/tmp/user-config/eww/widgets/game-launcher/worldless.jpg"
+          :run "steam steam://rungameid/1898500"
+          )
+        (game
+          :name "Osu!"
+          :image "/tmp/user-config/eww/widgets/game-launcher/osu.png"
+          :run "/home/the-elevated-one/.local/bin/osu-wine"
+          )
+        )
+      )
+    )
+  )
+

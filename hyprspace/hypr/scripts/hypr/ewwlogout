@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if eww active-windows | grep ewwlogout >/dev/null; then
+  eww close ewwlogout
+else
+  eww open ewwlogout
+fi

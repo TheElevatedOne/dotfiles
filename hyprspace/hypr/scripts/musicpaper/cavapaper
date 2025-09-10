@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+##########################
+### SCRIPT INFORMATION ###
+##########################
+
+# Name: cavapaper
+# Dependencies: kitty, hyprwinwrap (hypr-plugin), cavapaper-run (script)
+# Description: Run cavapaper-run with special class and config
+
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+
+KITTY_DISABLE_WAYLAND=1 kitty --class="cavapaper" -c ~/.config/kitty/cavapaper.conf $SCRIPT_DIR/cavapaper-run

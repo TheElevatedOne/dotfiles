@@ -1,0 +1,34 @@
+/* Hellwal Colors Symlink */
+@import url("./Hyprspace/colors-rgb.css");
+
+@import url("./Hyprspace/browser-tab-toolbar.css"); /* Top Toolbar With Tabs */
+@import url("./Hyprspace/browser-navbar.css"); /* Navigation Bar */
+
+* {
+  font-family: "GeistMono Nerd Font";
+}
+
+html#main-window {
+  background: transparent;
+}
+
+/* Hiding Shit */
+.titlebar-buttonbox-container,
+.titlebar-spacer, #firefox-view-button,
+#tab-drag-empty-feedback, 
+#alltabs-button, 
+#save-to-pocket-button, 
+#customizableui-special-spring1,
+#customizableui-special-spring2,
+.urlbarView-favicon,
+.urlbarView-type-icon,
+.urlbarView-tail-prefix,
+#urlbar-anon-search-settings { 
+  display: none !important;
+} 
+
+/* Bookmarks Toolbar */
+toolbar#PersonalToolbar {
+  background-color: hsl(from rgb(var(--color2)) h s calc(l - 15)) !important;
+}
+

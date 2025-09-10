@@ -1,0 +1,166 @@
+{
+  "custom/lp-tray": {
+    "format": "",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+  "custom/lp-lang": {
+    "format": "",
+    "tooltip": false
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "en",
+    "format-sk": "sk",
+    "keyboard-name": "at-translated-set-2-keyboard"
+  },
+  "custom/rp-lang": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/capslock": {
+    "format": "󰪛 ",
+    "tooltip": true,
+    "exec": "$HOME/.config/waybar/scripts/lock-keys caps",
+    "restart-interval": 1,
+    "return-type": "json"
+  },
+  "custom/rp-caps": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/numlock": {
+    "format": "󰎾 ",
+    "tooltip": true,
+    "exec": "$HOME/.config/waybar/scripts/lock-keys num",
+    "restart-interval": 1,
+    "return-type": "json"
+  },
+  "custom/rp-num": {
+    "format": "",
+    "tooltip": false
+  },
+  "backlight": {
+    "format": "{icon}",
+    "format-icons": [
+      "󰃞 ",
+      "󰃝 ",
+      "󰃟 ",
+      "󰃠 "
+    ],
+    "reverse-scrolling": true,
+    "tooltip-format": "Brightness: {percent}%",
+    "on-click": "better-control -d"
+  },
+  "custom/rp-backlight": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/nightlight": {
+    "format": "{icon}",
+    "format-icons": {
+      "on": "󰌵",
+      "off": "󰌶"
+    },
+    "tooltip": true,
+    "tooltip-format": "\tNight Light Toggle\t\n\nTemperature: {text}K",
+    "interval": 1,
+    "exec": "$HOME/.config/waybar/scripts/nightlight return",
+    "on-click": "$HOME/.config/waybar/scripts/nightlight toggle",
+    "return-type": "json"
+  },
+  "custom/rp-nightlight": {
+    "format": "",
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "tooltip": true,
+    "tooltip-format": "Device: {desc}",
+    "nospacing": 1,
+    "format-muted": "󰖁",
+    "format-icons": {
+      "default": [
+        "<big>󰕿</big>",
+        "<big>󰖀</big>",
+        "<big>󰕾</big>"
+      ]
+    },
+    "on-click": "pamixer -t",
+    "on-click-right": "better-control -V",
+    "scroll-step": 5
+  },
+  "custom/rp-sound": {
+    "format": "",
+    "tooltip": false
+  },
+  "bluetooth": {
+    "format-on": "󰂯",
+    "format-off": "󰂲",
+    "format-disabled": "󰂲",
+    "format-connected": "<big>󰂱</big>",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\nBattery: {device_battery_percentage}%",
+    "on-click": "better-control -b"
+  },
+  "custom/rp-bluetooth": {
+    "format": "",
+    "tooltip": false
+  },
+  "network": {
+    "format-wifi": "󰖩 ",
+    "format-ethernet": " ",
+    "format-disconnected": " ",
+    "tooltip-format-disconnected": "Error",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname} 🖧 ",
+    "on-click": "better-control -w"
+  },
+  "custom/rp-network": {
+    "format": "",
+    "tooltip": false,
+    "interval": 5
+  },
+  "custom/hotspot": {
+    "format": "{icon}",
+    "format-icons": {
+      "on": "󰀂 ",
+      "off": "󰯡 "
+    },
+    "tooltip": true,
+    "tooltip-format": "{text}",
+    "exec": "$HOME/.config/waybar/scripts/hotspot",
+    "on-click": "$HOME/.config/waybar/scripts/hotspot c",
+    "restart-interval": 1,
+    "return-type": "json"
+  },
+  "custom/lp-battery": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/battery": {
+    "interval": 1,
+    "exec": "$HOME/.config/waybar/scripts/batt-info",
+    "return-type": "json",
+    "on-click": "better-control -B"
+  },
+  "custom/rp-battery": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": " ",
+    "on-click": "swaync-client -t -sw",
+    "escape": true
+  },
+  "custom/rp-notif": {
+    "format": "",
+    "tooltip": false
+  }
+}

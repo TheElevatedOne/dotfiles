@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+##########################
+### SCRIPT INFORMATION ###
+##########################
+
+# Name: ewwlo-toggle
+# Dependencies: eww, ewwlogout
+# Description: Toggle logout screen
+
+if eww active-windows | grep ewwlogout >/dev/null; then
+  eww close ewwlogout
+else
+  FOCUSED="$(/tmp/user-config/hypr/scripts/monitor/getmonitor focused)"
+  eww open --screen $FOCUSED ewwlogout
+  unset FOCUSED
+fi

@@ -1,0 +1,176 @@
+/*  __  __           _       _             _           __ _   */
+/* |  \/  |         | |     | |           | |         / _| |  */
+/* | \  / | ___   __| |_   _| | ___  ___  | |     ___| |_| |_ */
+/* | |\/| |/ _ \ / _` | | | | |/ _ \/ __| | |    / _ \  _| __|*/
+/* | |  | | (_) | (_| | |_| | |  __/\__ \ | |___|  __/ | | |_ */
+/* |_|  |_|\___/ \__,_|\__,_|_|\___||___/ |______\___|_|  \__|*/
+
+/* ############################# */
+/* ### App Menu & Power Menu ### */
+/* ############################# */
+
+#custom-lp-power {
+  font-size: 20px;
+  color: @apps;
+}
+#custom-power {
+  background: @apps;
+  font-size: 16px;
+  padding: 0px 2px 0px 8px;
+}
+#custom-rp-power {
+  color: @apps;
+  background: @workspaces-bg;
+  font-size: 20px;
+}
+
+/*##########################*/
+/*### Workspace  & Window###*/
+/*##########################*/
+
+#custom-lp-workspaces {
+  margin-left: 0px;
+  color: @workspaces-bg;
+  font-size: 20px;
+}
+#workspaces {
+  background: @workspaces-bg;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+#workspaces button {
+    all:unset;
+    font-family: "GeistMono Nerd Font";
+    font-weight: 900;
+    font-size: 17px;
+    padding: 0px 6px;
+    color: alpha(@workspaces, 0.7);
+    transition: all .2s ease;
+}
+#workspaces button:hover {
+    color: alpha(@workspaces, 0.2);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
+}
+#workspaces button.active {
+    color: @workspaces;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#workspaces button.empty {
+    color: alpha(@workspaces, 0.4);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
+}
+#workspaces button.empty:hover {
+    color: alpha(@workspaces, 0.2);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
+}
+#workspaces button.empty.active {
+    color: @workspaces;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#custom-rp-workspaces {
+  color: @workspaces-bg;
+  font-size: 20px;
+  background: @window;
+}
+#window {
+  color: white;
+  background: @window;
+  padding: 0px 5px 0px 7px;
+  font-size: 15px;
+  font-weight: bold;
+}
+#custom-rp-window {
+  color: @window;
+  font-size: 20px;
+}
+
+/* ######################
+   ### System Monitor ###
+   ###################### */
+
+#custom-lp-sysmon, #custom-rp-sysmon, #custom-rp-cpu, #custom-rp-ram, #custom-rp-gpu {
+  font-size: 20px;
+}
+#sysmon {
+  margin-left: 10px;
+}
+#custom-lp-sysmon {
+  color: @sysmon-cpu;
+}
+#custom-cpu {
+  background: @sysmon-cpu;
+  font-size: 1.1em;
+  padding: 0px 0px 0px 5px;
+  font-weight: bold;
+}
+#custom-cpu-info {
+  background: @sysmon-cpu;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0px 5px 0px 5px;
+}
+#custom-rp-cpu {
+  color: @sysmon-cpu;
+  background: @sysmon-ram;
+}
+#custom-memory {
+  background: @sysmon-ram;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0px 3px 0px 7px;
+}
+#custom-memory-info {
+  background: @sysmon-ram;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0px 3px 0px 7px;
+}
+#custom-rp-ram {
+  color: @sysmon-ram;
+  background: @sysmon-gpu;
+}
+#custom-gpu {
+  background: @sysmon-gpu;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0px 0px 0px 7px;
+}
+#custom-gpu-info {
+  background: @sysmon-gpu;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0px 3px 0px 7px;
+}
+#custom-rp-gpu {
+  color: @sysmon-gpu;
+  background: @sysmon-net;
+}
+#custom-network {
+  background: @sysmon-net;
+  padding: 0px 1px 0px 6px;
+}
+#custom-rp-sysmon {
+  color: @sysmon-net;
+}
+#custom-lp-wthr {
+  margin-left: 10px;
+  font-size: 20px;
+  color: @wthr;
+}
+#custom-wthr {
+  background: @wthr;
+  padding: 0px 1px 0px 5px;
+  font-weight: bold;
+  font-size: 1.08em;
+}
+#custom-rp-wthr {
+  font-size: 20px;
+  color: @wthr;
+}

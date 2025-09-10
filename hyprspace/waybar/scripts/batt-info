@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+BATTERY_CAP="$(readarray -t array <<<"$(cat /sys/class/power_supply/BAT*/capacity)" && echo "${array[@]}")"
+BATTERY_CAP_TOTAL="$(echo "${BATTERY_CAP[@]}" | awk '{len=NF; sum=0; for (i=1; i<=len; i++) {sum+=$i}; avg=sum/NF; printf "%.0f",avg}')"
+unset BATTERY_CAP
+
+BATTERY_STATE="$(readarray -t array <<<"$(cat /sys/class/power_supply/BAT*/status)" && echo "${array[@]}")"
+BATTERY_STATE_TOTAL=$(echo "${BATTERY_STATE[@]}" | awk '{len=NF; charge=0; for (i=1; i<=len; i++) {if ($i~/Char/) {charge++} else if ($i~/char/) {charge--}}; if ((charge/len) >= 0.5) {print 1} else {print 0}}')
+unset BATTERY_STATE
+
+BATTERY_MAX="$(readarray -t array <<<"$(cat /sys/class/power_supply/BAT*/charge_full)" && echo "${array[@]}")"
+BATTERY_MAX_D="$(readarray -t array <<<"$(cat /sys/class/power_supply/BAT*/charge_full_design)" && echo "${array[@]}")"
+BATTERY_HEALTH="$(echo "${BATTERY_MAX[@]} | ${BATTERY_MAX_D[@]}" | awk '{bmax=0; bmaxd=0; check=0; for (i=1; i<=NF; i++) {if ($i=="|") {check++}; if (check==0) {bmax+=$i} else {bmaxd+=$i}}; printf "%.0f%%",(bmax/bmaxd)*100}')"
+unset BATTERY_MAX
+unset BATTERY_MAX_D
+
+BATTERY_V="$(readarray -t array <<<"$(cat /sys/class/power_supply/BAT*/voltage_now)" && echo "${array[@]}")"
+BATTERY_A="$(readarray -t array <<<"$(cat /sys/class/power_supply/BAT*/current_now)" && echo "${array[@]}")"
+BATTERY_WATT="$(echo "${BATTERY_V[@]} | ${BATTERY_A[@]}" | awk '{len=((NF-1)/2); volt=0; amp=0; avg_v=0; avg_a=0; check=0; for (i=1; i<=NF; i++) {if ($i=="|") {check++}; if (check==0) {volt+=$i} else {amp+=$i}}; avg_v=volt/len; avg_a=amp/len; printf "%.1f %s",(avg_v/1000000)*(avg_a/1000000),"W"}')"
+unset BATTERY_V
+unset BATTERY_A
+
+BATTERY_ICON="$(echo "$BATTERY_STATE_TOTAL $BATTERY_CAP_TOTAL" | awk '{if ($1 == 1 && $2 >= 95) {print "󰂅 "} else if ($1 == 1 && $2 >= 90) {print "󰂋 "} else if ($1 == 1 && $2 >= 80) {print "󰂊 "} else if ($1 == 1 && $2 >= 70) {print "󰢞 "} else if ($1 == 1 && $2 >= 60) {print "󰂉 "} else if ($1 == 1 && $2 >= 50) {print "󰢝 "} else if ($1 == 1 && $2 >= 40) {print "󰂈 "} else if ($1 == 1 && $2 >= 30) {print "󰂇 "} else if ($1 == 1 && $2 >= 20) {print "󰂆 "} else if ($1 == 1 && $2 >= 10) {print "󰢜 "} else if ($1 == 0 && $2 >= 95) {print "󰁹 "} else if ($1 == 0 && $2 >= 90) {print "󰂂 "} else if ($1 == 0 && $2 >= 80) {print "󰂁 "} else if ($1 == 0 && $2 >= 70) {print "󰂀 "} else if ($1 == 0 && $2 >= 60) {print "󰁿 "} else if ($1 == 0 && $2 >= 50) {print "󰁾 "} else if ($1 == 0 && $2 >= 40) {print "󰁽 "} else if ($1 == 0 && $2 >= 30) {print "󰁼 "} else if ($1 == 0 && $2 >= 20) {print "󰁻 "} else if ($1 == 0 && $2 >= 10) {print "󰁺 "}}')"
+
+echo "{'text': '$BATTERY_CAP_TOTAL% $BATTERY_ICON', 'tooltip': 'Battery\n\n󰂄 $(if [ "$BATTERY_STATE_TOTAL" -eq "1" ] || [ "$(echo "$BATTERY_WATT" | awk '{printf "%.0f",$1}')" -eq "0" ]; then echo ""; else echo "-"; fi)$BATTERY_WATT\n $BATTERY_HEALTH'}" | sed -e "s/'/\"/g" | jq -c

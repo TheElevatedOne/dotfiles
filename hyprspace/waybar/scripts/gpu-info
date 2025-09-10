@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+ACTIVE_STATS=()
+
+JSON=$(gpustat --json)
+GPU_UTIL=$(echo "$JSON" | jq -r '.gpus[0]."utilization.gpu"')
+ENC_UTIL=$(echo "$JSON" | jq -r '.gpus[0]."utilization.enc"')
+DEC_UTIL=$(echo "$JSON" | jq -r '.gpus[0]."utilization.dec"')
+
+GPU_NAME=$(echo "$JSON" | jq -r '.gpus[0].name')
+GPU_PWR=$(echo "$JSON" | jq -r '.gpus[0]."power.draw"')
+GPU_PWL=$(echo "$JSON" | jq -r '.gpus[0]."enforced.power.limit"')
+GPU_MEMU=$(echo "$JSON" | jq -r '.gpus[0]."memory.used"')
+GPU_MEMT=$(echo "$JSON" | jq -r '.gpus[0]."memory.total"')
+
+if ! [ "$GPU_UTIL" -eq "0" ]; then
+  ACTIVE_STATS+=("$GPU_UTIL")
+fi
+
+if ! [ "$ENC_UTIL" -eq "0" ]; then
+  ACTIVE_STATS+=("$ENC_UTIL")
+fi
+
+if ! [ "$DEC_UTIL" -eq "0" ]; then
+  ACTIVE_STATS+=("$DEC_UTIL")
+fi
+
+AVG=0
+for i in "${ACTIVE_STATS[@]}"; do
+  AVG=$(($AVG + $i))
+done
+
+AVG=$(echo "$AVG ${#ACTIVE_STATS[@]}" | awk '{if ($2 == 0) {print 0} else {print ($1 / $2)}}')
+
+case $1 in
+icon)
+  VALUES=(
+    "#FFFFFF"
+    "#FFD8D8"
+    "#FFA7A7"
+    "#FF8787"
+  )
+  STATE="$(echo "$AVG" | awk '{if ($1 >= 85) {print 3} else if ($1 >= 50) {print 2} else if ($1 >= 25) {print 1} else {print 0}}')"
+  echo "{'text': '<span color=''${VALUES[$STATE]}''><big>󰢮 </big></span>'}" | sed -e "s/'/\"/g" | sed -e "s/\"\"/'/g" | jq -c
+  ;;
+*)
+  echo "{'text': '$AVG', 'tooltip': '\tGraphics Card\t\n\nName: $GPU_NAME\nPower: $GPU_PWR / $GPU_PWL W\nMemory: $GPU_MEMU / $GPU_MEMT MB\n\nCompute: $GPU_UTIL%\nDecode: $DEC_UTIL%\nEncode: $ENC_UTIL%'}" | sed "s/'/\"/g" | jq --unbuffered --compact-output
+  ;;
+esac

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if eww active-windows | grep gamelaunch >/dev/null; then
+  eww close gamelaunch
+else
+  FOCUSED="$(/tmp/user-config/hypr/scripts/monitor/getmonitor focused)"
+  eww open --screen $FOCUSED gamelaunch
+  unset FOCUSED
+fi

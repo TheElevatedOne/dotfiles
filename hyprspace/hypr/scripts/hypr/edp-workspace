@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+MAIN="$(/tmp/user-config/hypr/scripts/monitor/getmonitor main)"
+
+if [ "$MAIN" -eq "1" ]; then
+  hyprctl keyword workspace 1,monitor:[eDP-1],persistent:true,default:true
+fi

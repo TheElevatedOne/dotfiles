@@ -1,0 +1,7 @@
+(include "./widgets/toastbright.yuck") ;; Brightness Toast Overlay
+(include "./widgets/toastvolume.yuck") ;; Volume Toast Overlay
+(include "./widgets/hyprlock.yuck")    ;; Hyprlock Timer
+(include "./widgets/ewwlogout.yuck")   ;; Kde Plasma Style wlogout Interface
+(include "./widgets/musepaper.yuck")   ;; Musepaper Eww Style
+(include "./widgets/launchbar.yuck")
+(include "./widgets/game-launcher.yuck")

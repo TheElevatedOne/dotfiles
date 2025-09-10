@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+FOC=$(/tmp/user-config/hypr/scripts/monitor/getmonitor focused)
+
+if ! eww active-windows | grep toastbright >>/dev/null; then eww open toastbright --screen $FOC; fi
+
+while true; do
+  TEST1=$(brightnessctl get)
+  sleep 3
+  TEST2=$(brightnessctl get)
+  if [ "$TEST1" = "$TEST2" ]; then
+    eww close toastbright
+    break
+  fi
+done

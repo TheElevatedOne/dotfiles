@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+source /tmp/user-hellwal/ansi-colors-hex.sh
+preset="$HOME/.config/cava/config-preset"
+config="$HOME/.config/cava/config"
+
+cp -f $preset $config
+
+sed -i -e "s/\$color1/$COLOR_1/g" $config
+sed -i -e "s/\$color2/$COLOR_2/g" $config
+sed -i -e "s/\$color3/$COLOR_3/g" $config
+sed -i -e "s/\$color4/$COLOR_4/g" $config
+sed -i -e "s/\$color5/$COLOR_5/g" $config
+sed -i -e "s/\$color6/$COLOR_6/g" $config
+
+killall -s SIGUSR1 cava >>/dev/null 2>&1

@@ -1,0 +1,23 @@
+* {
+  background:  rgba(%%color0.rgb%%, 0.9);
+  background1: rgba(%%color1.rgb%%, 0.9);
+  background2: rgba(%%color2.rgb%%, 0.9);
+  background3: rgba(%%color3.rgb%%, 0.9);
+  background4: rgba(%%color4.rgb%%, 0.9);
+  background5: rgba(%%color5.rgb%%, 0.9);
+  background6: rgba(%%color6.rgb%%, 0.9);
+  background7: rgba(%%color7.rgb%%, 0.9);
+
+  textcolor:   rgb(%%color15.rgb%%);
+  textcolor1:  rgb(%%color14.rgb%%);
+  textcolor2:  rgb(%%color13.rgb%%);
+  textcolor3:  rgb(%%color12.rgb%%);
+  textcolor4:  rgb(%%color11.rgb%%);
+  textcolor5:  rgb(%%color10.rgb%%);
+  textcolor6:  rgb(%%color9.rgb%%);
+  textcolor7:  rgb(%%color8.rgb%%);
+
+  border:      rgb(%%color4.rgb%%);
+}
+
+@import "theme.rasi"

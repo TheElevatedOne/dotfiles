@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+##########################
+### SCRIPT INFORMATION ###
+##########################
+
+# Name: cavapaper-run
+# Dependencies: cava
+# Description: Run cava
+
+sleep 1 && cava

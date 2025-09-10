@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+case $1 in
+
+cover)
+  COVER="$(playerctl -p tauon metadata mpris:artUrl)"
+  echo "${COVER/file:\/\//}"
+  ;;
+
+title)
+  echo "$(playerctl -p tauon metadata title)"
+  ;;
+
+artist)
+  echo "$(playerctl -p tauon metadata artist)"
+  ;;
+
+album)
+  echo "$(playerctl -p tauon metadata album)"
+  ;;
+
+genre)
+  echo "$(playerctl -p tauon metadata xesam:genre)"
+  ;;
+
+ppicon)
+  PLAY=""
+  PAUSE=""
+  if [ "$(playerctl -p tauon status)" = "Playing" ]; then
+    echo "$PAUSE"
+  else
+    echo "$PLAY"
+  fi
+  ;;
+
+pptoggle)
+  playerctl -p tauon play-pause
+  ;;
+
+forward)
+  playerctl -p tauon next
+  ;;
+
+backward)
+  playerctl -p tauon previous
+  ;;
+
+esac

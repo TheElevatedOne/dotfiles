@@ -1,0 +1,311 @@
+/* _   _     __      ______          _____
+  | \ | |   /\ \    / |  _ \   /\   |  __ \
+  |  \| |  /  \ \  / /| |_) | /  \  | |__) |
+  | . ` | / /\ \ \/ / |  _ < / /\ \ |  _  /
+  | |\  |/ ____ \  /  | |_) / ____ \| | \ \
+  |_| \_/_/    \_\/   |____/_/    \_|_|  \_\ */
+
+/* Bar Container */
+.browser-toolbox-background #nav-bar-customization-target, 
+.browser-toolbox-background #PanelUI-button {
+  background-color: hsl(from rgb(var(--color2)) h s calc(l - 5));
+  padding-bottom: 2px !important;
+  margin-top: -1px !important;
+}
+
+/* Back Next Buttons */
+toolbarbutton#back-button:is([disabled]), 
+toolbarbutton#forward-button:is([disabled]) {
+  background-color: hsl(from rgb(var(--color6)) h calc(s + 40) calc(l + 50)) !important;
+  color: rgb(var(--background)) !important;
+  transition: ease 0.3s !important;
+}
+toolbarbutton#back-button:not([disabled]), 
+toolbarbutton#forward-button:not([disabled]) {
+  /*box-shadow: 0px 0px 0px 1.5px rgba(var(--color14), 0.7) inset;*/
+  background-color: hsl(from rgba(var(--color1), 0.7) h s calc(l - 20)) !important;
+  transition: ease 0.1s !important;
+  box-sizing: border-box !important;
+  border-bottom: 2px solid rgb(var(--color7)) !important;
+}
+toolbarbutton#back-button:not([disabled]):hover, 
+toolbarbutton#forward-button:not([disabled]):hover {
+  border-bottom: 0px solid rgb(var(--color7)) !important;
+}
+toolbarbutton#back-button {
+  padding-left: 4px !important;
+  margin: 4px 0px 4px 6px !important;
+  border-radius: 5px 0px 0px 5px;
+}
+toolbarbutton#forward-button {
+  margin: 4px 6px 4px 0px !important;
+  border-radius: 0px 5px 5px 0px;
+}
+.menupopup-arrowscrollbox {
+  appearance: none !important;
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border-radius: 10px !important;
+  border-bottom: 3px solid rgb(var(--color7)) !important;
+}
+
+/* Reload */
+toolbarbutton#reload-button:is([disabled]) {
+  background-color: rgba(var(--color1)) !important;
+  margin: 4px 2px 4px 0px !important;
+  padding-left: 1px !important;
+  padding-right: 1px !important;
+  border-radius: 5px !important;
+}
+toolbarbutton#reload-button:not([disabled]) {
+  background-color: hsl(from rgba(var(--color1), 0.7) h s calc(l - 10)) !important;
+  margin: 4px 2px 4px 0px !important;
+  padding-left: 1px !important;
+  padding-right: 1px !important;
+  border-radius: 5px !important;
+  box-sizing: border-box !important;
+  border-bottom: 2px solid rgb(var(--color7)) !important;
+  transition: 0.1s ease !important;
+}
+toolbarbutton#reload-button:not([disabled]):hover {
+  border-bottom: 0px solid rgb(var(--color7)) !important;
+}
+toolbarbutton#stop-button:not([disabled]) {
+  background-color: hsl(from rgba(var(--color8), 0.7) h s calc(l - 10)) !important;
+  margin: 4px 2px 4px 0px !important;
+  padding-left: 1px !important;
+  padding-right: 1px !important;
+  border-radius: 5px !important;
+  box-sizing: border-box !important;
+  border-bottom: 2px solid rgb(var(--color7)) !important;
+}
+
+
+/* Identity Box (Next to the shield icon) */
+.browser-toolbox-background #identity-box {
+  /* background-color: rgba(var(--color2), 0.5);
+  border-radius: 5px;
+  padding: 0px 2px 0px 2px !important;*/
+  display: none !important;
+}
+
+/* Search Bar */
+#urlbar-container {
+  background: transparent !important;
+  transition: 0.3s ease !important;
+}
+.urlbar-input-box {
+  margin-left: 8px;
+  margin-right: 8px;
+  color: white !important;
+}
+.urlbar-input-container {
+  background-color: hsl(from rgb(var(--color2)) h s calc(l - 20)) !important;
+}
+.urlbarView {
+  background: linear-gradient(0deg, hsl(from rgb(var(--color2)) h s calc(l - 15)) 0%, hsl(from rgb(var(--color2)) h s calc(l - 20)) 100%) !important;
+  
+}
+.urlbar-input-container {
+  padding: 2px !important;
+  margin: -1px 0px !important;
+  height: 34px !important;
+  border-radius: 5px !important;
+}
+#urlbar {
+  transition: 0.3s ease !important;
+}
+#urlbar:is([open]) {
+  border-radius: 5px !important;
+  box-sizing: border-box;
+  border: 4px solid rgba(var(--color12), 1) !important;
+  margin-top: 4px !important;
+  & > * {
+    border-radius: 5px 5px 0px 0px !important;
+  }
+}
+#urlbar-container:has(#urlbar:is([open])) {
+  margin: 0px 10px !important;
+}
+
+.urlbarView {
+  border-inline: none !important;
+  margin-inline: 0px !important;
+  padding-inline: 10px !important;
+  width: auto !important;
+  /*border: 2px solid rgba(var(--color12), 1) !important;*/
+}
+.urlbarView-row {
+  border: 2px solid rgba(var(--color12), 0.5) !important;
+  border-radius: 10px !important;
+  margin: 5px !important;
+  padding: 3px !important;
+  transition: 0.1s ease !important;
+}
+.urlbarView-row:is([selected]) {
+  background: hsl(from rgb(var(--color14)) h s calc(l / 3)) !important;
+}
+.urlbarView-row:is([label="Recent Searches"]), .urlbarView-row:is([label="Firefox Suggest"])  {
+  margin-top: 20px !important;
+}
+.urlbarView-url {
+  color: hsl(from rgb(var(--color6)) h s calc(l + 10)) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  margin-left: 0px !important;
+}
+.urlbarView-title {
+  color: rgb(var(--cursor)) !important;
+  font-weight: 1000 !important;
+  font-size: 16px !important;
+}
+.search-one-offs {
+  justify-content: center !important;
+  width: auto !important;
+  margin: 0 auto !important;
+}
+
+/* Search Shield */
+box#tracking-protection-icon-container {
+  padding: 0px 7px !important;
+  margin-right: 2px !important;
+  background: rgba(var(--color4), 0.5) !important;
+  transition: 0.3s ease;
+}
+box#tracking-protection-icon-container:hover {
+  padding: 0px 7px 0px 7px !important;
+  margin-right: 2px !important;
+  background: rgba(var(--color4), 1) !important;
+}
+panel#protections-popup > * {
+  appearance: none !important;
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border: 10px !important;
+  border-bottom: 3px solid rgb(var(--color7)) !important;
+}
+panel#editBookmarkPanel > * {
+  appearance: none !important;
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border: 5px !important;
+}
+panel#editBookmarkPanel > .panel-header {
+  border-bottom: 3px solid rgba(var(--color7), 0.5) !important;
+}
+panel#editBookmarkPanel > .panel-subview-body {
+  appearance: none !important;
+  border-bottom: 3px solid rgb(var(--color7)) !important;
+  margin-top: -1px !important;
+}
+panel#downloadsPanel > *{
+  appearance: none !important;
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border: 10px !important;
+}
+panelmultiview#downloadsPanel-multiView {
+  border-bottom: 3px solid rgb(var(--color7)) !important;
+}
+panel#unified-extensions-panel {
+  height: 75% !important;
+  & > * {
+    background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  }
+  & > panelmultiview {
+    border-bottom: 3px solid rgb(var(--color7)) !important;
+  }
+}
+
+/* Ext & User Buttons */
+panel#customizationui-widget-panel:is([viewId="PanelUI-fxa"]) > * {
+  appearance: none !important;
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border-bottom: 3px solid rgb(var(--color7)) !important;
+  border-radius: 5px !important;
+}
+panel#customizationui-widget-panel:is([viewId="PanelUI-webext-simple-tab-groups_drive4ik-BAV"]) > * {
+  appearance: none !important;
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border-bottom: 3px solid rgb(var(--color7)) !important;
+  border-radius: 5px !important;
+}
+
+#downloads-button,
+#fxa-toolbar-menu-button,
+#simple-tab-groups_drive4ik-browser-action,
+#unified-extensions-button,
+#ublock0_raymondhill_net-browser-action,
+#addon_darkreader_org-browser-action,
+#logins-button,
+#_29edd886-c5e0-40d6-a369-31c5b9f4bb4e_-browser-action {
+  background-color: hsl(from rgba(var(--color1), 0.7) h s calc(l - 10)) !important;
+  border-bottom: 2px solid rgb(var(--color7)) !important;
+  margin: 4px 0px 4px 0px !important;
+  transition: 0.1s ease !important;
+}
+#downloads-button {
+  border-radius: 5px 0px 0px 5px !important;
+}
+#_29edd886-c5e0-40d6-a369-31c5b9f4bb4e_-browser-action {
+  border-radius: 0px 5px 5px 0px !important;
+}
+#downloads-button:hover,
+#fxa-toolbar-menu-button:hover,
+#simple-tab-groups_drive4ik-browser-action:hover,
+#unified-extensions-button:hover,
+#ublock0_raymondhill_net-browser-action:hover,
+#addon_darkreader_org-browser-action:hover,
+#logins-button:hover,
+#_29edd886-c5e0-40d6-a369-31c5b9f4bb4e_-browser-action:hover {
+  border-bottom: 0px solid rgb(var(--color7)) !important;
+}
+
+/* Hamburger Menu */
+toolbarbutton#PanelUI-menu-button {
+  margin: 4px 5px !important;
+  padding: 0px 1px !important;
+  border-radius: 4px !important;
+  border-bottom: 2px solid rgb(var(--color7)) !important;
+  background-color: hsl(from rgba(var(--color1), 0.7) h s calc(l - 10)) !important;
+  transition: 0.1s ease !important;
+}
+toolbarbutton#PanelUI-menu-button:hover {
+  border-bottom: 0px solid rgb(var(--color7)) !important;
+}
+panel#appMenu-popup {
+  border-radius: 5px !important;
+  border: none !important;
+  background: transparent !important;
+}
+panel#appMenu-popup > * {
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border-bottom: 3px solid rgb(var(--color7)) !important;
+  border-radius: 10px !important;
+}
+toolbarbutton#appMenu-fxa-label2 {
+  font-size: 17px !important;
+  font-weight: 1000 !important;
+  margin: -5px 0px !important;
+  padding: 15px 15px 17px 15px !important;
+  transition: 0.3s ease !important;
+}
+toolbarbutton#appMenu-fxa-label2:hover {
+  background: hsl(from rgb(var(--color2)) h s calc(l / 2.5)) !important;
+}
+toolbarseparator#appMenu-fxa-separator, toolbarseparator#PanelUI-fxa-menu-profiles-separator {
+  border: 1px solid rgb(var(--color6)) !important;
+}
+
+/* Tooltips */
+tooltip {
+  appearance: none !important;
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border-radius: 5px !important;
+  border-bottom: 3px solid rgb(var(--color7)) !important;
+}
+
+findbar {
+  appearance: none !important;
+  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  border: none !important;
+  margin-bottom: 0px !important;
+  padding-bottom: 7px !important;
+  transition: 0.3s ease !important;
+}

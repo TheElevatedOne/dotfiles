@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+##########################
+### SCRIPT INFORMATION ###
+##########################
+
+# Name: external-display-single
+# Dependencies: Hyprland IPC
+# Description: Disable Laptop display on external display (eg. HDMI-A-1) connection
+#              And enable it after disconnect.
+
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+HYPR_CONF="$HOME/.config/hypr/configs/monitors.conf"
+
+displays() {
+  if [ "$1" = "monitoradded>>HDMI-A-1" ]; then
+    # hyprctl keyword monitor "eDP-1,disable"
+    # hyprctl keyword monitor "HDMI-A-1,1920x1080@120,auto,1"
+    echo "monitor=eDP-1,disable" >$HYPR_CONF
+    echo "monitor=HDMI-A-1,1920x1080@120,auto,1" >>$HYPR_CONF
+    killall cava
+    $SCRIPT_DIR/cavapaper
+  elif [ "$1" = "monitorremoved>>HDMI-A-1" ]; then
+    sleep 2
+    # hyprctl keyword monitor "eDP-1,preferred,auto,1"
+    # hyprctl keyword monitor "HDMI-A-1,preferred,auto,1"
+    if ! xrandr --listmonitors | grep HDMI-A-1; then
+      echo "monitor=eDP-1,preferred,auto,1" >$HYPR_CONF
+      echo "monitor=HDMI-A-1,1920x1080@120,auto,1" >>$HYPR_CONF
+      killall cava
+      $SCRIPT_DIR/cavapaper
+    fi
+  fi
+}
+
+socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line; do displays "$line"; done

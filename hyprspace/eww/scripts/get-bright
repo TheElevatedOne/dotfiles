@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+STEP=$(($(brightnessctl max) / 100))
+VALUE=$(($(brightnessctl get) / $STEP))
+
+echo $VALUE

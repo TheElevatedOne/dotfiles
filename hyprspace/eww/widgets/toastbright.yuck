@@ -1,0 +1,49 @@
+;; ########################
+;; ### Brightness Toast ###
+;; ########################
+;;
+;; Description: Show floating window with brightness change
+
+(defwindow toastbright
+  :monitor 0
+  :geometry (geometry
+            :x "0px"
+            :y "150px"
+            :width "13%"
+            :height "13%"
+            :anchor "center bottom")
+  :stacking "overlay"
+  :exclusive false
+  (brightness-widget)
+  )
+
+(defpoll bright-value
+  :interval "0.01s"
+  :initial ""
+  "scripts/get-bright")
+
+(defwidget brightness-widget []
+  (box
+    :class "bright-box"
+    :orientation "v"
+    :valign "center center"
+    :haligh "center center"
+    :hexpand false
+    :vexpand false
+    (box
+      :class "bright-label"
+      :orientation "h"
+      (label
+        :class "bright-info"
+        :text "Brightness: ${bright-value}%"
+        )
+      )
+    (progress
+      :class "bright-prog"
+      :value "${bright-value}"
+      :valign "center"
+      :halign "center"
+      )
+    )
+  )
+

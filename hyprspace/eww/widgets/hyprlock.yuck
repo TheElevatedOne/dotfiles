@@ -1,0 +1,32 @@
+;; ######################
+;; ### Hyprlock Timer ###
+;; ######################
+;;
+;; Description: Show floating window with 30 second timer
+;;              until hyprlock triggers.
+
+(defwindow hyprlock
+  :monitor 0
+  :geometry (geometry
+              :x "0px"
+              :y "0px"
+              :width "10%"
+              :height "10%"
+              :anchor "center")
+  :stacking "overlay"
+  :exclusive false
+  (locktimer)
+  )
+
+(deflisten lock-time
+  :initial "30"
+  "scripts/locktimer")
+
+(defwidget locktimer []
+  (label
+    :class "lock-text"
+    :text " ${lock-time}s"
+    )
+  )
+
+

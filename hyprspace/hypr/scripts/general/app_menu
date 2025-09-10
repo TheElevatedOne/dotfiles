@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+source ~/.config/nwg-panel/menu.conf
+
+declare -a DICT
+
+bool_vars() {
+  if $1; then
+    echo "$2"
+  else
+    echo
+  fi
+}
+
+DICT=(
+  "-s $css_filename"
+  "-ha $h_align"
+  "-va $v_align"
+  "-mt $margin_top"
+  "-mr $margin_right"
+  "-mb $margin_bottom"
+  "-ml $margin_left"
+  "-padding $vertical_item_padding"
+  "-isl $icon_size_l"
+  "-iss $icon_size_s"
+  "-fm '$file_manager'"
+  "-term '$terminal'"
+  "-lang '$language'"
+  "-o '$display'"
+  "-wm '$window_manager'"
+  "-cmd-lock '$cmd_lock'"
+  "-cmd-logout '$cmd_logout'"
+  "-cmd-restart '$cmd_reboot'"
+  "-cmd-shutdown '$cmd_shutdown'"
+  "-slen $search_result_limit"
+  "$(bool_vars $hover_open "-t")"
+  "$(bool_vars $autohide "-d")"
+  "$(bool_vars $debug "--debug")"
+)
+nwg-menu ${DICT[@]}

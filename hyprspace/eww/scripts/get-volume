@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+IFS=" " read -ra VOL <<<"$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
+VOLUME=$(echo "print(round(${VOL[1]} * 100))" | python3)
+MUTE=$(echo "print('' if 'MUTED' in '${VOL[2]}' else '')" | python3)
+
+if [ "$1" = "vol" ]; then
+  echo "$VOLUME"
+elif [ "$1" = "mute" ]; then
+  echo "$MUTE"
+fi

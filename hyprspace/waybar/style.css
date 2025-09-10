@@ -1,0 +1,62 @@
+/*###############################*/
+/*### General and Definitions ###*/
+/*###############################*/
+
+@import '../../.cache/hellwal/waybar-colors.css';
+
+/* Left Modules */
+@define-color apps mix(@color2, #000, 0.2);
+@define-color power @color2;
+@define-color workspaces-bg mix(lighter(@color15), #FFF, 0.2);
+@define-color workspaces darker(@color2);
+@define-color window @color2;
+@define-color lock mix(@color2, #000, 0.3);
+@define-color sysmon-cpu @color2;
+@define-color sysmon-ram mix(@sysmon-cpu, #000, 0.2);
+@define-color sysmon-gpu mix(@sysmon-cpu, #000, 0.4);
+@define-color sysmon-net mix(@sysmon-cpu, #000, 0.6);
+@define-color wthr mix(mix(@color2, @color3, 0.3), #000, 0.3);
+
+/* Center Modules */
+@define-color date darker(@color4);
+@define-color time darker(@color6);
+
+/* Right Modules */
+@define-color tray darker(@color2);
+
+@define-color lang mix(lighter(@color2), #000, 0.15);
+@define-color capslock mix(lighter(@color2), #000, 0.2);
+@define-color numlock mix(lighter(@color2), #000, 0.25);
+@define-color backlight mix(lighter(@color2), #000, 0.3);
+@define-color nightlight mix(lighter(@color2), #000, 0.35);
+@define-color sound mix(lighter(@color2), #000, 0.4);
+@define-color bluetooth mix(lighter(@color2), #000, 0.45);
+@define-color network mix(lighter(@color2), #000, 0.5);
+@define-color hotspot mix(lighter(@color2), #000, 0.55);
+@define-color battery mix(lighter(@color2), #000, 0.6);
+
+@define-color notifications mix(lighter(@color2), #000, 0.65);
+
+/* Extra Colors */
+@define-color text-light #FFF;
+@define-color text-dark #000;
+
+* {
+    /* font-size: 15px; */
+    font-family: "GeistMono Nerd Font";
+}
+window#waybar{
+    all: unset;
+}
+tooltip {
+    background: alpha(@background, 0.7);
+    color: lighter(@color7);
+    font-weight: bold;
+    border: 2px solid @color7;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+@import './style/modules-left.css';
+@import './style/modules-center.css';
+@import './style/modules-right.css';

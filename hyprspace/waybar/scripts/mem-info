@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+bytes2mbytes() {
+  local RET=$(echo "$1" | awk '{if ($1 >= (1024*1024*1024)) {printf "%.1f GiB",$1/1024/1024/1024} else if ($1 >= (1024*1024)) {printf "%.1f MiB",$1/1024/1024} else {printf "%.1f kiB",$1/1024}}')
+  echo "$RET"
+}
+
+MEM_TOTAL=$(free -b | grep -i mem | awk '{print $2}')
+MEM_USED=$(free -b | grep -i mem | awk '{print $3}')
+SWAP_TOTAL=$(free -b | grep -i swap | awk '{print $2}')
+SWAP_USED=$(free -b | grep -i swap | awk '{print $3}')
+
+MEM_UTIL=$(echo "$MEM_USED $MEM_TOTAL" | awk '{printf "%.1f",(($1 * 100) / $2)}')
+SWAP_UTIL=$(echo "$SWAP_USED $SWAP_TOTAL" | awk '{printf "%.1f",(($1 * 100) / $2)}')
+
+TITLE="Memory"
+MEM_RET="RAM: $(bytes2mbytes $MEM_USED) / $(bytes2mbytes $MEM_TOTAL) ($MEM_UTIL%)"
+SWAP_RET="SWAP: $(bytes2mbytes $SWAP_USED) / $(bytes2mbytes $SWAP_TOTAL) ($SWAP_UTIL%)"
+
+if [ "${#MEM_RET}" -ge "${#SWAP_RET}" ]; then
+  LEN="${#MEM_RET}"
+else
+  LEN="${#SWAP_RET}"
+fi
+
+SPACER_NUM=$(echo "$LEN ${#TITLE}" | awk '{printf "%.0f",(($1 - $2) / 2)}')
+SPACER=$(for i in $(seq 1 $SPACER_NUM); do echo -n " "; done)
+
+case $1 in
+icon)
+  VALUES=(
+    "#FFFFFF"
+    "#FFD8D8"
+    "#FFA7A7"
+    "#FF8787"
+  )
+  STATE="$(echo "$MEM_UTIL" | awk '{if ($1 >= 85) {print 3} else if ($1 >= 50) {print 2} else if ($1 >= 25) {print 1} else {print 0}}')"
+  echo "{'text': '<span color=''${VALUES[$STATE]}''> </span>'}" | sed -e "s/'/\"/g" | sed -e "s/\"\"/'/g" | jq -c
+  ;;
+*)
+  echo "{'text': '$MEM_UTIL', 'tooltip': '$SPACER$TITLE\n\n$MEM_RET\n$SWAP_RET'}" | sed "s/'/\"/g" | jq -c
+  ;;
+esac

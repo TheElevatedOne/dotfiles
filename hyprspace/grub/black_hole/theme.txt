@@ -1,0 +1,42 @@
+# Main options
+title-text: ""
+desktop-image: "background.png"
+desktop-color: "#000000"
+terminal-font: "Terminus Regular 14"
+terminal-box: "terminal_box_*.png"
+terminal-left: "0"
+terminal-top: "0"
+terminal-width: "100%"
+terminal-height: "100%"
+terminal-border: "0"
+
+# Boot menu
++ boot_menu {
+  left = 5%
+  top = 32%
+  width = 30%
+  height = 55%
+  item_font = "Noto Sans Regular 20"
+  item_color = "#cccccc"
+  selected_item_color = "#ffffff"
+  icon_width = 36
+  icon_height = 36
+  item_icon_space = 20
+  item_height = 54
+  item_padding = 0
+  item_spacing = 0
+  selected_item_pixmap_style = "select_*.png"
+}
+
+
+# Countdown label
+# You can change the name of default starting OS here
++ label {
+  left = 7%
+  top = 26%
+  align = "center"
+  id = "__timeout__"
+  text = "Booting first entry in %d"
+  color = "#cccccc"
+  font = "Noto Sans Regular 20"
+}

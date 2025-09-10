@@ -1,0 +1,221 @@
+@import url('./Hyprspace/colors-rgb.css');
+
+/* General Firefox */
+@-moz-document url-prefix("about") {
+  * {
+    font-family: "GeistMono Nerd Font" !important;
+  }
+}
+
+/* Settings */
+@-moz-document url-prefix("about:preferences")
+{
+  html, body {
+    background: var(--wallpaper) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+  stack#preferences-stack, div#full {
+    backdrop-filter: blur(5px) brightness(50%) !important;
+    -webkit-backdrop-filter: blur(5px) brightness(50%) !important;
+  }
+  hbox.sticky-container {
+    background: transparent !important;
+  }
+  #translations-manage-install-list, 
+  #browserContainersExtensionContent, 
+  #searchInput,
+  #downloadFolder,
+  #filter,
+  #handlersViewHeader,
+  #handlersView,
+  #engineList,
+  #engineChildren,
+  .featureGate {
+    background: rgb(var(--color1)) !important;
+  }
+}
+
+/* Addons */
+@-moz-document url-prefix("about:addons")
+{
+  div#sidebar {
+    background: var(--wallpaper) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+  categories-box#categories {
+    margin-top: 0px !important;
+    padding-top: 40px !important;
+  }
+  categories-box#categories,
+  div.spacer, 
+  sidebar-footer {
+    backdrop-filter: blur(5px) brightness(50%) !important;
+    -webkit-backdrop-filter: blur(5px) brightness(50%) !important;
+  }
+  h1.header-name + div.spacer {
+    display: none;
+  }
+  div#content, 
+  div.sticky-container,
+  div.main-search,
+  div.main-heading {
+    background: hsl(from rgb(var(--color1)) h s calc(l / 1.3)) !important;
+  }
+  search-addons, search-textbox {
+    background: hsl(from rgb(var(--color1)) h s calc(l / 2)) !important;
+  }
+  div.addon {
+    background: hsl(from rgb(var(--color1)) h s calc(l / 2.5)) !important;
+  }
+}
+
+/* Config */
+@-moz-document url-prefix("about:config") {
+  html, body {
+    background: var(--wallpaper) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+  div#toolbar {
+    background: transparent !important;
+    backdrop-filter: blur(5px) brightness(50%) !important;
+    -webkit-backdrop-filter: blur(5px) brightness(50%) !important;
+    padding-bottom: 10px !important;
+  }
+  table#prefs, tr.odd {
+    background: transparent !important;
+    backdrop-filter: blur(5px) brightness(50%) !important;
+    -webkit-backdrop-filter: blur(5px) brightness(50%) !important;
+    padding-bottom: 10px !important;
+  }
+}
+
+/* Logins */
+@-moz-document url-prefix("about:logins")
+{
+  html, body {
+    background: var(--wallpaper) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+  div.container, header{
+    background: transparent !important;
+    backdrop-filter: blur(5px) brightness(50%) !important;
+    -webkit-backdrop-filter: blur(5px) brightness(50%) !important;
+  }
+}
+
+/* Support */
+@-moz-document url-prefix("about:support"), url-prefix("about:compat") {
+  html, body {
+    background: hsl(from rgb(var(--color2)) h s calc(l / 2)) !important;
+  }
+  div.action-box, tr {
+    background: hsl(from rgb(var(--color1)) h s calc(l / 2)) !important;
+  }
+}
+
+/* New Tab */
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+  html, body {
+    background: var(--wallpaper) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    overflow: hidden !important;
+  }
+  div#root {
+    backdrop-filter: blur(5px) brightness(50%) !important;
+    -webkit-backdrop-filter: blur(5px) brightness(50%) !important;
+  }
+  button.search-handoff-button {
+    background: rgba(var(--color0), 0.7) !important;
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+  div.fake-textbox {
+    text-align: center !important;
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+  div.icon-pin-small, div.wallpapers-section, div.wallpapers-section + span.divider {
+    display: none !important;
+  }
+  div.tile {
+    background: rgba(var(--color10), 0.5) !important;
+    border-bottom: 4px solid rgb(var(--color7)) !important;
+    transition: 0.3s ease
+  }
+  div.tile:hover {
+    border: 0px solid rgb(var(--color7)) !important;
+  }
+  div.icon-wrapper {
+    background: transparent !important;
+  }
+  div.logo {
+    background: transparent !important;
+    background-image: url('./Hyprspace/icons/firefox-icon.svg') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    padding: 45px !important;
+  }
+  div.wordmark {
+    background: rgb(var(--cursor)) !important;
+    mask-image: url('./Hyprspace/icons/firefox-text.svg') !important;
+    mask-repeat: no-repeat !important;
+    mask-size: contain !important;
+    mask-position: center !important;
+    padding: 0px 100px 0px 100px !important;
+  }
+  li.top-site-outer {
+    margin: -5px !important;
+  }
+  a.top-site-button {
+    margin: -5px !important;
+    padding: -10px !important;
+  }
+  button.context-menu-button {
+    margin-right: 3px;
+    margin-top: 27px;
+    opacity: 0.1;
+  }
+  span.context-menu {
+    background: hsl(from rgb(var(--color2)) h s calc(l / 2));
+  }
+  div.customize-menu {
+    background: rgba(var(--color2), 0.3) !important;
+    backdrop-filter: blur(5px) brightness(35%) !important;
+    -webkit-backdrop-filter: blur(5px) brightness(35%) !important;
+    height: 300px !important;
+    overflow: hidden !important;
+    margin-top: auto !important;
+    border-radius: 25px 0px 0px 0px !important;
+  }
+  select#row-selector {
+    background-color: hsl(from rgba(var(--color5), 0.5) h calc(s + 40) l) !important;
+    border: 1px solid rgb(var(--color14));
+  }
+  option:is([data-l10n-id="newtab-custom-row-selector"]) {
+    background-color: hsl(from rgba(var(--color5), 0.5) h calc(s + 40) l) !important;
+  }
+  button.close-button {
+    position: absolute !important;
+    top: 240px !important;
+    left: 330px
+  }
+  div.close-button-wrapper {
+    background: transparent !important;
+  }
+  button.personalize-button {
+    margin-top: 0px !important;
+  }
+}

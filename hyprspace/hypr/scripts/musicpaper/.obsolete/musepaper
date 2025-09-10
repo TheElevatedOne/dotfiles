@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+##########################
+### SCRIPT INFORMATION ###
+##########################
+
+# Name: musepaper
+# Dependencies: kitty, hyprwinwrap (hypr-plugin), cavapaper-run (script)
+# Description: Run cavapaper-run with special class and config
+
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+
+hellwal_reload() {
+  pkill -f "kitty --class=musepaper"
+  KITTY_DISABLE_WAYLAND=1 kitty --class="musepaper" -c ~/.config/kitty/musepaper.conf $SCRIPT_DIR/musepaper-run
+}
+
+trap hellwal_reload SIGUSR1
+
+KITTY_DISABLE_WAYLAND=1 kitty --class="musepaper" -c ~/.config/kitty/musepaper.conf $SCRIPT_DIR/musepaper-run

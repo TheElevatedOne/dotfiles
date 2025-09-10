@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+readarray -t IDS <<<"$(hyprctl -j monitors | jq .[].id)"
+readarray -t FOC <<<"$(hyprctl -j monitors | jq .[].focused)"
+
+for i in $(seq 0 $((${#IDS[@]} - 1))); do
+  if [ "${FOC[i]}" = "true" ]; then
+    FOCUSED="${IDS[$i]}"
+  fi
+done
+
+echo "$FOCUSED"

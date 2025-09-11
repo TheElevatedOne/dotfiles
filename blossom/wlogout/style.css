@@ -1,10 +1,8 @@
-@import '/tmp/user-hellwal/waybar-colors.css';
-
 window {
     font-family: GeistMono Nerd Font;
     font-weight: bold;
     font-size: 16pt;
-    color: @foreground; /* text */
+    color: #ffd4df; /* text */
     background-image: url("/tmp/wl-blur.jpg");
 
 } 
@@ -15,6 +13,7 @@ button {
     background-size: 20%;
     background-color: alpha(#b30030, 0.5);
     transition: all 0.3s ease-in;
+    border: 100px solid #000;
     border-radius: 25px;
     box-shadow: none;
     border: none;

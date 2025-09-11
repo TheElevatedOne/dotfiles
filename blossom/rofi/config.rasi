@@ -1,4 +1,4 @@
-@theme "/tmp/user-config/rofi/rofi-colors.rasi"
+@theme "/tmp/user-config/rofi/colors.rasi"
 
 configuration {
     modes: "window,drun,run,filebrowser";

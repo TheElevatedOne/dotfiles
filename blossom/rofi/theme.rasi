@@ -88,7 +88,6 @@ textbox {
 listview {
     background-color:   transparent;
     margin:     12px 12px 0px 12px;
-    padding: 0px 0px 0px 0px;
     lines:      10;
     columns:    2;
     fixed-height: true;
@@ -127,7 +126,7 @@ mode-switcher {
   spacing: 12px;
 }
 button {
-  background-color: @background3;
+  background-color: @background2;
   padding: 6px 0px;
   border-radius: 8px;
 }

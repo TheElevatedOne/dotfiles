@@ -1,0 +1,17 @@
+* {
+  background:  rgba(0, 0, 0, 0.6);
+  background1: rgba(115, 0, 31, 0.9);
+  background2: rgba(150, 0, 41, 0.9);
+  background3: rgba(179, 0, 48, 0.9);
+  background4: rgba(206, 0, 56, 0.9);
+  background6: rgba(255, 64, 116, 0.9);
+  background7: rgba(255, 163, 188, 0.9);
+
+  textcolor:   rgb(255, 255, 255);
+  textcolor1:  rgb(255, 191, 209);
+  textcolor3:  rgb(255, 212, 223);
+  textcolor7:  rgb(3, 3, 3);
+  border:      rgb(206, 0, 56);
+}
+
+@import "theme.rasi"

@@ -2,6 +2,8 @@
 
 **A Theme Around the Color:**
 
+![#CE0038](https://github.com/TheElevatedOne/dotfiles/blob/main/blossom/assets/color.png)
+
 **It Assumes Japaneses Cherry Trees, so here's Blossom.**
 
 ---

@@ -97,10 +97,10 @@
 }
 #custom-capslock {
   margin: 2px 2px 2px 0px;
-  font-size: 18px;
+  font-size: 20px;
   background: mix(@accent, #000, 0.1);
   color: #FFF;
-  padding: 0px 1px 0px 7px;
+  padding: 0px 0px 0px 8px;
   border-radius: 3px;
 }
 #custom-capslock.off {

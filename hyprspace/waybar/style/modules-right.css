@@ -106,7 +106,7 @@
   background: @capslock;
 }
 #custom-capslock {
-  font-size: 18px;
+  font-size: 20px;
   background: @capslock;
   color: @text-light;
   padding: 0px 0px 0px 6px;

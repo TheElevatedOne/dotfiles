@@ -22,7 +22,7 @@
     "tooltip": false
   },
   "custom/capslock": {
-    "format": "󰪛 ",
+    "format": "󰯫 ",
     "tooltip": true,
     "exec": "$HOME/.config/waybar/scripts/lock-keys caps",
     "restart-interval": 1,

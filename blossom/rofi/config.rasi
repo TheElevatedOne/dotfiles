@@ -1,16 +1,16 @@
 @theme "/tmp/user-config/rofi/colors.rasi"
 
 configuration {
-    modes: "window,drun,run,filebrowser";
+    modes: "window,drun,run,filebrowser,powermenu";
     location: 0;
     fixed-num-lines: false;
     show-icons: true;
     sidebar-mode: true;
     hover-select: true;
-    display-window: "Windows";
-    display-run: "Run";
-    display-drun: "Apps";
-    display-filebrowser: "Files";
+    display-window: " Windows";
+    display-run: " Run";
+    display-drun: "󰀻 Apps";
+    display-filebrowser: " Files";
 
 /*	preview-cmd: ;*/
 /*	on-selection-changed: ;*/

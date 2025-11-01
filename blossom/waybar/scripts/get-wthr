@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
 
-declare -A WC_LIST
-
 LOC=$(curl http://ip-api.com/json?fields=lat,lon,city,country -s | jq -c)
 
 LAT=$(echo "$LOC" | jq -r '.lat' | awk '{printf "%.2f",$1}')
 LONG=$(echo "$LOC" | jq -r '.lon' | awk '{printf "%.2f",$1}')
-CITY=$(echo "$LOC" | jq -r '.city' | awk '{printf "%s",$1}')
-COUNTRY=$(echo "$LOC" | jq -r '.country' | awk '{printf "%s",$1}')
+CITY=$(echo "$LOC" | jq -r '.city')
+COUNTRY=$(echo "$LOC" | jq -r '.country')
 
-WTHR_API=$(curl -s "https://api.open-meteo.com/v1/forecast?latitude=$LAT&longitude=$LONG&current=temperature_2m,relative_humidity_2m,precipitation,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,is_day,weather_code" | jq -c)
+WTHR_API=$(curl -s "https://api.open-meteo.com/v1/forecast?latitude=$LAT&longitude=$LONG&timezone=auto&current=temperature_2m,relative_humidity_2m,precipitation,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,is_day,weather_code" | jq -c)
 
 TIME="$(echo "$WTHR_API" | jq -r '.current.time' | awk '{split($1, time, "T"); printf "%s %s",time[1],time[2]}')"
 TEMP="$(echo "$WTHR_API" | jq -r '.current.temperature_2m')$(echo "$WTHR_API" | jq -r '.current_units.temperature_2m')"
@@ -20,20 +18,22 @@ WIND_S="$(echo "$WTHR_API" | jq -r '.current.wind_speed_10m') $(echo "$WTHR_API"
 WIND_G="$(echo "$WTHR_API" | jq -r '.current.wind_gusts_10m') $(echo "$WTHR_API" | jq -r '.current_units.wind_gusts_10m')"
 
 WIND_ARR=(
-  "N"
-  "NE"
-  "E"
-  "SE"
-  "S"
-  "SW"
-  "W"
-  "NW"
+  "North"
+  "North East"
+  "East"
+  "South East"
+  "South"
+  "South West"
+  "West"
+  "North West"
 )
 WIND_DIR="$(echo "$WTHR_API" | jq -r '.current.wind_direction_10m')"
 WIND_DIR_LET="$(echo "${WIND_ARR[$(echo "$WIND_DIR" | awk '{print int(($1 / 45) % 8 )}')]}")"
 
 IS_DAY="$(echo "$WTHR_API" | jq -r '.current.is_day')"
 WC="$(echo "$WTHR_API" | jq -r '.current.weather_code')"
+
+declare -A WC_LIST
 
 WC_LIST=(
   ["0_0"]="󰖔 "

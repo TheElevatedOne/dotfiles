@@ -8,7 +8,7 @@
 /* Bar Container */
 .browser-toolbox-background #nav-bar-customization-target, 
 .browser-toolbox-background #PanelUI-button {
-  background-color: hsl(from rgb(var(--color2)) h s calc(l - 5));
+  background-color: hsl(var(--hue) var(--sat) calc(var(--lig) - 20));
   padding-bottom: 2px !important;
   margin-top: -1px !important;
 }

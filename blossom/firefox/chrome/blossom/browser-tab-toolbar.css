@@ -6,21 +6,44 @@
      |_/_/    \_|____/|_____/  */
 
 /* Bar Container */
+
+:root {
+  --tabs-bg: hsl(var(--hue) var(--sat) calc(var(--lig) - 20));
+  --tabs-separator: hsl(var(--hue) var(--sat) calc(var(--lig) - 25));
+  --tabs-title: hsl(var(--hue) var(--sat) calc(var(--lig) + 60));
+  --tabs-title-inactive: hsl(var(--hue) var(--sat) calc(var(--lig) + 50));
+  --tabs-icon: hsl(var(--hue) var(--sat) calc(var(--lig) - 20) / 0.8);
+  --tabs-icon-inactive: hsl(var(--hue) var(--sat) calc(var(--lig) - 20) / 0.3);
+  --tabs-select-border: hsl(var(--hue) var(--sat) calc(var(--lig) + 50));
+  --tabs-select-border-multi: hsl(var(--hue) var(--sat) calc(var(--lig) + 35));
+  --tabs-pinned: hsl(var(--hue) var(--sat) calc(var(--lig) + 15));
+  --tabs-pinned-inactive: hsl(var(--hue) var(--sat) var(--lig));
+  --tabs-normal: hsl(var(--hue) var(--sat) calc(var(--lig) + 5));
+  --tabs-normal-inactive: hsl(var(--hue) var(--sat) calc(var(--lig) - 10));
+}
+
+/*****************/
+/* TAB CONTAINER */
+/*****************/
 .browser-toolbox-background .toolbar-items { 
   margin-left: -3px !important;
-  background-color: hsl(from rgb(var(--color2)) h s calc(l - 10));
+  background-color: var(--tabs-bg) !important;
   padding-bottom: 1px !important;
+  border-bottom: 3px solid var(--tabs-separator) !important;
+}
+arrowscrollbox#pinned-tabs-container {
+  margin-inline-end: 0px !important;
 }
 
 /* Tab Title Text */
 .tab-text:is([selected]) {
-  color: hsl(from rgb(var(--cursor)) h s calc(l * 1.5)) !important;
+  color: var(--tabs-title) !important;
   font-weight: 1000;
   transition: ease 0.3s !important;
   margin-bottom: 2px !important;
 }
 .tab-text:not([selected]) {
-  color: hsl(from rgb(var(--cursor)) h s calc(l * 1.2)) !important;
+  color: var(--tabs-title-inactive) !important;
   font-weight: 600;
   transition: ease 0.3s !important;
 }
@@ -49,7 +72,7 @@ span:is([class=" button-background "]) {
 .tabbrowser-tab:is([pinned]):not([selected]) .tab-icon-image {
   width: 18px !important;
   height: 18px !important;
-  background-color: rgba(var(--background), 0.3) !important;
+  background-color: var(--tabs-icon-inactive) !important;
   padding: 5px !important;
   margin: 0px -4px 0px -4px !important;
   border-radius: 100px !important;
@@ -58,7 +81,7 @@ span:is([class=" button-background "]) {
 .tabbrowser-tab:is([pinned]):is([selected]) .tab-icon-image {
   width: 18px !important;
   height: 18px !important;
-  background-color: rgba(var(--background), 0.8) !important;
+  background-color: var(--tabs-icon) !important;
   padding: 5px !important;
   margin: 0px -4px 2px -4px !important;
   border-radius: 100px !important;
@@ -68,7 +91,7 @@ span:is([class=" button-background "]) {
 .tabbrowser-tab:not([pinned]):not([selected]) .tab-icon-image {
   width: 18px !important;
   height: 18px !important;
-  background-color: rgba(var(--background), 0.3) !important;
+  background-color: var(--tabs-icon-inactive) !important;
   padding: 5px !important;
   margin: 0px 4px 0px -2px !important;
   border-radius: 100px !important;
@@ -77,34 +100,39 @@ span:is([class=" button-background "]) {
 .tabbrowser-tab:not([pinned]):is([selected]) .tab-icon-image {
   width: 18px !important;
   height: 18px !important;
-  background-color: rgba(var(--background), 0.8) !important;
+  background-color: var(--tabs-icon) !important;
   padding: 5px !important;
   margin: 0px 4px 3px -2px !important;
   border-radius: 100px !important;
   transition: ease 0.3s !important;
 }
 
+.tabbrowser-tab:is([multiselected]) .tab-background:is([multiselected]) {
+  outline: transparent !important;
+  border-bottom: 3px solid var(--tabs-select-border-multi) !important;
+}
+
 /* Pinned Tabs */
 .tabbrowser-tab:is([pinned]) .tab-background:is([selected]) {
-  background-color: hsl(from rgb(var(--color1)) h s calc(l + 7)) !important;
-  border-bottom: 3px solid hsl(from rgb(var(--color1)) h s calc(l + 60)) !important;
+  background-color: var(--tabs-pinned) !important;
+  border-bottom: 3px solid var(--tabs-select-border) !important;
   transition: ease 0.2s !important;
 }
 .tabbrowser-tab:is([pinned]) .tab-background:not([selected]) {
-  background-color: hsl(from rgb(var(--color1)) h s calc(l + 7)) !important;
+  background-color: var(--tabs-pinned-inactive) !important;
   transition: ease 0.2s !important;
 }
 /* Normal Tabs */
 .tabbrowser-tab:not([pinned]) .tab-background:is([selected]) {
-  background-color: rgba(var(--color1), 0.7) !important;
-  border-bottom: 3px solid hsl(from rgb(var(--color1)) h s calc(l + 50)) !important;
+  background-color: var(--tabs-normal) !important;
+  border-bottom: 3px solid var(--tabs-select-border) !important;
   transition: ease 0.2s !important;
   & + .tab-content > image.tab-close-button {
     margin-bottom: 3px !important;
   }
 }
 .tabbrowser-tab:not([pinned]) .tab-background:not([selected]) {
-  background-color: rgba(var(--color1), 0.7) !important;
+  background-color: var(--tabs-normal-inactive) !important;
   border: none;
   transition: ease 0.2s !important;
   & + .tab-content > image.tab-close-button {
@@ -115,11 +143,11 @@ span:is([class=" button-background "]) {
 tab.tabbrowser-tab:nth-last-of-type(1) {
   margin-right: 3px !important;
 }
-
 panel#tab-preview-panel > .tab-preview-text-container {
-  background: hsl(from rgb(var(--color1)) h s calc(l / 1.5)) !important;
+  background: hsl(var(--hue) var(--sat) calc(var(--lig))) !important;
   border-radius: 5px !important;
-  border-bottom: 3px solid rgb(var(--color7)) !important;
+  border-bottom: 3px solid hsl(var(--hue) var(--sat) calc(var(--lig) + 30)) !important;
+  color: hsl(var(--hue) var(--sat) calc(var(--lig) + 55));
 }
 /*panel#tab-preview-panel > .tab-preview-thumbnail-container {
   box-sizing: border-box !important;
@@ -127,25 +155,40 @@ panel#tab-preview-panel > .tab-preview-text-container {
 }*/
 
 /* New Tab Button */
-hbox#tabbrowser-arrowscrollbox-periphery, 
-toolbarbutton#new-tab-button {
+toolbarbutton.toolbarbutton-1#tabs-newtab-button {
   margin: 4px 4px 4px auto !important;
-  background-color: rgb(var(--color1)) !important;
+  background-color: var(--tabs-pinned-inactive) !important;
   border-radius: 5px !important;
-  border-bottom: 3px solid hsl(from rgb(var(--color1)) h s calc(l + 50)) !important;
-  transition: 0.1s ease !important;
+  border-bottom: 3px solid var(--tabs-select-border-multi) !important;
+  transition: 0.3s ease !important;
   & image.toolbarbutton-icon {
-    color: hsl(from rgb(var(--cursor)) h s calc(l * 1.5)) !important;
+    color: var(--tabs-title) !important;
+    transition: 0.3s ease !important;
   }
 }
-hbox#tabbrowser-arrowscrollbox-periphery:hover, 
-toolbarbutton#new-tab-button:hover {
-  border-bottom: 0px solid hsl(from rgb(var(--color1)) h s calc(l + 50)) !important;
-  padding-bottom: 3px !important;
+toolbarbutton.toolbarbutton-1#tabs-newtab-button:hover {
+  background-color: var(--tabs-pinned) !important;
+  & image.toolbarbutton-icon {
+    color: hsl(var(--hue) var(--sat) calc(var(--lig) - 35)) !important;
+    padding: calc(var(--toolbarbutton-inner-padding) - 1px) !important;
+    outline-color: transparent !important;
+    background-color: transparent !important;
+  }
 }
 
 toolbarbutton#scrollbutton-down, toolbarbutton#scrollbutton-up {
-  background-color: rgba(var(--color1), 0.5) !important;
+  background-color: hsl(var(--hue) var(--sat) calc(var(--lig) - 20)) !important;
   padding: 0px 5px !important;
   margin: 0px 0px 0px 0px !important;
+  transition: 0.3s ease !important;
+  border-radius: 5px;
+  &:not([disabled]) {
+    cursor: pointer !important;
+  }
+  & > image {
+    color: hsl(var(--hue) var(--sat) calc(var(--lig) + 45))
+  }
+  &:not([disabled]):hover {
+    background-color: hsl(var(--hue) var(--sat) calc(var(--lig) - 10)) !important;
+  }
 }

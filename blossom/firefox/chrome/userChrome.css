@@ -1,8 +1,10 @@
 /* Hellwal Colors Symlink */
-@import url("./Hyprspace/colors-rgb.css");
+@import url("./blossom/colors-rgb.css");
+@import url("./blossom/colors.css");
 
-@import url("./Hyprspace/browser-tab-toolbar.css"); /* Top Toolbar With Tabs */
-@import url("./Hyprspace/browser-navbar.css"); /* Navigation Bar */
+@import url("./blossom/browser-tab-toolbar.css"); /* Top Toolbar With Tabs */
+@import url("./blossom/browser-navbar.css"); /* Navigation Bar */
+@import url("./blossom/browser-bookmarks.css");
 
 * {
   font-family: "GeistMono Nerd Font";
@@ -25,10 +27,5 @@ html#main-window {
 .urlbarView-tail-prefix,
 #urlbar-anon-search-settings { 
   display: none !important;
-} 
-
-/* Bookmarks Toolbar */
-toolbar#PersonalToolbar {
-  background-color: hsl(from rgb(var(--color2)) h s calc(l - 15)) !important;
 }
 

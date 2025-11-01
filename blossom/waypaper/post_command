@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-echo "$1"
-
-hellwal -i "$1" -m --no-cache --skip-term-colors
-eww reload
-swaync-client -rs

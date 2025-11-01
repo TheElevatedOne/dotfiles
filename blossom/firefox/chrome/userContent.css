@@ -1,4 +1,4 @@
-@import url('./Hyprspace/colors-rgb.css');
+@import url('./blossom/colors-rgb.css');
 
 /* General Firefox */
 @-moz-document url-prefix("about") {
@@ -162,7 +162,7 @@
   }
   div.logo {
     background: transparent !important;
-    background-image: url('./Hyprspace/icons/firefox-icon.svg') !important;
+    background-image: url('./blossom/icons/firefox-icon.svg') !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-position: center !important;
@@ -170,7 +170,7 @@
   }
   div.wordmark {
     background: rgb(var(--cursor)) !important;
-    mask-image: url('./Hyprspace/icons/firefox-text.svg') !important;
+    mask-image: url('./blossom/icons/firefox-text.svg') !important;
     mask-repeat: no-repeat !important;
     mask-size: contain !important;
     mask-position: center !important;

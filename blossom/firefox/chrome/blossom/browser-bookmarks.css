@@ -1,0 +1,7 @@
+toolbar#PersonalToolbar {
+  background-color: hsl(var(--hue) var(--sat) calc(var(--lig) - 20)) !important;
+  border-top: 3px solid hsl(var(--hue) var(--sat) calc(var(--lig) - 25)) !important;
+  padding: 2px 0px !important;
+}
+toolbarbutton#import-button {
+}

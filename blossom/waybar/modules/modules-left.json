@@ -2,7 +2,7 @@
   "custom/power": {
     "format": " ",
     "tooltip-format": "Power Menu",
-    "on-click": "/tmp/user-config/hypr/scripts/general/way-out"
+    "on-click": "rofi -show powermenu"
   },
   "group/power": {
     "orientation": "horizontal",
@@ -27,10 +27,10 @@
     "max-length": 35,
     "rewrite": {
       "org.kde.dolphin": "dolphin",
-      "clipse": "📋 clipse",
       "org.qbittorrent.qBittorrent": "qbittorrent",
       "ableton live 11 suite.exe": "ableton_live_11",
-      "org.fooyin.fooyin": "fooyin"
+      "org.fooyin.fooyin": "fooyin",
+      "org.inkscape.Inkscape": "inkscape"
     }
   },
   "hyprland/windowcount": {
@@ -147,8 +147,8 @@
   },
   "custom/wthr": {
     "format": "{text}",
-    "interval": 900,
-    "exec": "$HOME/.config/waybar/scripts/get-wthr",
+    "restart-interval": 5,
+    "exec": "wayweather --daemon",
     "return-type": "json"
   },
   "group/wthr": {
